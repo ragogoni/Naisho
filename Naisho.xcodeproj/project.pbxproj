@@ -1,0 +1,765 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3ABEE43B1E70BCE500C753E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE43A1E70BCE500C753E8 /* AppDelegate.swift */; };
+		3ABEE43D1E70BCE500C753E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE43C1E70BCE500C753E8 /* ViewController.swift */; };
+		3ABEE4401E70BCE500C753E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ABEE43E1E70BCE500C753E8 /* Main.storyboard */; };
+		3ABEE4421E70BCE500C753E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ABEE4411E70BCE500C753E8 /* Assets.xcassets */; };
+		3ABEE4451E70BCE500C753E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ABEE4431E70BCE500C753E8 /* LaunchScreen.storyboard */; };
+		3ABEE4501E70BCE500C753E8 /* NaishoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE44F1E70BCE500C753E8 /* NaishoTests.swift */; };
+		3ABEE45B1E70BCE500C753E8 /* NaishoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE45A1E70BCE500C753E8 /* NaishoUITests.swift */; };
+		3ABEE46E1E70BD7A00C753E8 /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE46C1E70BD7A00C753E8 /* BasicViewController.swift */; };
+		3ABEE46F1E70BD7A00C753E8 /* GradientViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE46D1E70BD7A00C753E8 /* GradientViewManager.swift */; };
+		6F10B1F7840872747B11F861 /* Pods_NaishoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C7596367773E732C422F343 /* Pods_NaishoTests.framework */; };
+		80F11F401A7C4D7B77433BEC /* Pods_NaishoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBEDC747946DF6DDAAAD1A2 /* Pods_NaishoUITests.framework */; };
+		F86E214CDC2C8A7C7E8E3AA8 /* Pods_Naisho.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B079E45E8A7320465F576BAD /* Pods_Naisho.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3ABEE44C1E70BCE500C753E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3ABEE42F1E70BCE400C753E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3ABEE4361E70BCE400C753E8;
+			remoteInfo = Naisho;
+		};
+		3ABEE4571E70BCE500C753E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3ABEE42F1E70BCE400C753E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3ABEE4361E70BCE400C753E8;
+			remoteInfo = Naisho;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		10D824FAF324C5023FEE467B /* Pods-NaishoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaishoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NaishoUITests/Pods-NaishoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		35907FAB935FFE40B179BDB1 /* Pods-Naisho.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Naisho.release.xcconfig"; path = "Pods/Target Support Files/Pods-Naisho/Pods-Naisho.release.xcconfig"; sourceTree = "<group>"; };
+		3ABEE4371E70BCE500C753E8 /* Naisho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Naisho.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ABEE43A1E70BCE500C753E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3ABEE43C1E70BCE500C753E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3ABEE43F1E70BCE500C753E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3ABEE4411E70BCE500C753E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3ABEE4441E70BCE500C753E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3ABEE4461E70BCE500C753E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3ABEE44B1E70BCE500C753E8 /* NaishoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NaishoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ABEE44F1E70BCE500C753E8 /* NaishoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaishoTests.swift; sourceTree = "<group>"; };
+		3ABEE4511E70BCE500C753E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3ABEE4561E70BCE500C753E8 /* NaishoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NaishoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ABEE45A1E70BCE500C753E8 /* NaishoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaishoUITests.swift; sourceTree = "<group>"; };
+		3ABEE45C1E70BCE500C753E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3ABEE46C1E70BD7A00C753E8 /* BasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
+		3ABEE46D1E70BD7A00C753E8 /* GradientViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientViewManager.swift; sourceTree = "<group>"; };
+		42AAA0C9E32E28BDFE798B92 /* Pods-Naisho.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Naisho.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Naisho/Pods-Naisho.debug.xcconfig"; sourceTree = "<group>"; };
+		4578890AB9E65F95310AB8E6 /* Pods-NaishoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaishoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NaishoTests/Pods-NaishoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		59448EA97FED6958EC5B90A1 /* Pods-NaishoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaishoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NaishoTests/Pods-NaishoTests.release.xcconfig"; sourceTree = "<group>"; };
+		7C7596367773E732C422F343 /* Pods_NaishoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NaishoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B079E45E8A7320465F576BAD /* Pods_Naisho.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Naisho.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6B1D6EE6333369F3CD02F61 /* Pods-NaishoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaishoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NaishoUITests/Pods-NaishoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DBBEDC747946DF6DDAAAD1A2 /* Pods_NaishoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NaishoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3ABEE4341E70BCE400C753E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F86E214CDC2C8A7C7E8E3AA8 /* Pods_Naisho.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ABEE4481E70BCE500C753E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F10B1F7840872747B11F861 /* Pods_NaishoTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ABEE4531E70BCE500C753E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80F11F401A7C4D7B77433BEC /* Pods_NaishoUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3ABEE42E1E70BCE400C753E8 = {
+			isa = PBXGroup;
+			children = (
+				3ABEE4391E70BCE500C753E8 /* Naisho */,
+				3ABEE44E1E70BCE500C753E8 /* NaishoTests */,
+				3ABEE4591E70BCE500C753E8 /* NaishoUITests */,
+				3ABEE4381E70BCE500C753E8 /* Products */,
+				E6286C61269716308AB2549A /* Pods */,
+				B02D8F02220A1E541338535C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3ABEE4381E70BCE500C753E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3ABEE4371E70BCE500C753E8 /* Naisho.app */,
+				3ABEE44B1E70BCE500C753E8 /* NaishoTests.xctest */,
+				3ABEE4561E70BCE500C753E8 /* NaishoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3ABEE4391E70BCE500C753E8 /* Naisho */ = {
+			isa = PBXGroup;
+			children = (
+				3ABEE46A1E70BD2400C753E8 /* SupportingFiles */,
+				3ABEE46B1E70BD3400C753E8 /* StoryBoards */,
+				3ABEE4691E70BD1C00C753E8 /* VCs */,
+				3ABEE4681E70BD1500C753E8 /* Classes */,
+				3ABEE4411E70BCE500C753E8 /* Assets.xcassets */,
+			);
+			path = Naisho;
+			sourceTree = "<group>";
+		};
+		3ABEE44E1E70BCE500C753E8 /* NaishoTests */ = {
+			isa = PBXGroup;
+			children = (
+				3ABEE44F1E70BCE500C753E8 /* NaishoTests.swift */,
+				3ABEE4511E70BCE500C753E8 /* Info.plist */,
+			);
+			path = NaishoTests;
+			sourceTree = "<group>";
+		};
+		3ABEE4591E70BCE500C753E8 /* NaishoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3ABEE45A1E70BCE500C753E8 /* NaishoUITests.swift */,
+				3ABEE45C1E70BCE500C753E8 /* Info.plist */,
+			);
+			path = NaishoUITests;
+			sourceTree = "<group>";
+		};
+		3ABEE4681E70BD1500C753E8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3ABEE46D1E70BD7A00C753E8 /* GradientViewManager.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		3ABEE4691E70BD1C00C753E8 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				3ABEE43C1E70BCE500C753E8 /* ViewController.swift */,
+				3ABEE46C1E70BD7A00C753E8 /* BasicViewController.swift */,
+			);
+			name = VCs;
+			sourceTree = "<group>";
+		};
+		3ABEE46A1E70BD2400C753E8 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				3ABEE4461E70BCE500C753E8 /* Info.plist */,
+				3ABEE43A1E70BCE500C753E8 /* AppDelegate.swift */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		3ABEE46B1E70BD3400C753E8 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				3ABEE43E1E70BCE500C753E8 /* Main.storyboard */,
+				3ABEE4431E70BCE500C753E8 /* LaunchScreen.storyboard */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
+		B02D8F02220A1E541338535C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B079E45E8A7320465F576BAD /* Pods_Naisho.framework */,
+				7C7596367773E732C422F343 /* Pods_NaishoTests.framework */,
+				DBBEDC747946DF6DDAAAD1A2 /* Pods_NaishoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6286C61269716308AB2549A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				42AAA0C9E32E28BDFE798B92 /* Pods-Naisho.debug.xcconfig */,
+				35907FAB935FFE40B179BDB1 /* Pods-Naisho.release.xcconfig */,
+				4578890AB9E65F95310AB8E6 /* Pods-NaishoTests.debug.xcconfig */,
+				59448EA97FED6958EC5B90A1 /* Pods-NaishoTests.release.xcconfig */,
+				D6B1D6EE6333369F3CD02F61 /* Pods-NaishoUITests.debug.xcconfig */,
+				10D824FAF324C5023FEE467B /* Pods-NaishoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3ABEE4361E70BCE400C753E8 /* Naisho */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3ABEE45F1E70BCE500C753E8 /* Build configuration list for PBXNativeTarget "Naisho" */;
+			buildPhases = (
+				776B77E9B03B617B7B2D0D06 /* [CP] Check Pods Manifest.lock */,
+				3ABEE4331E70BCE400C753E8 /* Sources */,
+				3ABEE4341E70BCE400C753E8 /* Frameworks */,
+				3ABEE4351E70BCE400C753E8 /* Resources */,
+				43A9AF41DC66B9FE4A5CDF75 /* [CP] Embed Pods Frameworks */,
+				FD4447BF3210ED2BFA4D53E7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Naisho;
+			productName = Naisho;
+			productReference = 3ABEE4371E70BCE500C753E8 /* Naisho.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3ABEE44A1E70BCE500C753E8 /* NaishoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3ABEE4621E70BCE500C753E8 /* Build configuration list for PBXNativeTarget "NaishoTests" */;
+			buildPhases = (
+				1AB46B104752FC4061EACC98 /* [CP] Check Pods Manifest.lock */,
+				3ABEE4471E70BCE500C753E8 /* Sources */,
+				3ABEE4481E70BCE500C753E8 /* Frameworks */,
+				3ABEE4491E70BCE500C753E8 /* Resources */,
+				59418BA3702B42153F720F92 /* [CP] Embed Pods Frameworks */,
+				5229BABA5AB0815C8F50E6CC /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3ABEE44D1E70BCE500C753E8 /* PBXTargetDependency */,
+			);
+			name = NaishoTests;
+			productName = NaishoTests;
+			productReference = 3ABEE44B1E70BCE500C753E8 /* NaishoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3ABEE4551E70BCE500C753E8 /* NaishoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3ABEE4651E70BCE500C753E8 /* Build configuration list for PBXNativeTarget "NaishoUITests" */;
+			buildPhases = (
+				61FEB460FA188140A62286BD /* [CP] Check Pods Manifest.lock */,
+				3ABEE4521E70BCE500C753E8 /* Sources */,
+				3ABEE4531E70BCE500C753E8 /* Frameworks */,
+				3ABEE4541E70BCE500C753E8 /* Resources */,
+				D9647EABC52CB5810F75245E /* [CP] Embed Pods Frameworks */,
+				1361403A035CC0D82EB986FD /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3ABEE4581E70BCE500C753E8 /* PBXTargetDependency */,
+			);
+			name = NaishoUITests;
+			productName = NaishoUITests;
+			productReference = 3ABEE4561E70BCE500C753E8 /* NaishoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3ABEE42F1E70BCE400C753E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = JustACoin;
+				TargetAttributes = {
+					3ABEE4361E70BCE400C753E8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = NJ8ZKPBNVM;
+						ProvisioningStyle = Automatic;
+					};
+					3ABEE44A1E70BCE500C753E8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3ABEE4361E70BCE400C753E8;
+					};
+					3ABEE4551E70BCE500C753E8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3ABEE4361E70BCE400C753E8;
+					};
+				};
+			};
+			buildConfigurationList = 3ABEE4321E70BCE400C753E8 /* Build configuration list for PBXProject "Naisho" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3ABEE42E1E70BCE400C753E8;
+			productRefGroup = 3ABEE4381E70BCE500C753E8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3ABEE4361E70BCE400C753E8 /* Naisho */,
+				3ABEE44A1E70BCE500C753E8 /* NaishoTests */,
+				3ABEE4551E70BCE500C753E8 /* NaishoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3ABEE4351E70BCE400C753E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ABEE4451E70BCE500C753E8 /* LaunchScreen.storyboard in Resources */,
+				3ABEE4421E70BCE500C753E8 /* Assets.xcassets in Resources */,
+				3ABEE4401E70BCE500C753E8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ABEE4491E70BCE500C753E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ABEE4541E70BCE500C753E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1361403A035CC0D82EB986FD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NaishoUITests/Pods-NaishoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1AB46B104752FC4061EACC98 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		43A9AF41DC66B9FE4A5CDF75 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Naisho/Pods-Naisho-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5229BABA5AB0815C8F50E6CC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NaishoTests/Pods-NaishoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59418BA3702B42153F720F92 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NaishoTests/Pods-NaishoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61FEB460FA188140A62286BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		776B77E9B03B617B7B2D0D06 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D9647EABC52CB5810F75245E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NaishoUITests/Pods-NaishoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD4447BF3210ED2BFA4D53E7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Naisho/Pods-Naisho-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3ABEE4331E70BCE400C753E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ABEE46F1E70BD7A00C753E8 /* GradientViewManager.swift in Sources */,
+				3ABEE43D1E70BCE500C753E8 /* ViewController.swift in Sources */,
+				3ABEE46E1E70BD7A00C753E8 /* BasicViewController.swift in Sources */,
+				3ABEE43B1E70BCE500C753E8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ABEE4471E70BCE500C753E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ABEE4501E70BCE500C753E8 /* NaishoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ABEE4521E70BCE500C753E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ABEE45B1E70BCE500C753E8 /* NaishoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3ABEE44D1E70BCE500C753E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3ABEE4361E70BCE400C753E8 /* Naisho */;
+			targetProxy = 3ABEE44C1E70BCE500C753E8 /* PBXContainerItemProxy */;
+		};
+		3ABEE4581E70BCE500C753E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3ABEE4361E70BCE400C753E8 /* Naisho */;
+			targetProxy = 3ABEE4571E70BCE500C753E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3ABEE43E1E70BCE500C753E8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3ABEE43F1E70BCE500C753E8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3ABEE4431E70BCE500C753E8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3ABEE4441E70BCE500C753E8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3ABEE45D1E70BCE500C753E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3ABEE45E1E70BCE500C753E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3ABEE4601E70BCE500C753E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42AAA0C9E32E28BDFE798B92 /* Pods-Naisho.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NJ8ZKPBNVM;
+				INFOPLIST_FILE = Naisho/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = JustACoin.Naisho;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3ABEE4611E70BCE500C753E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35907FAB935FFE40B179BDB1 /* Pods-Naisho.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NJ8ZKPBNVM;
+				INFOPLIST_FILE = Naisho/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = JustACoin.Naisho;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		3ABEE4631E70BCE500C753E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4578890AB9E65F95310AB8E6 /* Pods-NaishoTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NaishoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = JustACoin.NaishoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Naisho.app/Naisho";
+			};
+			name = Debug;
+		};
+		3ABEE4641E70BCE500C753E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59448EA97FED6958EC5B90A1 /* Pods-NaishoTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NaishoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = JustACoin.NaishoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Naisho.app/Naisho";
+			};
+			name = Release;
+		};
+		3ABEE4661E70BCE500C753E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6B1D6EE6333369F3CD02F61 /* Pods-NaishoUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = NaishoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = JustACoin.NaishoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Naisho;
+			};
+			name = Debug;
+		};
+		3ABEE4671E70BCE500C753E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10D824FAF324C5023FEE467B /* Pods-NaishoUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = NaishoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = JustACoin.NaishoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Naisho;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3ABEE4321E70BCE400C753E8 /* Build configuration list for PBXProject "Naisho" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3ABEE45D1E70BCE500C753E8 /* Debug */,
+				3ABEE45E1E70BCE500C753E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3ABEE45F1E70BCE500C753E8 /* Build configuration list for PBXNativeTarget "Naisho" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3ABEE4601E70BCE500C753E8 /* Debug */,
+				3ABEE4611E70BCE500C753E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3ABEE4621E70BCE500C753E8 /* Build configuration list for PBXNativeTarget "NaishoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3ABEE4631E70BCE500C753E8 /* Debug */,
+				3ABEE4641E70BCE500C753E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3ABEE4651E70BCE500C753E8 /* Build configuration list for PBXNativeTarget "NaishoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3ABEE4661E70BCE500C753E8 /* Debug */,
+				3ABEE4671E70BCE500C753E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3ABEE42F1E70BCE400C753E8 /* Project object */;
+}
