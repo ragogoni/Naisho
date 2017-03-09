@@ -6,6 +6,7 @@ target 'Naisho' do
   use_frameworks!
 
   # Pods for Naisho
+  pod 'RealmSwift'
 
   target 'NaishoTests' do
     inherit! :search_paths
