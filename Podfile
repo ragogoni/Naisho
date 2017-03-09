@@ -7,6 +7,9 @@ target 'Naisho' do
 
   # Pods for Naisho
   pod 'RealmSwift'
+  pod 'FoursquareAPIClient'
+  pod 'SDWebImage'
+  pod 'SwiftyJSON'
 
   target 'NaishoTests' do
     inherit! :search_paths

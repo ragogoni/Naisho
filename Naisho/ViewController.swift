@@ -13,6 +13,11 @@ class ViewController: BasicViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // testing Foursquare Client API
+        let fs = FSClient();
+        fs.searchExample();
+        
     }
 
     override func didReceiveMemoryWarning() {

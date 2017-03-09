@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>FoursquareAPIClient.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Naisho.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -29,10 +34,20 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>14AD8DF6ADCBBAD50F04789063F3C64F</key>
+		<key>1EFAF64493E9D5405ED9AB4807C8FF9B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,7 +57,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>45071C212E9E67C001CFF5AED7CD9A63</key>
+		<key>4710D1A59B3FF3CF67BA72ABA2EF565F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +67,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A627D020664DEAC8C777E3A0C3FF5299</key>
+		<key>80FB9A9B8B349E7FFD589D98B2B56FBF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A437C6C3C6CF41401DA4F80763A0F640</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BCD2D4963668F917188881A29A51D4EB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D25FB7B0DF27E58DFAEE8806FF022FB2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
