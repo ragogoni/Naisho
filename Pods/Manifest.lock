@@ -1,4 +1,14 @@
 PODS:
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
+  - FBSDKCoreKit (4.20.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.20.0):
+    - FBSDKCoreKit
   - FoursquareAPIClient (3.1.0)
   - Realm (2.4.3):
     - Realm/Headers (= 2.4.3)
@@ -9,20 +19,27 @@ PODS:
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
   - SwiftyJSON (3.1.4)
+  - WhereAmI (4.0.0)
 
 DEPENDENCIES:
+  - FBSDKLoginKit
   - FoursquareAPIClient
   - RealmSwift
   - SDWebImage
   - SwiftyJSON
+  - WhereAmI (~> 4.0)
 
 SPEC CHECKSUMS:
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  FBSDKCoreKit: 2d16979b28fe28c2b95af0d275ad5f9703c6c8de
+  FBSDKLoginKit: a9d9391506c687e2304a590bf9312837fce7f375
   FoursquareAPIClient: 2bb916176f560c0afb6838a28c1a0970467a0edc
   Realm: e08d60b0048ccccd3949c8c28a92c4db5712d7e9
   RealmSwift: 30d49739ccb3385d201242736ca4dda56aec9dfc
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  WhereAmI: df31873a49da0cef82b5293e6c5203af939d4eff
 
-PODFILE CHECKSUM: e2bd9f76a9491b9b53282eca6ff5fd48ad849ce6
+PODFILE CHECKSUM: 619bb38e2c533f216e96ebfb5f6443f6543d1675
 
 COCOAPODS: 1.2.0

@@ -4,6 +4,21 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FBSDKCoreKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FBSDKLoginKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FoursquareAPIClient.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -44,10 +59,15 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>WhereAmI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1EFAF64493E9D5405ED9AB4807C8FF9B</key>
+		<key>316FD14E9572F94F7F6CB652D41C1064</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,7 +77,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>44CAD6CE523055ED339E87154473A254</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4710D1A59B3FF3CF67BA72ABA2EF565F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>62FAF061C2232019499B056E5CA45BA5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6D4541A68956685FACC3E1A96D8EDEE2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,22 +102,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>80FB9A9B8B349E7FFD589D98B2B56FBF</key>
+		<key>AE277593347382632E4BE7DD50BE2E96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A437C6C3C6CF41401DA4F80763A0F640</key>
+		<key>B92A829A7B6BB529FD99F47B2E646620</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BCD2D4963668F917188881A29A51D4EB</key>
+		<key>BC5000D645EEAF961C85907CDC796FE1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D25FB7B0DF27E58DFAEE8806FF022FB2</key>
+		<key>BEF7E6E85DB5CDE5D7A18F4F2EB8494B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED64DE879331E6007B90CF6ABD6754BD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

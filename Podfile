@@ -10,6 +10,8 @@ target 'Naisho' do
   pod 'FoursquareAPIClient'
   pod 'SDWebImage'
   pod 'SwiftyJSON'
+  pod 'WhereAmI', '~> 4.0'
+  pod 'FBSDKLoginKit'
 
   target 'NaishoTests' do
     inherit! :search_paths
