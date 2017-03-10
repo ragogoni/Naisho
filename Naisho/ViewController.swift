@@ -12,6 +12,9 @@ import FBSDKLoginKit
 import Firebase
 
 class ViewController: BasicViewController, FBSDKLoginButtonDelegate {
+    
+    let ffManager = FirebaseFacebookManager()
+    
     /**
      Sent to the delegate when the button was used to logout.
      - Parameter loginButton: The button that was clicked.
@@ -38,35 +41,8 @@ class ViewController: BasicViewController, FBSDKLoginButtonDelegate {
         } else {
             // その他
             print("Login Succeeded")
-            FireBaseAuthWithFB();
+            ffManager.FireBaseAuthWithFB();
         }
-    }
-    
-    private func FireBaseAuthWithFB(){
-        let accessToken = FBSDKAccessToken.current()
-        
-        let credential = FIRFacebookAuthProvider.credential(withAccessToken: (accessToken?.tokenString)!)
-        
-        // Perform login by calling Firebase APIs
-        FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
-            if let error = error {
-                print("Login error: \(error.localizedDescription)")
-                let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
-                let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alertController.addAction(okayAction)
-                self.present(alertController, animated: true, completion: nil)
-                
-                return
-            }
-            
-            // Present the main view
-            /*
-            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
-                UIApplication.shared.keyWindow?.rootViewController = viewController
-                self.dismiss(animated: true, completion: nil)
-            }*/
-            
-        })
     }
 
 
@@ -78,10 +54,10 @@ class ViewController: BasicViewController, FBSDKLoginButtonDelegate {
         let fs = FSClient();
         fs.searchExample();
         
-        let loginBtn : FBSDKLoginButton = FBSDKLoginButton()
-        self.view.addSubview(loginBtn)
-        loginBtn.center = self.view.center
-        loginBtn.readPermissions = ["public_profile", "email", "user_friends"]
+        // get Facebook Login Button
+        let loginBtn : FBSDKLoginButton = ffManager.getFBLoginButton();
+        self.view.addSubview(loginBtn);
+        loginBtn.center = self.view.center;
         loginBtn.delegate = self
         
         
