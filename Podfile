@@ -6,12 +6,24 @@ target 'Naisho' do
   use_frameworks!
 
   # Pods for Naisho
+  
+  # Realm
   pod 'RealmSwift'
+  
+  # FourSquare API
   pod 'FoursquareAPIClient'
   pod 'SDWebImage'
   pod 'SwiftyJSON'
+  
+  # Location
   pod 'WhereAmI', '~> 4.0'
+  
+  # Facebook Login Stuff
   pod 'FBSDKLoginKit'
+  
+  # Firebase
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 
   target 'NaishoTests' do
     inherit! :search_paths
