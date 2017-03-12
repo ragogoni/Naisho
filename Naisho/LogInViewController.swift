@@ -60,7 +60,7 @@ class LogInViewController: BasicViewController, FBSDKLoginButtonDelegate {
         loginBtn.center = self.view.center;
         loginBtn.delegate = self
         
-        ffManager.testFBGraphRequest();
+        ffManager.FBGraphRequest(nextCursor: nil);
         
         
     }

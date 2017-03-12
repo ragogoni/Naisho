@@ -10,6 +10,7 @@ import Foundation
 import Firebase
 import FBSDKCoreKit
 import FBSDKLoginKit
+import SwiftyJSON
 
 class FirebaseFacebookManager:NSObject{
     override init(){
@@ -53,11 +54,28 @@ class FirebaseFacebookManager:NSObject{
         return loginBtn;
     }
     
-    func testFBGraphRequest(){
+    func FBGraphRequest(nextCursor : String?){
+        var params = Dictionary<String, String>() as? Dictionary
+        
+        if nextCursor == nil {
+            params = nil
+        } else {
+            params!["after"] = nextCursor
+        }
+        
         if((FBSDKAccessToken.current()) != nil){
-            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, email, age_range,link,gender,locale,timezone,updated_time,verified"]).start(completionHandler: { (connection, result, error) -> Void in
+            FBSDKGraphRequest(graphPath: "me/taggable_friends", parameters: params).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil){
-                    print(result)
+                    let json = JSON(result!)
+                    for (_,subJson):(String, JSON) in json["data"] {
+                        print(subJson["name"])
+                    }
+                    if(json["paging"]["cursors"]["after"] != nil){
+                        self.FBGraphRequest(nextCursor: json["paging"]["cursors"]["after"].string);
+                    } else {
+                        print("End of Page");
+                    }
+                    
                 }
             })
         }
