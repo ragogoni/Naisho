@@ -16,7 +16,7 @@ class FirebaseFacebookManager:NSObject{
         super.init()
     }
     
-    public func FireBaseAuthWithFB(){
+    func FireBaseAuthWithFB(){
         let accessToken = FBSDKAccessToken.current()
         
         let credential = FIRFacebookAuthProvider.credential(withAccessToken: (accessToken?.tokenString)!)
@@ -51,6 +51,16 @@ class FirebaseFacebookManager:NSObject{
         let loginBtn : FBSDKLoginButton = FBSDKLoginButton();
         loginBtn.readPermissions = ["public_profile", "email", "user_friends"];
         return loginBtn;
+    }
+    
+    func testFBGraphRequest(){
+        if((FBSDKAccessToken.current()) != nil){
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, email, age_range,link,gender,locale,timezone,updated_time,verified"]).start(completionHandler: { (connection, result, error) -> Void in
+                if (error == nil){
+                    print(result)
+                }
+            })
+        }
     }
     
 

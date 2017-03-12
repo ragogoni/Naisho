@@ -11,7 +11,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
 
-class ViewController: BasicViewController, FBSDKLoginButtonDelegate {
+class LogInViewController: BasicViewController, FBSDKLoginButtonDelegate {
     
     let ffManager = FirebaseFacebookManager()
     
@@ -59,6 +59,8 @@ class ViewController: BasicViewController, FBSDKLoginButtonDelegate {
         self.view.addSubview(loginBtn);
         loginBtn.center = self.view.center;
         loginBtn.delegate = self
+        
+        ffManager.testFBGraphRequest();
         
         
     }
