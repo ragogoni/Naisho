@@ -67,32 +67,41 @@ class FirebaseFacebookManager:NSObject{
      Update the User information into the sharedInstance.
      
      Updating:
-        - firstname
-        - lastname
+        - firstname, lastname
         - birthday
-        - age range
+        - max and min age range
         - gender
         - timezone
         - email
-     
      */
     func UpdateUserInfo(){
-        let user = UserInfo.sharedInstance;
+        let userDefaults = UserDefaults.standard
+        
         if((FBSDKAccessToken.current()) != nil){
-            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "email,id,first_name,last_name,age_range,gender,timezone,birthday"]).start(completionHandler: { (connection, result, error) -> Void in
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "email,first_name,last_name,age_range,gender,timezone,birthday"]).start(completionHandler: { (connection, result, error) -> Void in
                 if(error == nil){
                     let json = JSON(result!);
-                    print(json);
                     for(tag,data):(String,JSON) in json {
-                        if(json["id"] != JSON.null && tag == "id"){
-                            user.data["fbID"] = json["id"].string!;
-                        } else if (json["timezone"] != JSON.null && tag == "timezone"){
-                            user.data["timezone"] = String(describing: data.int!);
-                        } else {
-                            user.data[tag] = data.string;
+                        // I dont think facebook ID is necessary
+                        if(tag == "id"){
+                            continue;
                         }
+                        
+                        if (data != JSON.null && tag == "timezone"){
+                            userDefaults.set(data.int!,forKey: tag);
+                        } else if (tag == "age_range"){
+                            if(data["max"] != JSON.null){
+                                userDefaults.set(data["max"].int!,forKey: "max");
+                            } else if (data["min"] != JSON.null){
+                                userDefaults.set(data["min"].int!,forKey: "min");
+                            }
+                        } else {
+                            userDefaults.set(data.string,forKey: tag);
+                        }
+                    }// end of for loop for json
+                    for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
+                        print("\(key) = \(value) \n")
                     }
-                    print(user.data);
                 }
     
                 }
