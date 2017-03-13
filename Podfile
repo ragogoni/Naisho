@@ -19,7 +19,7 @@ target 'Naisho' do
   pod 'XLPagerTabStrip', '~> 7.0'
   
   # Location
-  pod 'WhereAmI', '~> 4.0'
+  pod 'SwiftLocation'
   
   # Facebook Login Stuff
   pod 'FBSDKLoginKit'

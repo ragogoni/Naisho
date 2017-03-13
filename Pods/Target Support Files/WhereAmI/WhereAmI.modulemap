@@ -1,6 +1,0 @@
-framework module WhereAmI {
-  umbrella header "WhereAmI-umbrella.h"
-
-  export *
-  module * { export * }
-}

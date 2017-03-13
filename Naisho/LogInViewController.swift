@@ -10,6 +10,8 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
+import SwiftLocation
+import CoreLocation
 
 class LogInViewController: BasicViewController, FBSDKLoginButtonDelegate {
     
@@ -61,9 +63,15 @@ class LogInViewController: BasicViewController, FBSDKLoginButtonDelegate {
         loginBtn.delegate = self
         
         //ffManager.FBGraphRequest(nextCursor: nil);
-        ffManager.UpdateUserInfo();
         
-        
+        // Request Location record it to userdefaults only when there is a significant change
+        Location.getLocation(accuracy: .city, frequency: .significant, success: { (_, location) in
+            UserDefaults.standard.setValue(String(describing:location.coordinate.longitude), forKeyPath: "lon");
+            UserDefaults.standard.setValue(String(describing:location.coordinate.latitude), forKeyPath: "lat");
+            self.ffManager.UpdateUserInfo();
+        }) { (request, last, error) in
+            request.cancel() // stop continous location monitoring on error
+        }
     }
 
     override func didReceiveMemoryWarning() {

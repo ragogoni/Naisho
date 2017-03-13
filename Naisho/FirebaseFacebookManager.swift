@@ -34,6 +34,10 @@ class FirebaseFacebookManager:NSObject{
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
             if let error = error {
                 
+                print("Error during FireBase Authorization:")
+                print(error);
+                
+                
                 // Error Handler
                 // Generate Alert
                 /*
@@ -99,9 +103,15 @@ class FirebaseFacebookManager:NSObject{
                             userDefaults.set(data.string,forKey: tag);
                         }
                     }// end of for loop for json
+                    
+                    // testing UserDefaults
+                    /*
                     for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
                         print("\(key) = \(value) \n")
-                    }
+                    }*/
+                    
+                    // synchronize into data
+                    userDefaults.synchronize()
                 }
     
                 }
@@ -111,7 +121,7 @@ class FirebaseFacebookManager:NSObject{
     
     
     func FBGraphRequest(nextCursor : String?){
-        var params = Dictionary<String, String>() as? Dictionary
+        var params = Dictionary<String, String>() as Dictionary?
         
         if nextCursor == nil {
             params = nil

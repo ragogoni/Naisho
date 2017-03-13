@@ -17,7 +17,6 @@
 		3ABEE46E1E70BD7A00C753E8 /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE46C1E70BD7A00C753E8 /* BasicViewController.swift */; };
 		3ABEE46F1E70BD7A00C753E8 /* GradientViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE46D1E70BD7A00C753E8 /* GradientViewManager.swift */; };
 		3AC1FB501E71C5560031DDCF /* FSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC1FB4F1E71C5560031DDCF /* FSClient.swift */; };
-		3AC1FB6D1E71F5410031DDCF /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC1FB6C1E71F5410031DDCF /* Location.swift */; };
 		3AC1FB6F1E71F5470031DDCF /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC1FB6E1E71F5470031DDCF /* RealmObjects.swift */; };
 		3AC1FB721E72FA1D0031DDCF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AC1FB711E72FA1D0031DDCF /* GoogleService-Info.plist */; };
 		3AC1FB741E72FBD20031DDCF /* FirebaseFacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC1FB731E72FBD20031DDCF /* FirebaseFacebookManager.swift */; };
@@ -62,7 +61,6 @@
 		3ABEE46C1E70BD7A00C753E8 /* BasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
 		3ABEE46D1E70BD7A00C753E8 /* GradientViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientViewManager.swift; sourceTree = "<group>"; };
 		3AC1FB4F1E71C5560031DDCF /* FSClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSClient.swift; sourceTree = "<group>"; };
-		3AC1FB6C1E71F5410031DDCF /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		3AC1FB6E1E71F5470031DDCF /* RealmObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
 		3AC1FB701E71FD640031DDCF /* FacebookLoginSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FacebookLoginSample-Bridging-Header.h"; sourceTree = "<group>"; };
 		3AC1FB711E72FA1D0031DDCF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -161,7 +159,6 @@
 			children = (
 				3ABEE46D1E70BD7A00C753E8 /* GradientViewManager.swift */,
 				3AC1FB4F1E71C5560031DDCF /* FSClient.swift */,
-				3AC1FB6C1E71F5410031DDCF /* Location.swift */,
 				3AC1FB6E1E71F5470031DDCF /* RealmObjects.swift */,
 				3AC1FB731E72FBD20031DDCF /* FirebaseFacebookManager.swift */,
 			);
@@ -509,7 +506,6 @@
 				3ABEE46E1E70BD7A00C753E8 /* BasicViewController.swift in Sources */,
 				3AC1FB741E72FBD20031DDCF /* FirebaseFacebookManager.swift in Sources */,
 				3AC1FB501E71C5560031DDCF /* FSClient.swift in Sources */,
-				3AC1FB6D1E71F5410031DDCF /* Location.swift in Sources */,
 				3ABEE43B1E70BCE500C753E8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double WhereAmIVersionNumber;
-FOUNDATION_EXPORT const unsigned char WhereAmIVersionString[];
+FOUNDATION_EXPORT double SwiftLocationVersionNumber;
+FOUNDATION_EXPORT const unsigned char SwiftLocationVersionString[];
 

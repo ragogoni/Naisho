@@ -64,12 +64,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SwiftyJSON.xcscheme</key>
+		<key>SwiftLocation.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>WhereAmI.xcscheme</key>
+		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -92,11 +92,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>14890A3935FB7C24977AFCD9184EA3F9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>3C02DABE3BD7B4021015D4B16FA23205</key>
 		<dict>
 			<key>primary</key>
@@ -112,7 +107,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4A01010FC9E03208C95653CD5D5CFA31</key>
+		<key>4E8D94172901FF35BF246AB650D204E4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>59A202EE14A8E24A23879E8BEA809EFD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5C7D232E244FE76962370AADEEB82293</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,7 +127,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A980BC0D4F810DFDB649913DAAEDCEE7</key>
+		<key>7E718575FD5017D61FE5E7D95A0D8D63</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8BE3A155E5DA35E09BB1DFADCE6DDF50</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>91FD9209B41B7919704AFA3DFB3C4B50</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,27 +157,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CC2AEE75F1835C35AC9B865069B0101A</key>
+		<key>F3BC4E8B7702B82647A3C687E0D35176</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D1E787969E2183CDE080B205FD34BE0D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F1C904C269A10FC96FBD4494F050219B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FD62F890ABDFCA569747D5BD51033DE3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FE825BDDB7900D74C4C5A14DC7367219</key>
+		<key>FCFBF2D52A6FCB6E51555233C75E4D51</key>
 		<dict>
 			<key>primary</key>
 			<true/>
