@@ -15,7 +15,7 @@ import FirebaseAnalytics
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let lManager = LocationManager.sharedInstance;
     
     public func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
@@ -39,6 +39,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FIRApp.configure()
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        
+        // if already logged in, skip the login View
+        if((FBSDKAccessToken.current()) != nil){
+            let rootView: MainViewController = MainViewController()
+            if let window = self.window{
+                window.rootViewController = rootView
+            }
+        }
+        
+        lManager.updateUserLocationInUserDefaultsOnce();
+        
         return true
     }
     
