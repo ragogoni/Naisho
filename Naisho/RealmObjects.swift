@@ -8,11 +8,3 @@
 
 import Foundation
 import RealmSwift
-
-class UserInfo:Object{
-    dynamic var first_name = "";
-    dynamic var last_name = "";
-    dynamic var email = "";
-    dynamic var fbID = 0;
-    dynamic var ll = "";
-}

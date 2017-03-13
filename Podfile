@@ -15,6 +15,9 @@ target 'Naisho' do
   pod 'SDWebImage'
   pod 'SwiftyJSON'
   
+  # Page View
+  pod 'XLPagerTabStrip', '~> 7.0'
+  
   # Location
   pod 'WhereAmI', '~> 4.0'
   

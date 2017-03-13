@@ -12,9 +12,17 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import SwiftyJSON
 
+/*
+ Singleton Firebase Facebook Manager
+ */
 class FirebaseFacebookManager:NSObject{
-    override init(){
-        super.init()
+    
+    static var sharedInstance: FirebaseFacebookManager = {
+        return FirebaseFacebookManager();
+    }()
+
+    
+    private override init(){
     }
     
     func FireBaseAuthWithFB(){
@@ -48,11 +56,50 @@ class FirebaseFacebookManager:NSObject{
         })
     }
     
+    /* get facebook button */
     func getFBLoginButton()->FBSDKLoginButton{
         let loginBtn : FBSDKLoginButton = FBSDKLoginButton();
         loginBtn.readPermissions = ["public_profile", "email", "user_friends"];
         return loginBtn;
     }
+    
+    /*
+     Update the User information into the sharedInstance.
+     
+     Updating:
+        - firstname
+        - lastname
+        - birthday
+        - age range
+        - gender
+        - timezone
+        - email
+     
+     */
+    func UpdateUserInfo(){
+        let user = UserInfo.sharedInstance;
+        if((FBSDKAccessToken.current()) != nil){
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "email,id,first_name,last_name,age_range,gender,timezone,birthday"]).start(completionHandler: { (connection, result, error) -> Void in
+                if(error == nil){
+                    let json = JSON(result!);
+                    print(json);
+                    for(tag,data):(String,JSON) in json {
+                        if(json["id"] != JSON.null && tag == "id"){
+                            user.data["fbID"] = json["id"].string!;
+                        } else if (json["timezone"] != JSON.null && tag == "timezone"){
+                            user.data["timezone"] = String(describing: data.int!);
+                        } else {
+                            user.data[tag] = data.string;
+                        }
+                    }
+                    print(user.data);
+                }
+    
+                }
+            )
+        }
+    }
+    
     
     func FBGraphRequest(nextCursor : String?){
         var params = Dictionary<String, String>() as? Dictionary
@@ -70,7 +117,7 @@ class FirebaseFacebookManager:NSObject{
                     for (_,subJson):(String, JSON) in json["data"] {
                         print(subJson["name"])
                     }
-                    if(json["paging"]["cursors"]["after"] != nil){
+                    if(json["paging"]["cursors"]["after"] != JSON.null){
                         self.FBGraphRequest(nextCursor: json["paging"]["cursors"]["after"].string);
                     } else {
                         print("End of Page");

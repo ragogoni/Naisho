@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AB2B6031E76F7F700FC7B52 /* SharedUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2B6021E76F7F700FC7B52 /* SharedUserInfo.swift */; };
 		3ABEE43B1E70BCE500C753E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE43A1E70BCE500C753E8 /* AppDelegate.swift */; };
 		3ABEE43D1E70BCE500C753E8 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE43C1E70BCE500C753E8 /* LogInViewController.swift */; };
 		3ABEE4401E70BCE500C753E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ABEE43E1E70BCE500C753E8 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		10D824FAF324C5023FEE467B /* Pods-NaishoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaishoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NaishoUITests/Pods-NaishoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		35907FAB935FFE40B179BDB1 /* Pods-Naisho.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Naisho.release.xcconfig"; path = "Pods/Target Support Files/Pods-Naisho/Pods-Naisho.release.xcconfig"; sourceTree = "<group>"; };
+		3AB2B6021E76F7F700FC7B52 /* SharedUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedUserInfo.swift; sourceTree = "<group>"; };
 		3ABEE4371E70BCE500C753E8 /* Naisho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Naisho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ABEE43A1E70BCE500C753E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3ABEE43C1E70BCE500C753E8 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				3AC1FB6C1E71F5410031DDCF /* Location.swift */,
 				3AC1FB6E1E71F5470031DDCF /* RealmObjects.swift */,
 				3AC1FB731E72FBD20031DDCF /* FirebaseFacebookManager.swift */,
+				3AB2B6021E76F7F700FC7B52 /* SharedUserInfo.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				3AC1FB6F1E71F5470031DDCF /* RealmObjects.swift in Sources */,
 				3ABEE46E1E70BD7A00C753E8 /* BasicViewController.swift in Sources */,
 				3AC1FB741E72FBD20031DDCF /* FirebaseFacebookManager.swift in Sources */,
+				3AB2B6031E76F7F700FC7B52 /* SharedUserInfo.swift in Sources */,
 				3AC1FB501E71C5560031DDCF /* FSClient.swift in Sources */,
 				3AC1FB6D1E71F5410031DDCF /* Location.swift in Sources */,
 				3ABEE43B1E70BCE500C753E8 /* AppDelegate.swift in Sources */,

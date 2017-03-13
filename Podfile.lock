@@ -48,6 +48,7 @@ PODS:
   - SDWebImage/Core (4.0.0)
   - SwiftyJSON (3.1.4)
   - WhereAmI (4.0.0)
+  - XLPagerTabStrip (7.0.0)
 
 DEPENDENCIES:
   - FBSDKLoginKit
@@ -58,6 +59,7 @@ DEPENDENCIES:
   - SDWebImage
   - SwiftyJSON
   - WhereAmI (~> 4.0)
+  - XLPagerTabStrip (~> 7.0)
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -76,7 +78,8 @@ SPEC CHECKSUMS:
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   WhereAmI: df31873a49da0cef82b5293e6c5203af939d4eff
+  XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
 
-PODFILE CHECKSUM: 3ff54b53e1da6d07eeabaadbcb93fa11fdf7bc5e
+PODFILE CHECKSUM: 8d9742201b2f7d46c6af10a6bbf18bdc0c835e57
 
 COCOAPODS: 1.2.0

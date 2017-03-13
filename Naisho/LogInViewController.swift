@@ -13,7 +13,7 @@ import Firebase
 
 class LogInViewController: BasicViewController, FBSDKLoginButtonDelegate {
     
-    let ffManager = FirebaseFacebookManager()
+    let ffManager = FirebaseFacebookManager.sharedInstance;
     
     /**
      Sent to the delegate when the button was used to logout.
@@ -60,7 +60,8 @@ class LogInViewController: BasicViewController, FBSDKLoginButtonDelegate {
         loginBtn.center = self.view.center;
         loginBtn.delegate = self
         
-        ffManager.FBGraphRequest(nextCursor: nil);
+        //ffManager.FBGraphRequest(nextCursor: nil);
+        ffManager.UpdateUserInfo();
         
         
     }
