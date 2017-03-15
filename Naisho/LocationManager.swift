@@ -12,7 +12,7 @@ import SwiftLocation
 
 class LocationManager:NSObject{
 
-    let ffManager = FirebaseFacebookManager.sharedInstance;
+    let ffManager = FacebookManager.sharedInstance;
     
     static var sharedInstance: LocationManager = {
         return LocationManager();

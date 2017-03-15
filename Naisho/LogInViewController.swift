@@ -14,7 +14,8 @@ import CoreLocation
 
 class LogInViewController: BasicViewController, FBSDKLoginButtonDelegate {
     
-    let ffManager = FirebaseFacebookManager.sharedInstance;
+    let facebookManager = FacebookManager.sharedInstance;
+    let firebaseManager = FirebaseManager.sharedInstance;
     
     /**
      Sent to the delegate when the button was used to logout.
@@ -42,18 +43,9 @@ class LogInViewController: BasicViewController, FBSDKLoginButtonDelegate {
             // その他
             print("Login Succeeded")
             // Perform login by calling Firebase APIs
-            FIRAuth.auth()?.signIn(with: FIRFacebookAuthProvider.credential(withAccessToken: (FBSDKAccessToken.current()?.tokenString)!), completion: { (user, error) in
-                if let error = error {
-                    print(error);
-                    return
-                }
-                // Present the main view and set it to the root
-                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
-                    //let navigationController = UINavigationController(rootViewController: viewController)
-                    UIApplication.shared.keyWindow?.rootViewController = viewController
-                    self.dismiss(animated: true, completion: nil)
-                }
-            })
+            firebaseManager.auth();
+            // dismiss itself
+            self.dismiss(animated: true, completion: nil)
         }
     }
 
@@ -67,12 +59,12 @@ class LogInViewController: BasicViewController, FBSDKLoginButtonDelegate {
         fs.searchExample();
         
         // get Facebook Login Button
-        let loginBtn : FBSDKLoginButton = ffManager.getFBLoginButton();
+        let loginBtn : FBSDKLoginButton = facebookManager.getFBLoginButton();
         self.view.addSubview(loginBtn);
         loginBtn.center = self.view.center;
         loginBtn.delegate = self
         
-        //ffManager.FBGraphRequest(nextCursor: nil);
+        //facebookManager.FBGraphRequest(nextCursor: nil);
         
     }
 

@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Naisho/FireBaseManager.swift"
-            timestampString = "510852146.346258"
+            timestampString = "511290771.775635"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
-            landmarkName = "FirebaseFacebookManager"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "FirebaseManager"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>

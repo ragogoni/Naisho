@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A2EE1091E79AAB400953110 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EE1081E79AAB400953110 /* FirebaseManager.swift */; };
 		3AB2B6051E77451200FC7B52 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2B6041E77451200FC7B52 /* MainViewController.swift */; };
 		3AB2B6071E774B5600FC7B52 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2B6061E774B5600FC7B52 /* LocationManager.swift */; };
 		3ABEE43B1E70BCE500C753E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE43A1E70BCE500C753E8 /* AppDelegate.swift */; };
@@ -21,7 +22,7 @@
 		3AC1FB501E71C5560031DDCF /* FSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC1FB4F1E71C5560031DDCF /* FSClient.swift */; };
 		3AC1FB6F1E71F5470031DDCF /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC1FB6E1E71F5470031DDCF /* RealmObjects.swift */; };
 		3AC1FB721E72FA1D0031DDCF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AC1FB711E72FA1D0031DDCF /* GoogleService-Info.plist */; };
-		3AC1FB741E72FBD20031DDCF /* FirebaseFacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC1FB731E72FBD20031DDCF /* FirebaseFacebookManager.swift */; };
+		3AC1FB741E72FBD20031DDCF /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC1FB731E72FBD20031DDCF /* FacebookManager.swift */; };
 		6F10B1F7840872747B11F861 /* Pods_NaishoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C7596367773E732C422F343 /* Pods_NaishoTests.framework */; };
 		80F11F401A7C4D7B77433BEC /* Pods_NaishoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBEDC747946DF6DDAAAD1A2 /* Pods_NaishoUITests.framework */; };
 		F86E214CDC2C8A7C7E8E3AA8 /* Pods_Naisho.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B079E45E8A7320465F576BAD /* Pods_Naisho.framework */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		10D824FAF324C5023FEE467B /* Pods-NaishoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaishoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NaishoUITests/Pods-NaishoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		35907FAB935FFE40B179BDB1 /* Pods-Naisho.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Naisho.release.xcconfig"; path = "Pods/Target Support Files/Pods-Naisho/Pods-Naisho.release.xcconfig"; sourceTree = "<group>"; };
+		3A2EE1081E79AAB400953110 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		3AB2B6041E77451200FC7B52 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3AB2B6061E774B5600FC7B52 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		3ABEE4371E70BCE500C753E8 /* Naisho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Naisho.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,7 +70,7 @@
 		3AC1FB6E1E71F5470031DDCF /* RealmObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
 		3AC1FB701E71FD640031DDCF /* FacebookLoginSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FacebookLoginSample-Bridging-Header.h"; sourceTree = "<group>"; };
 		3AC1FB711E72FA1D0031DDCF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3AC1FB731E72FBD20031DDCF /* FirebaseFacebookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseFacebookManager.swift; sourceTree = "<group>"; };
+		3AC1FB731E72FBD20031DDCF /* FacebookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
 		42AAA0C9E32E28BDFE798B92 /* Pods-Naisho.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Naisho.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Naisho/Pods-Naisho.debug.xcconfig"; sourceTree = "<group>"; };
 		4578890AB9E65F95310AB8E6 /* Pods-NaishoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaishoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NaishoTests/Pods-NaishoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		59448EA97FED6958EC5B90A1 /* Pods-NaishoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaishoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NaishoTests/Pods-NaishoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -164,8 +166,9 @@
 				3ABEE46D1E70BD7A00C753E8 /* GradientViewManager.swift */,
 				3AC1FB4F1E71C5560031DDCF /* FSClient.swift */,
 				3AC1FB6E1E71F5470031DDCF /* RealmObjects.swift */,
-				3AC1FB731E72FBD20031DDCF /* FirebaseFacebookManager.swift */,
 				3AB2B6061E774B5600FC7B52 /* LocationManager.swift */,
+				3AC1FB731E72FBD20031DDCF /* FacebookManager.swift */,
+				3A2EE1081E79AAB400953110 /* FirebaseManager.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -508,9 +511,10 @@
 			files = (
 				3ABEE46F1E70BD7A00C753E8 /* GradientViewManager.swift in Sources */,
 				3ABEE43D1E70BCE500C753E8 /* LogInViewController.swift in Sources */,
+				3A2EE1091E79AAB400953110 /* FirebaseManager.swift in Sources */,
 				3AC1FB6F1E71F5470031DDCF /* RealmObjects.swift in Sources */,
 				3ABEE46E1E70BD7A00C753E8 /* BasicViewController.swift in Sources */,
-				3AC1FB741E72FBD20031DDCF /* FirebaseFacebookManager.swift in Sources */,
+				3AC1FB741E72FBD20031DDCF /* FacebookManager.swift in Sources */,
 				3AC1FB501E71C5560031DDCF /* FSClient.swift in Sources */,
 				3ABEE43B1E70BCE500C753E8 /* AppDelegate.swift in Sources */,
 				3AB2B6051E77451200FC7B52 /* MainViewController.swift in Sources */,

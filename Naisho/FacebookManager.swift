@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Firebase
 import FBSDKCoreKit
 import FBSDKLoginKit
 import SwiftyJSON
@@ -15,10 +14,10 @@ import SwiftyJSON
 /*
  Singleton Firebase Facebook Manager
  */
-class FirebaseFacebookManager:NSObject{
+class FacebookManager:NSObject{
     
-    static var sharedInstance: FirebaseFacebookManager = {
-        return FirebaseFacebookManager();
+    static var sharedInstance: FacebookManager = {
+        return FacebookManager();
     }()
 
     
@@ -111,6 +110,11 @@ class FirebaseFacebookManager:NSObject{
             })
         }
     }
+    
+    
+    
+    
+    
     
 
 }
