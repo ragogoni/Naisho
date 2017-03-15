@@ -12,7 +12,7 @@ target 'Naisho' do
   
   # FourSquare API
   pod 'FoursquareAPIClient'
-  pod 'SDWebImage'
+  #pod 'SDWebImage'
   pod 'SwiftyJSON'
   
   # Page View
@@ -27,6 +27,7 @@ target 'Naisho' do
   # Firebase
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 
   target 'NaishoTests' do
     inherit! :search_paths

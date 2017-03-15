@@ -10,10 +10,11 @@ import Foundation
 import Firebase
 import FBSDKCoreKit
 import FBSDKLoginKit
-
+import FirebaseDatabase
 
 class FirebaseManager:NSObject{
-
+    
+    var validKeys = [String]()
     
     static var sharedInstance: FirebaseManager = {
         return FirebaseManager();
@@ -21,6 +22,14 @@ class FirebaseManager:NSObject{
     
     
     private override init(){
+        super.init()
+        self.configureValidKeys(data: ["last_name","first_name","ll"]);
+    }
+    
+    func configureValidKeys(data: Array<String>){
+        for (elem) in data{
+            validKeys.append(elem);
+        }
     }
     
     func auth() {
@@ -30,18 +39,53 @@ class FirebaseManager:NSObject{
                 return
             }
             
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            // Set uid into UserDefaults
+            UserDefaults.standard.set(user?.uid as String!, forKey: "uid");
+            UserDefaults.standard.synchronize();
             
-            // From there, get your UIStoryboard reference from the
-            // rootViewController in your UIWindow
-            let rootViewController = appDelegate.window?.rootViewController
-            let storyboard = rootViewController?.storyboard
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let storyboard = appDelegate.window?.rootViewController?.storyboard
+            
             
             // Present the main view and set it to the root
             if let viewController = storyboard?.instantiateViewController(withIdentifier: "MainView"){
                 UIApplication.shared.keyWindow?.rootViewController = viewController
-            }
-            // dont forget to tell the view controller to dismiss itself
+            } // dont forget to tell the view controller to dismiss itself
+            
+            
         })
     }
+    
+    /*
+    func saveDataOnUser(data: Dictionary<String,String>){
+        
+        let ref = FIRDatabase.database().reference()
+        // What can be saved and what cannot be saved
+        for (key,val) in data{
+            if(validKeys.contains(key)){
+                //self.ref.child("users/(user.uid)/username").setValue(username)
+                ref.child("users/(user.uid)/"+key).setValue(val)
+            }
+        }
+        
+    }*/ //Probably Useless
+    
+    
+    func saveOneDataOnUser(tagUnderUserUID: String, val: String){
+        var uid: String?
+        if( UserDefaults.standard.value(forKey: "uid") == nil){
+            print("null uid")
+            return;
+        }
+        uid = UserDefaults.standard.value(forKey: "uid") as! String;
+        
+        
+        if(validKeys.contains(tagUnderUserUID)){
+            FIRDatabase.database().reference().child("users/"+uid!+"/"+tagUnderUserUID).setValue(val)
+        }
+    }
+    
+    
+    
 }

@@ -15,6 +15,9 @@ PODS:
   - Firebase/Core (3.14.0):
     - FirebaseAnalytics (= 3.7.0)
     - FirebaseCore (= 3.5.1)
+  - Firebase/Database (3.14.0):
+    - Firebase/Core
+    - FirebaseDatabase (= 3.1.2)
   - FirebaseAnalytics (3.7.0):
     - FirebaseCore (~> 3.5)
     - FirebaseInstanceID (~> 1.0)
@@ -25,6 +28,8 @@ PODS:
     - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseCore (3.5.1):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseDatabase (3.1.2):
+    - FirebaseAnalytics (~> 3.7)
   - FirebaseInstanceID (1.0.9)
   - FoursquareAPIClient (3.1.0)
   - GoogleToolboxForMac/DebugUtils (2.1.1):
@@ -43,9 +48,6 @@ PODS:
   - Realm/Headers (2.4.3)
   - RealmSwift (2.4.3):
     - Realm (= 2.4.3)
-  - SDWebImage (4.0.0):
-    - SDWebImage/Core (= 4.0.0)
-  - SDWebImage/Core (4.0.0)
   - SwiftLocation (2.0.1)
   - SwiftyJSON (3.1.4)
   - XLPagerTabStrip (7.0.0)
@@ -54,9 +56,9 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - Firebase/Auth
   - Firebase/Core
+  - Firebase/Database
   - FoursquareAPIClient
   - RealmSwift
-  - SDWebImage
   - SwiftLocation
   - SwiftyJSON
   - XLPagerTabStrip (~> 7.0)
@@ -69,17 +71,17 @@ SPEC CHECKSUMS:
   FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
   FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
   FirebaseCore: 225d40532489835a034b8f4e2c9c87fbf4f615a2
+  FirebaseDatabase: 05c96d7b43a7368dc91c07791adb49683e1738d1
   FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
   FoursquareAPIClient: 2bb916176f560c0afb6838a28c1a0970467a0edc
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
   Realm: e08d60b0048ccccd3949c8c28a92c4db5712d7e9
   RealmSwift: 30d49739ccb3385d201242736ca4dda56aec9dfc
-  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SwiftLocation: 3c66807be3cc511d6b3496fcccd7ba05d839f23b
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
 
-PODFILE CHECKSUM: b62b2700d53b20b1b458742327771a1fbbf5a5ca
+PODFILE CHECKSUM: 28c246335108ad9907385bdd160b62dc11e4bc81
 
 COCOAPODS: 1.2.0

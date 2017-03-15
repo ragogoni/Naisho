@@ -27,7 +27,7 @@ class LocationManager:NSObject{
         Location.getLocation(accuracy: .city, frequency: .oneShot, success: { (_, location) in
             UserDefaults.standard.setValue(String(describing:location.coordinate.longitude), forKeyPath: "lon");
             UserDefaults.standard.setValue(String(describing:location.coordinate.latitude), forKeyPath: "lat");
-            self.ffManager.UpdateUserInfo();
+            //self.ffManager.UpdateUserInfo();
         }) { (request, last, error) in
             request.cancel() // stop continous location monitoring on error
         }

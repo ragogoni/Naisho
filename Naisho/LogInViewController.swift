@@ -45,7 +45,7 @@ class LogInViewController: BasicViewController, FBSDKLoginButtonDelegate {
             // Perform login by calling Firebase APIs
             firebaseManager.auth();
             // dismiss itself
-            self.dismiss(animated: true, completion: nil)
+            // self.dismiss(animated: true, completion: nil)
         }
     }
 
@@ -55,8 +55,8 @@ class LogInViewController: BasicViewController, FBSDKLoginButtonDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         // testing Foursquare Client API
-        let fs = FSClient();
-        fs.searchExample();
+        //let fs = FSClient();
+        //fs.searchExample();
         
         // get Facebook Login Button
         let loginBtn : FBSDKLoginButton = facebookManager.getFBLoginButton();
