@@ -14,7 +14,7 @@ class MainViewController: BasicViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // facebookManager.UpdateUserInfo();
+        facebookManager.UpdateUserInfo();
         // Do any additional setup after loading the view.
     }
 

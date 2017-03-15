@@ -23,7 +23,7 @@ class FirebaseManager:NSObject{
     
     private override init(){
         super.init()
-        self.configureValidKeys(data: ["last_name","first_name","ll"]);
+        self.configureValidKeys(data: ["last_name","first_name","ll","timezone","gender","email"]);
     }
     
     func configureValidKeys(data: Array<String>){
@@ -72,17 +72,24 @@ class FirebaseManager:NSObject{
     }*/ //Probably Useless
     
     
-    func saveOneDataOnUser(tagUnderUserUID: String, val: String){
-        var uid: String?
+    func saveOneDataOnUser(tagUnderUserUID: String, val: Any){
         if( UserDefaults.standard.value(forKey: "uid") == nil){
             print("null uid")
             return;
         }
-        uid = UserDefaults.standard.value(forKey: "uid") as! String;
+        var data:Any;
+        
+        if(val is Int){
+            data = val as! Int
+        } else {
+            data = val as! String
+        }
+        
+        let uid = UserDefaults.standard.value(forKey: "uid") as! String;
         
         
         if(validKeys.contains(tagUnderUserUID)){
-            FIRDatabase.database().reference().child("users/"+uid!+"/"+tagUnderUserUID).setValue(val)
+            FIRDatabase.database().reference().child("users/"+uid+"/"+tagUnderUserUID).setValue(data)
         }
     }
     

@@ -59,6 +59,7 @@ class FacebookManager:NSObject{
                         
                         if (data != JSON.null && tag == "timezone"){
                             userDefaults.set(data.int!,forKey: tag);
+                            self.firebaseManager.saveOneDataOnUser(tagUnderUserUID: tag, val: data.int!)
                         } else if (tag == "age_range"){
                             if(data["max"] != JSON.null){
                                 userDefaults.set(data["max"].int!,forKey: "max");
