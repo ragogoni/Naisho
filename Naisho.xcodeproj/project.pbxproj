@@ -164,9 +164,9 @@
 			isa = PBXGroup;
 			children = (
 				3ABEE46D1E70BD7A00C753E8 /* GradientViewManager.swift */,
-				3AC1FB4F1E71C5560031DDCF /* FSClient.swift */,
 				3AC1FB6E1E71F5470031DDCF /* RealmObjects.swift */,
 				3AB2B6061E774B5600FC7B52 /* LocationManager.swift */,
+				3AC1FB4F1E71C5560031DDCF /* FSClient.swift */,
 				3AC1FB731E72FBD20031DDCF /* FacebookManager.swift */,
 				3A2EE1081E79AAB400953110 /* FirebaseManager.swift */,
 			);

@@ -42,18 +42,6 @@ class FirebaseManager:NSObject{
             // Set uid into UserDefaults
             UserDefaults.standard.set(user?.uid as String!, forKey: "uid");
             UserDefaults.standard.synchronize();
-            
-            
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let storyboard = appDelegate.window?.rootViewController?.storyboard
-            
-            
-            // Present the main view and set it to the root
-            if let viewController = storyboard?.instantiateViewController(withIdentifier: "MainView"){
-                UIApplication.shared.keyWindow?.rootViewController = viewController
-            } // dont forget to tell the view controller to dismiss itself
-            
-            
         })
     }
     
@@ -79,10 +67,16 @@ class FirebaseManager:NSObject{
         }
         var data:Any;
         
-        if(val is Int){
+        switch val {
+        case is Int:
             data = val as! Int
-        } else {
+            break;
+        case is String:
             data = val as! String
+            break;
+        default:
+            data = val as! String
+            break;
         }
         
         let uid = UserDefaults.standard.value(forKey: "uid") as! String;

@@ -88,6 +88,7 @@ class FacebookManager:NSObject{
     }
     
     
+    // graph request getting all information of user's friend
     func FBGraphRequest(nextCursor : String?){
         var params = Dictionary<String, String>() as Dictionary?
         

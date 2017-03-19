@@ -10,7 +10,6 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
-import CoreLocation
 
 class LogInViewController: BasicViewController, FBSDKLoginButtonDelegate {
     
@@ -45,7 +44,14 @@ class LogInViewController: BasicViewController, FBSDKLoginButtonDelegate {
             // Perform login by calling Firebase APIs
             firebaseManager.auth();
             // dismiss itself
-            // self.dismiss(animated: true, completion: nil)
+            let storyboard = self.storyboard;
+            
+            // Present the main view and set it to the root
+            if let viewController = storyboard?.instantiateViewController(withIdentifier: "MainView"){
+                UIApplication.shared.keyWindow?.rootViewController = viewController
+            } // dont forget to tell the view controller to dismiss itself
+            
+            self.dismiss(animated: true, completion: nil)
         }
     }
 

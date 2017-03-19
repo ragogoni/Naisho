@@ -49,10 +49,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // if already logged in, skip the login View
         if((FBSDKAccessToken.current()) != nil){
-            let rootView: MainViewController = MainViewController()
-            if let window = self.window{
-                window.rootViewController = rootView
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let storyboard = appDelegate.window?.rootViewController?.storyboard
+            
+            
+            // Present the main view and set it to the root
+            if let viewController = storyboard?.instantiateViewController(withIdentifier: "MainView"){
+                if let window = self.window{
+                    window.rootViewController = viewController
+                }
             }
+            
+            
         }
         
         lManager.updateUserLocationInUserDefaultsOnce();

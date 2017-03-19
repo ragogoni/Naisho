@@ -18,6 +18,9 @@ class FSClient:NSObject{
     // Json Data that is querried. Initialize with NULL
     var json:JSON = [:];
     
+    // Location
+    let lManager = LocationManager.sharedInstance;
+    
     // FourSquare API Client
     let client = FoursquareAPIClient(clientId: "P144FFFTUUBLODLZPVOTHSHUKD5OSKK4HTABYVTGFUBWZDKA", clientSecret: "HLLAOJG2XSZCY0ZDF0XY5HKN1NEUSNC4FXKDA3AYAICK2CNL")
     
@@ -54,8 +57,16 @@ class FSClient:NSObject{
     }
     
     
-    func search(ll:String,limit:Int){
-        let param:[String:String] = ["ll":ll,"limit":String(limit)];
+    func search(ll:String,limit:Int,currentLocation: Bool){
+        var param:[String:String]
+        
+        if(currentLocation){
+            lManager.updateUserLocationInUserDefaultsOnce();
+            let loc:String = UserDefaults.standard.string(forKey: "lat")! + "," + UserDefaults.standard.string(forKey: "lon")!
+            param = ["ll":loc,"limit":String(limit)];
+        } else {
+            param = ["ll":ll,"limit":String(limit)];
+        }
         client.request(path: FSClient.SEARCH_PATH, parameter: param){
             result in
             

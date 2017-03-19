@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: BasicViewController {
+class MainViewController: UIViewController {
 
     let facebookManager:FacebookManager = FacebookManager.sharedInstance;
     
@@ -16,6 +16,8 @@ class MainViewController: BasicViewController {
         super.viewDidLoad()
         facebookManager.UpdateUserInfo();
         // Do any additional setup after loading the view.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

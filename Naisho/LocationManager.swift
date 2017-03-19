@@ -8,11 +8,10 @@
 
 import Foundation
 import SwiftLocation
+import CoreLocation
 
 
 class LocationManager:NSObject{
-
-    let ffManager = FacebookManager.sharedInstance;
     
     static var sharedInstance: LocationManager = {
         return LocationManager();
@@ -22,14 +21,18 @@ class LocationManager:NSObject{
         super.init()
     }
     
+    /*
+     update user's location only once and save lat and lon in UserDefaults.
+     
+     */
     public func updateUserLocationInUserDefaultsOnce(){
         // Request Location record it to userdefaults only when there is a significant change
         Location.getLocation(accuracy: .city, frequency: .oneShot, success: { (_, location) in
             UserDefaults.standard.setValue(String(describing:location.coordinate.longitude), forKeyPath: "lon");
             UserDefaults.standard.setValue(String(describing:location.coordinate.latitude), forKeyPath: "lat");
-            //self.ffManager.UpdateUserInfo();
         }) { (request, last, error) in
             request.cancel() // stop continous location monitoring on error
         }
     }
+    
 }
