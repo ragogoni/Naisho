@@ -59,8 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     window.rootViewController = viewController
                 }
             }
-            
-            
         }
         
         lManager.updateUserLocationInUserDefaultsOnce();

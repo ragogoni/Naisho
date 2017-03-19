@@ -17,6 +17,7 @@ class BasicViewController: UIViewController {
         let gvManager = GradientViewManager(color1: UIColor(red:0.29, green:0.94, blue:1.00, alpha:1.0),color2: UIColor(red:0.26, green:0.43, blue:0.54, alpha:1.0),view: self.view);
         let gradientView = gvManager.getGradientView();
         self.view.addSubview(gradientView)
+        self.view.sendSubview(toBack: gradientView)
         
         // Do any additional setup after loading the view.
     }

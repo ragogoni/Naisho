@@ -8,14 +8,16 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: BasicViewController {
 
     let facebookManager:FacebookManager = FacebookManager.sharedInstance;
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         facebookManager.UpdateUserInfo();
         // Do any additional setup after loading the view.
+        
         
         
     }

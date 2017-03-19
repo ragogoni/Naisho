@@ -37,12 +37,26 @@
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="MainView" id="dmp-Ur-gic">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UE1-sG-66y">
+                                <rect key="frame" x="123" y="267" width="129" height="133"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="129" id="bRa-a6-a5N"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="UE1-sG-66y" firstAttribute="centerX" secondItem="dmp-Ur-gic" secondAttribute="centerX" id="FeS-qj-0sY"/>
+                            <constraint firstItem="UE1-sG-66y" firstAttribute="top" secondItem="jeZ-dv-FZh" secondAttribute="bottom" constant="247" id="VTq-gO-aFf"/>
+                            <constraint firstItem="UE1-sG-66y" firstAttribute="centerY" secondItem="dmp-Ur-gic" secondAttribute="centerY" id="xuO-F8-w2q"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kvw-Sm-Miq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="796" y="103.89805097451276"/>
+            <point key="canvasLocation" x="768.79999999999995" y="69.715142428785612"/>
         </scene>
     </scenes>
 </document>
