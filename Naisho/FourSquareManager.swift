@@ -11,15 +11,30 @@ import FoursquareAPIClient
 import SwiftyJSON
 
 enum Category:String{
-    case Asian = "4bf58dd8d48988d142941735"
-    case Chinese = "4bf58dd8d48988d145941735"
-    case Japanese = "4bf58dd8d48988d111941735"
-    case Korean = "4bf58dd8d48988d113941735"
+    case EastAsian = "4bf58dd8d48988d142941735"
+        case Chinese = "4bf58dd8d48988d145941735"
+        case Japanese = "4bf58dd8d48988d111941735"
+        case Korean = "4bf58dd8d48988d113941735"
     case French = "4bf58dd8d48988d10c941735"
     case Italian = "4bf58dd8d48988d110941735"
     case LatinAmerican = "4bf58dd8d48988d1be941735"
+        case Brazilian = "4bf58dd8d48988d16b941735"
+        case Peruvian = "4eb1bfa43b7b52c0e1adc2e8"
     case Mexican = "4bf58dd8d48988d1c1941735"
     case Turkish = "4f04af1f2fb6e1c99f3db0bb"
+    case American = "4bf58dd8d48988d14e941735"
+    case Filipino = "4eb1bd1c3b7b55596b4a748f"
+    case Indonesian = "4deefc054765f83613cdba6f"
+    case Indian = "4bf58dd8d48988d10f941735"
+    case Greek = "4bf58dd8d48988d10e941735"
+    case Jewish = "52e81612bcbc57f1066b79fd"
+    case Mediterranean = "4bf58dd8d48988d1c0941735"
+    case MiddleEastern = "4bf58dd8d48988d115941735"
+    case Spanish = "4bf58dd8d48988d150941735"
+    case Vegetarian = "4bf58dd8d48988d1d3941735"
+    case Steakhouse = "4bf58dd8d48988d1cc941735"
+    case Soulfood = "4bf58dd8d48988d14f941735"
+    case Foodtruck = "4bf58dd8d48988d1cb941735"
 }
 
 class FourSquareManager:NSObject{
@@ -74,16 +89,19 @@ class FourSquareManager:NSObject{
     }
     
     
-    func search(ll:String?,limit:Int,currentLocation: Bool){
+    // search by location and category
+    func search(ll:String?,limit:Int,currentLocation: Bool, category:Category){
         var param:[String:String]
         
         if(currentLocation){
             lManager.updateUserLocationInUserDefaultsOnce();
             let loc:String = UserDefaults.standard.string(forKey: "lat")! + "," + UserDefaults.standard.string(forKey: "lon")!
-            param = ["ll":loc,"limit":String(limit),"categoryId":"4bf58dd8d48988d142941735"];
+            param = ["ll":loc,"limit":String(limit)];
         } else {
-            param = ["ll":ll!,"limit":String(limit),"categoryId":"4bf58dd8d48988d142941735"];
+            param = ["ll":ll!,"limit":String(limit)];
         }
+        param["categoryId"] = category.rawValue;
+        
         client.request(path: FourSquareManager.SEARCH_PATH, parameter: param){
             result in
             
@@ -91,8 +109,17 @@ class FourSquareManager:NSObject{
                 
             case let .success(data):
                 self.json = JSON(data: data)
+                
+                for(_,subjson):(String,JSON) in self.json["response"]["venues"]{
+                    print("name: ", subjson["name"])
+                    print("distance: ", subjson["location"]["distance"])
+                    print("phone: ", subjson["contact"]["phone"])
+                    print("location: ", (subjson["location"]["lat"]) ,(subjson["location"]["lng"]),"\n")
+                    
+                }
+                
                 print(self.json)
-                print(param)
+                //print(param)
             case let .failure(error):
                 switch error{
                 case let .connectionError(connectionError):

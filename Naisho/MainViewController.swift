@@ -17,7 +17,7 @@ class MainViewController: BasicViewController {
         super.viewDidLoad()
         facebookManager.UpdateUserInfo();
         // Do any additional setup after loading the view.
-        foursquareManager.search(ll: nil, limit: 10, currentLocation: true)
+        foursquareManager.search(ll: nil, limit: 10, currentLocation: true,category: Category.EastAsian)
         
         
     }
