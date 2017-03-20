@@ -38,27 +38,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UE1-sG-66y">
-                                <rect key="frame" x="123" y="267" width="129" height="133"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="129" id="bRa-a6-a5N"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vza-wZ-U06" customClass="MGLMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="304"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vza-wZ-U06" customClass="MGLMapView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="284"/>
                                 <color key="backgroundColor" red="0.87315538194444442" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleURL__" value="mapbox://styles/vixaer/cj0hfud06004g2sqpso3ebbhw"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showsUserLocation" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="UE1-sG-66y" firstAttribute="centerX" secondItem="dmp-Ur-gic" secondAttribute="centerX" id="FeS-qj-0sY"/>
-                            <constraint firstItem="UE1-sG-66y" firstAttribute="top" secondItem="jeZ-dv-FZh" secondAttribute="bottom" constant="247" id="VTq-gO-aFf"/>
-                            <constraint firstItem="UE1-sG-66y" firstAttribute="centerY" secondItem="dmp-Ur-gic" secondAttribute="centerY" id="xuO-F8-w2q"/>
+                            <constraint firstItem="vza-wZ-U06" firstAttribute="leading" secondItem="dmp-Ur-gic" secondAttribute="leading" id="MXq-CI-dZo"/>
+                            <constraint firstAttribute="trailing" secondItem="vza-wZ-U06" secondAttribute="trailing" id="OXc-TE-r8R"/>
+                            <constraint firstItem="vza-wZ-U06" firstAttribute="top" secondItem="jeZ-dv-FZh" secondAttribute="bottom" id="XDD-XO-Uo1"/>
+                            <constraint firstItem="8mp-Q8-Zgt" firstAttribute="top" secondItem="vza-wZ-U06" secondAttribute="bottom" constant="363" id="sau-hI-zfg"/>
                         </constraints>
                     </view>
                 </viewController>

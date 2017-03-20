@@ -11,13 +11,13 @@ import UIKit
 class MainViewController: BasicViewController {
 
     let facebookManager:FacebookManager = FacebookManager.sharedInstance;
-
+    let foursquareManager:FourSquareManager = FourSquareManager.sharedInstance;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         facebookManager.UpdateUserInfo();
         // Do any additional setup after loading the view.
-        
+        foursquareManager.search(ll: nil, limit: 10, currentLocation: true)
         
         
     }
