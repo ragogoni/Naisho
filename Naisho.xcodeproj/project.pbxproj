@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A2EE1091E79AAB400953110 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EE1081E79AAB400953110 /* FirebaseManager.swift */; };
+		3A2EE10B1E7F6DD400953110 /* MapBoxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EE10A1E7F6DD400953110 /* MapBoxManager.swift */; };
 		3AB2B6051E77451200FC7B52 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2B6041E77451200FC7B52 /* MainViewController.swift */; };
 		3AB2B6071E774B5600FC7B52 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2B6061E774B5600FC7B52 /* LocationManager.swift */; };
 		3ABEE43B1E70BCE500C753E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE43A1E70BCE500C753E8 /* AppDelegate.swift */; };
@@ -49,6 +50,7 @@
 		10D824FAF324C5023FEE467B /* Pods-NaishoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaishoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NaishoUITests/Pods-NaishoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		35907FAB935FFE40B179BDB1 /* Pods-Naisho.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Naisho.release.xcconfig"; path = "Pods/Target Support Files/Pods-Naisho/Pods-Naisho.release.xcconfig"; sourceTree = "<group>"; };
 		3A2EE1081E79AAB400953110 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		3A2EE10A1E7F6DD400953110 /* MapBoxManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapBoxManager.swift; sourceTree = "<group>"; };
 		3AB2B6041E77451200FC7B52 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3AB2B6061E774B5600FC7B52 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		3ABEE4371E70BCE500C753E8 /* Naisho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Naisho.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +171,7 @@
 				3AC1FB4F1E71C5560031DDCF /* FSClient.swift */,
 				3AC1FB731E72FBD20031DDCF /* FacebookManager.swift */,
 				3A2EE1081E79AAB400953110 /* FirebaseManager.swift */,
+				3A2EE10A1E7F6DD400953110 /* MapBoxManager.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				3ABEE46E1E70BD7A00C753E8 /* BasicViewController.swift in Sources */,
 				3AC1FB741E72FBD20031DDCF /* FacebookManager.swift in Sources */,
 				3AC1FB501E71C5560031DDCF /* FSClient.swift in Sources */,
+				3A2EE10B1E7F6DD400953110 /* MapBoxManager.swift in Sources */,
 				3ABEE43B1E70BCE500C753E8 /* AppDelegate.swift in Sources */,
 				3AB2B6051E77451200FC7B52 /* MainViewController.swift in Sources */,
 				3AB2B6071E774B5600FC7B52 /* LocationManager.swift in Sources */,

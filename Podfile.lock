@@ -43,6 +43,7 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.8)
+  - Mapbox-iOS-SDK (3.4.2)
   - Realm (2.4.3):
     - Realm/Headers (= 2.4.3)
   - Realm/Headers (2.4.3)
@@ -58,6 +59,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - FoursquareAPIClient
+  - Mapbox-iOS-SDK (~> 3.4)
   - RealmSwift
   - SwiftLocation
   - SwiftyJSON
@@ -76,12 +78,13 @@ SPEC CHECKSUMS:
   FoursquareAPIClient: 2bb916176f560c0afb6838a28c1a0970467a0edc
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
+  Mapbox-iOS-SDK: d2c567fee32d316044ec925c8bcfb74a92d57ec9
   Realm: e08d60b0048ccccd3949c8c28a92c4db5712d7e9
   RealmSwift: 30d49739ccb3385d201242736ca4dda56aec9dfc
   SwiftLocation: 3c66807be3cc511d6b3496fcccd7ba05d839f23b
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
 
-PODFILE CHECKSUM: 28c246335108ad9907385bdd160b62dc11e4bc81
+PODFILE CHECKSUM: 11664a2830f3cadb704ebcd73a8a9cef0522848a
 
 COCOAPODS: 1.2.0

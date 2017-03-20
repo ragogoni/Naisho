@@ -28,6 +28,9 @@ target 'Naisho' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  
+  # MapBox
+  pod 'Mapbox-iOS-SDK', '~> 3.4'
 
   target 'NaishoTests' do
     inherit! :search_paths
