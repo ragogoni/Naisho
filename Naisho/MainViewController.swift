@@ -7,19 +7,15 @@
 //
 
 import UIKit
+import Mapbox
 
-class MainViewController: BasicViewController {
+class MainViewController: BasicViewController, MGLMapViewDelegate {
 
     let facebookManager:FacebookManager = FacebookManager.sharedInstance;
     let foursquareManager:FourSquareManager = FourSquareManager.sharedInstance;
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        facebookManager.UpdateUserInfo();
-        // Do any additional setup after loading the view.
-        foursquareManager.search(ll: nil, limit: 10, currentLocation: true,category: Category.EastAsian)
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,15 +23,6 @@ class MainViewController: BasicViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

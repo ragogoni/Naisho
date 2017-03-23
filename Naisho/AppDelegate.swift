@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let lManager = LocationManager.sharedInstance;
     
+    let facebookManager:FacebookManager = FacebookManager.sharedInstance;
+    let foursquareManager:FourSquareManager = FourSquareManager.sharedInstance;
+    
     override init() {
         super.init()
         FIRApp.configure()
@@ -59,6 +62,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     window.rootViewController = viewController
                 }
             }
+            
+            facebookManager.UpdateUserInfo();
+            
+            foursquareManager.search(ll: nil, limit: 10, currentLocation: true,category: Category.EastAsian)
         }
         
         lManager.updateUserLocationInUserDefaultsOnce();
