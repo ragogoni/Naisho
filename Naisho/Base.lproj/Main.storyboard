@@ -55,6 +55,9 @@
                             <constraint firstItem="8mp-Q8-Zgt" firstAttribute="top" secondItem="vza-wZ-U06" secondAttribute="bottom" constant="363" id="sau-hI-zfg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="vza-wZ-U06" id="Dgz-fL-0b2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kvw-Sm-Miq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
