@@ -22,7 +22,8 @@ class Business : Object{
     dynamic var name = "";
     dynamic var distance: Int = 0;
     dynamic var phone = "";
-    dynamic var location = "";
+    dynamic var lat = 0.0;
+    dynamic var lon = 0.0;
 }
 
 class RealmManager:NSObject{
@@ -36,6 +37,11 @@ class RealmManager:NSObject{
     }
     
     private var realm:Realm = try! Realm();
+    
+    
+    func getAllBusinesses()->[Business]{
+        return Array(realm.objects(Business.self))
+    }
     
     func writeBusiness(business:Business){
         try! realm.write {

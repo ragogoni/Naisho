@@ -9,6 +9,7 @@
 import Foundation
 import FoursquareAPIClient
 import SwiftyJSON
+import CoreLocation
 
 enum Category:String{
     case EastAsian = "4bf58dd8d48988d142941735"
@@ -22,14 +23,14 @@ enum Category:String{
     //    case Peruvian = "4eb1bfa43b7b52c0e1adc2e8"
     case Mexican = "4bf58dd8d48988d1c1941735"
     case Turkish = "4f04af1f2fb6e1c99f3db0bb"
-    case American = "4bf58dd8d48988d14e941735"
+    // case American = "4bf58dd8d48988d14e941735"
     // case Filipino = "4eb1bd1c3b7b55596b4a748f"
     case Indonesian = "4deefc054765f83613cdba6f"
     case Indian = "4bf58dd8d48988d10f941735"
-    // case Greek = "4bf58dd8d48988d10e941735"
+    case Greek = "4bf58dd8d48988d10e941735"
     // case Jewish = "52e81612bcbc57f1066b79fd"
-    // case Mediterranean = "4bf58dd8d48988d1c0941735"
-    case MiddleEastern = "4bf58dd8d48988d115941735"
+    case Mediterranean = "4bf58dd8d48988d1c0941735"
+    // case MiddleEastern = "4bf58dd8d48988d115941735"
     case Spanish = "4bf58dd8d48988d150941735"
     case Vegetarian = "4bf58dd8d48988d1d3941735"
     // case Steakhouse = "4bf58dd8d48988d1cc941735"
@@ -91,7 +92,7 @@ class FourSquareManager:NSObject{
     
     
     // search by location and category
-    func search(ll:String?,limit:Int,currentLocation: Bool, category:Category){
+    func search(ll:String?,limit:Int,currentLocation: Bool, category:Category?,radius:String?){
         var param:[String:String]
         
         if(currentLocation){
@@ -101,7 +102,16 @@ class FourSquareManager:NSObject{
         } else {
             param = ["ll":ll!,"limit":String(limit)];
         }
-        param["categoryId"] = category.rawValue;
+        
+        param["radius"] = (radius != nil) ? radius! : nil;
+        
+        // if the category is nil, search in general restaurant category
+        if(category != nil){
+            param["categoryId"] = category!.rawValue;
+        } else {
+            param["categoryId"] = "4d4b7105d754a06374d81259";
+            param["query"] = "Restaurant"
+        }
         
         client.request(path: FourSquareManager.SEARCH_PATH, parameter: param){
             result in
@@ -128,7 +138,8 @@ class FourSquareManager:NSObject{
                         b.distance = subjson["location"]["distance"].int!
                         b.phone = subjson["contact"]["phone"].string!
                         b.name = subjson["name"].string!
-                        b.location = String(describing:subjson["location"]["lat"].double!)+","+String(describing:subjson["location"]["lng"].double!)
+                        b.lat = subjson["location"]["lat"].double!
+                        b.lon = subjson["location"]["lng"].double!
                         RealmManager.sharedInstance.writeBusiness(business: b);
                     }
                     

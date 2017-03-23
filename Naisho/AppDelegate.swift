@@ -62,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             FacebookManager.sharedInstance.UpdateUserInfo();
             
-            FourSquareManager.sharedInstance.search(ll: nil, limit: 10, currentLocation: true,category: Category.EastAsian)
+            FourSquareManager.sharedInstance.search(ll: nil, limit: 10, currentLocation: true,category: nil, radius: "3000")
         }
         lManager.updateUserLocationInUserDefaultsOnce();
         lManager.continuouslyUpdateUserLocation();

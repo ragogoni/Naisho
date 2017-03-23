@@ -29,4 +29,22 @@ class MapBoxManager:NSObject,MGLMapViewDelegate{
         // Animate the camera movement over 5 seconds.
         mapView.setCamera(camera, withDuration: 5, animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
     }
+    
+    func getPin(title:String,location:CLLocationCoordinate2D,subtitile:String?) -> MGLPointAnnotation{
+        let pin = MGLPointAnnotation();
+        pin.title = title;
+        pin.coordinate = location;
+        pin.subtitle = (subtitile != nil) ? subtitile : nil;
+        return pin;
+    }
+    
+    // Use the default marker. See also: our view annotation or custom marker examples.
+    func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
+        return nil
+    }
+    
+    // Allow callout view to appear when an annotation is tapped.
+    func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
+        return true
+    }
 }

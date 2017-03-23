@@ -45,21 +45,6 @@ class FirebaseManager:NSObject{
         })
     }
     
-    /*
-    func saveDataOnUser(data: Dictionary<String,String>){
-        
-        let ref = FIRDatabase.database().reference()
-        // What can be saved and what cannot be saved
-        for (key,val) in data{
-            if(validKeys.contains(key)){
-                //self.ref.child("users/(user.uid)/username").setValue(username)
-                ref.child("users/(user.uid)/"+key).setValue(val)
-            }
-        }
-        
-    }*/ //Probably Useless
-    
-    
     func saveOneDataOnUser(tagUnderUserUID: String, val: Any){
         if( UserDefaults.standard.value(forKey: "uid") == nil){
             print("null uid")

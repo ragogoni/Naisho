@@ -25,6 +25,13 @@ class MainViewController: BasicViewController {
         
         // Optionally set a starting point.
         mapView.setCenter(center, zoomLevel: 7, direction: 0, animated: false)
+        
+        
+        for b in RealmManager.sharedInstance.getAllBusinesses(){
+            print("yo")
+            mapView.addAnnotation(MapBoxManager.sharedInstance.getPin(title: b.name, location: CLLocationCoordinate2D(latitude: b.lat,longitude: b.lon), subtitile: b.name));
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
