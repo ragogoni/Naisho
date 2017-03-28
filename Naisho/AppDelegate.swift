@@ -46,6 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        lManager.updateUserLocationInUserDefaultsOnce();
+        lManager.continuouslyUpdateUserLocation();
         
         // if already logged in, skip the login View
         if((FBSDKAccessToken.current()) != nil){
@@ -60,12 +62,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
             
-            FacebookManager.sharedInstance.UpdateUserInfo();
+            // FacebookManager.sharedInstance.UpdateUserInfo();
             
             FourSquareManager.sharedInstance.search(ll: nil, limit: 10, currentLocation: true,category: nil, radius: "3000")
         }
-        lManager.updateUserLocationInUserDefaultsOnce();
-        lManager.continuouslyUpdateUserLocation();
         
         return true
     }

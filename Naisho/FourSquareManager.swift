@@ -97,7 +97,10 @@ class FourSquareManager:NSObject{
         
         if(currentLocation){
             lManager.updateUserLocationInUserDefaultsOnce();
-            let loc:String = UserDefaults.standard.string(forKey: "lat")! + "," + UserDefaults.standard.string(forKey: "lon")!
+            var loc:String = ""
+            while(UserDefaults.standard.string(forKey: "lat") == nil || UserDefaults.standard.string(forKey: "lon") == nil){
+                loc = UserDefaults.standard.string(forKey: "lat")! + "," + UserDefaults.standard.string(forKey: "lon")!
+            }
             param = ["ll":loc,"limit":String(limit)];
         } else {
             param = ["ll":ll!,"limit":String(limit)];
@@ -148,8 +151,6 @@ class FourSquareManager:NSObject{
                     
                 }
                 
-                //print(self.json)
-                //print(param)
             case let .failure(error):
                 switch error{
                 case let .connectionError(connectionError):
@@ -179,7 +180,7 @@ class FourSquareManager:NSObject{
                 
                 RealmManager.sharedInstance.updatePhotoCountOn(ID: venueID, count: j["response"]["photos"]["count"].int!)
                 
-                // restore 3 photos locally
+                // restore 0 to 3 photos locally
                 for(_,subjson):(String,JSON) in j["response"]["photos"]["items"]{
                     let url:NSURL = NSURL(string: subjson["prefix"].string!+"300x300"+subjson["suffix"].string!)!
                     RealmManager.sharedInstance.updatePhotoOn(ID: subjson["id"].string!, url: url)

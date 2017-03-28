@@ -20,6 +20,7 @@ class MainViewController: BasicViewController {
         
         // Add floating action Button
         let fab = KCFloatingActionButton()
+        fab.buttonColor = UIColor.white
         fab.addItem("Settings", icon: UIImage(named: "settings")!)
         fab.addItem("Stars", icon: UIImage(named: "star")!)
         self.view.addSubview(fab)
@@ -34,6 +35,7 @@ class MainViewController: BasicViewController {
         mapView.setCenter(center, zoomLevel: 7, direction: 0, animated: false)
         mapView.showsUserLocation = true;
         
+        // add pins
         for b in RealmManager.sharedInstance.getAllBusinesses(){
             mapView.addAnnotation(MapBoxManager.sharedInstance.getPin(title: b.name, location: CLLocationCoordinate2D(latitude: b.lat,longitude: b.lon), subtitile: b.name));
         }
