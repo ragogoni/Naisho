@@ -29,7 +29,7 @@ class LocationManager:NSObject{
      */
     public func updateUserLocationInUserDefaultsOnce(){
         // Request Location record it to userdefaults only when there is a significant change
-        Location.getLocation(accuracy: .city, frequency: .oneShot, success: { (_, location) in
+        Location.getLocation(accuracy: .city, frequency: Frequency.significant, success: { (_, location) in
             UserDefaults.standard.setValue(String(describing:location.coordinate.longitude), forKeyPath: "lon");
             UserDefaults.standard.setValue(String(describing:location.coordinate.latitude), forKeyPath: "lat");
         }) { (request, last, error) in

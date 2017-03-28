@@ -36,7 +36,7 @@ enum Category:String{
     // case Steakhouse = "4bf58dd8d48988d1cc941735"
     // case Soulfood = "4bf58dd8d48988d14f941735"
     // case Foodtruck = "4bf58dd8d48988d1cb941735"
-    case Thai = "4bf58dd8d48988d149941735"
+    // case Thai = "4bf58dd8d48988d149941735"
 }
 
 class FourSquareManager:NSObject{

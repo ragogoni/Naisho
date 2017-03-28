@@ -32,6 +32,7 @@ class FirebaseManager:NSObject{
         }
     }
     
+    // authorize the user and update uid
     func auth() {
         FIRAuth.auth()?.signIn(with: FIRFacebookAuthProvider.credential(withAccessToken: (FBSDKAccessToken.current()?.tokenString)!), completion: { (user, error) in
             if let error = error {
@@ -45,6 +46,7 @@ class FirebaseManager:NSObject{
         })
     }
     
+    // Save data on user under tag with value
     func saveOneDataOnUser(tagUnderUserUID: String, val: Any){
         if( UserDefaults.standard.value(forKey: "uid") == nil){
             print("null uid")
@@ -70,6 +72,17 @@ class FirebaseManager:NSObject{
         if(validKeys.contains(tagUnderUserUID)){
             FIRDatabase.database().reference().child("users/"+uid+"/"+tagUnderUserUID).setValue(data)
         }
+    }
+    
+    // Save data on Collaborative Filetering under tag with value
+    // save an array of int that represents user's preference on categories
+    func saveDataForCollaborativeFiltering(data: [Int]){
+        if( UserDefaults.standard.value(forKey: "uid") == nil){
+            print("null uid")
+            return;
+        }
+        let uid = UserDefaults.standard.value(forKey: "uid") as! String;
+       FIRDatabase.database().reference().child("CollaborativeFiltering/"+uid).setValue(data)
     }
     
     

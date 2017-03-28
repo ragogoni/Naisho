@@ -70,6 +70,7 @@ class FacebookManager:NSObject{
                             userDefaults.set(data.string,forKey: tag);
                             self.firebaseManager.saveOneDataOnUser(tagUnderUserUID: tag, val: data.string!)
                         }
+                        
                     }// end of for loop for json
                     
                     // testing UserDefaults

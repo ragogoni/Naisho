@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>KCFloatingActionButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Naisho.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -82,7 +87,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0568AAE1C441C4A750DDAF56340D473D</key>
+		<key>051A0984DD829D48B433FA599EA4B607</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,7 +97,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3A101F27B95E05C29EFCAC418BC5A4BA</key>
+		<key>1879B7462A67FE6A8E655BCE65717A2C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,12 +117,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5BA6515CD75E8E2B70C39BCDD5172AB5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>65A2B2F99573B65B384D4EA0837D289B</key>
+		<key>5EAB365F430FEB8FAC91F3FCE479547D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -127,7 +127,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7DE539E763F8C27FF1F008CB38529F24</key>
+		<key>94D4E5AC8A656ABB482C40BA922C3A63</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9D642645173AA5E50A66CEE123CEC4F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A6E9CEC9E5ACFE69D21456CCB70BEEA0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -147,12 +157,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E17AFD8100ECE3F87D16BD4210952DB1</key>
+		<key>C0A3E2C297D618B1D7B1A46B961A0DBA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FCEB11784E280A8CD70199717A4BEBAD</key>
+		<key>FB664321B69AD9168E072F1567950CA4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

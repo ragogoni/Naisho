@@ -29,6 +29,9 @@ target 'Naisho' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   
+  # FloatingButton
+  pod "KCFloatingActionButton", "~> 2.2.0"
+  
   # MapBox
   pod 'Mapbox-iOS-SDK', '~> 3.4'
 

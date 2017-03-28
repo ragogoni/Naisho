@@ -9,6 +9,7 @@
 import UIKit
 import Mapbox
 import SwiftLocation
+import KCFloatingActionButton
 
 class MainViewController: BasicViewController {
     
@@ -16,6 +17,12 @@ class MainViewController: BasicViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Add floating action Button
+        let fab = KCFloatingActionButton()
+        fab.addItem("Settings", icon: UIImage(named: "settings")!)
+        fab.addItem("Stars", icon: UIImage(named: "star")!)
+        self.view.addSubview(fab)
         
         // set the delegate
         mapView.delegate = MapBoxManager.sharedInstance;
@@ -25,10 +32,9 @@ class MainViewController: BasicViewController {
         
         // Optionally set a starting point.
         mapView.setCenter(center, zoomLevel: 7, direction: 0, animated: false)
-        
+        mapView.showsUserLocation = true;
         
         for b in RealmManager.sharedInstance.getAllBusinesses(){
-            print("yo")
             mapView.addAnnotation(MapBoxManager.sharedInstance.getPin(title: b.name, location: CLLocationCoordinate2D(latitude: b.lat,longitude: b.lon), subtitile: b.name));
         }
         
