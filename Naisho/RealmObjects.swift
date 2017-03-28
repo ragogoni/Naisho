@@ -19,11 +19,21 @@ import CoreLocation
 
 
 class Business : Object{
+    dynamic var id = ""
     dynamic var name = "";
     dynamic var distance: Int = 0;
     dynamic var phone = "";
     dynamic var lat = 0.0;
     dynamic var lon = 0.0;
+    dynamic var photoCount = 0;
+    
+    dynamic var photo_1 = NSData()
+    dynamic var photo_2 = NSData()
+    dynamic var photo_3 = NSData()
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }
 
 class RealmManager:NSObject{
@@ -62,4 +72,25 @@ class RealmManager:NSObject{
             realm.deleteAll()
         }
     }
+    
+    func updatePhotoCountOn(ID:String, count:Int){
+        if let b = realm.object(ofType: Business.self, forPrimaryKey: ID){
+            try! realm.write {
+                b.photoCount = count;
+                realm.add(b, update: true)
+            }
+        }
+    }
+    
+    func updatePhotoOn(ID:String, url:NSURL){
+        if let imgData = NSData(contentsOf: url as URL) {
+            if let b = realm.object(ofType: Business.self, forPrimaryKey: ID){
+                try! realm.write {
+                    b.photo_1 = imgData
+                    realm.add(b, update: true)
+                }
+            }
+        }
+    }
+    
 }

@@ -121,7 +121,6 @@ class FourSquareManager:NSObject{
             case let .success(data):
                 self.json = JSON(data: data)
                 
-                
                 RealmManager.sharedInstance.removeAllEntries()
                 
                 for(_,subjson):(String,JSON) in self.json["response"]["venues"]{
@@ -140,7 +139,11 @@ class FourSquareManager:NSObject{
                         b.name = subjson["name"].string!
                         b.lat = subjson["location"]["lat"].double!
                         b.lon = subjson["location"]["lng"].double!
+                        b.id = subjson["id"].string!
                         RealmManager.sharedInstance.writeBusiness(business: b);
+                        
+                        // get the photos
+                        self.searchPhoto(venueID: subjson["id"].string!);
                     }
                     
                 }
@@ -157,6 +160,45 @@ class FourSquareManager:NSObject{
                 }
             }
         }
+    }
+    
+    // search for the very first photo
+    func searchPhoto(venueID:String){
+        // Search Path for Photos e.g venues/VENUE_ID/photos
+        // need to replace @ with the venue ID
+        let PHOTO_PATH = "venues/@/photos".replacingOccurrences(of: "@", with: venueID)
+        let param:[String:String] = ["limit":"3","VENUE_ID":venueID]
+        
+        client.request(path: PHOTO_PATH, parameter: param){
+            result in
+            
+            switch result{
+            case let .success(data):
+                // update the photo count
+                let j = JSON(data)
+                
+                RealmManager.sharedInstance.updatePhotoCountOn(ID: venueID, count: j["response"]["photos"]["count"].int!)
+                
+                // restore 3 photos locally
+                for(_,subjson):(String,JSON) in j["response"]["photos"]["items"]{
+                    let url:NSURL = NSURL(string: subjson["prefix"].string!+"300x300"+subjson["suffix"].string!)!
+                    RealmManager.sharedInstance.updatePhotoOn(ID: subjson["id"].string!, url: url)
+                }
+                break
+                
+                
+            case let .failure(error):
+                switch error{
+                case let .connectionError(connectionError):
+                    print(connectionError)
+                case let .apiError(apiError):
+                    print(apiError.errorType)   // e.g. endpoint_error
+                    print(apiError.errorDetail) // e.g. The requested path does not exist.
+                }
+            }
+        }
+        
+    
     }
     
     

@@ -11,7 +11,7 @@ import Foundation
 // Machine Learning Manager
 class MLManager:NSObject{
     
-    var ratings:[Int] = [Int]()
+    var ratings:[Int] = [Int](repeating: 0, count: 12)
     
     private override init(){
         super.init()
@@ -21,4 +21,6 @@ class MLManager:NSObject{
     /*
      case EastAsian, French, Italian, LatinAmerican, Mexican, Turkish, Indonesian, Indian, Greek, Mediterranean, Spanish, Vegetarian
      */
+    
+    
 }
