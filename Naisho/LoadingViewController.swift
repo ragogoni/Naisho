@@ -13,18 +13,28 @@ class LoadingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Start Searching
+        FourSquareManager.sharedInstance.search(ll: nil, limit: 15, currentLocation: true,category: nil, radius: "3000")
 
         //アニメーションのViewを生成
-        let animeView = BAFluidView(frame: self.view.frame)
+        let animeView = BAFluidView(frame: self.view.frame,startElevation: 0.0)!
         //波の高さを設定(0~1.0)
         animeView.fill(to: 1.0)
         //波の境界線の色
         animeView.strokeColor = .white
         //波の色
         animeView.fillColor = UIColor(red: 0.274, green: 0.288, blue: 0.297, alpha: 1.0)
-        //アニメーション開始（コメントアウトしてもアニメーションされる）
+        //アニメーション開始（コメントアウトしてもアニメーションされる
         animeView.startAnimation()
         self.view.addSubview(animeView)
+        
+        // Wait for 4 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
+            let storyboard: UIStoryboard = self.storyboard!
+            let nextView = storyboard.instantiateViewController(withIdentifier: "Main") as! MainViewController
+            self.present(nextView, animated: false, completion: nil)
+        })
     }
 
     override func didReceiveMemoryWarning() {

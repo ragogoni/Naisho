@@ -58,7 +58,6 @@ class FourSquareManager:NSObject{
         return FourSquareManager();
     }()
     
-    
     private override init() {
         super.init()
     }
@@ -125,6 +124,7 @@ class FourSquareManager:NSObject{
                 
             case let .success(data):
                 self.json = JSON(data: data)
+                print(self.json)
                 
                 RealmManager.sharedInstance.removeAllEntries()
                 
@@ -152,6 +152,7 @@ class FourSquareManager:NSObject{
                     }
                     
                 }
+                
                 
             case let .failure(error):
                 switch error{
@@ -197,6 +198,7 @@ class FourSquareManager:NSObject{
                     print(apiError.errorType)   // e.g. endpoint_error
                     print(apiError.errorDetail) // e.g. The requested path does not exist.
                 }
+                
             }
         }
         

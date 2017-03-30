@@ -56,15 +56,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             
             // Present the main view and set it to the root
-            if let viewController = storyboard?.instantiateViewController(withIdentifier: "Main"){
+            if let viewController = storyboard?.instantiateViewController(withIdentifier: "Loading"){
                 if let window = self.window{
                     window.rootViewController = viewController
                 }
             }
             
             // FacebookManager.sharedInstance.UpdateUserInfo();
-            
-            FourSquareManager.sharedInstance.search(ll: nil, limit: 10, currentLocation: true,category: nil, radius: "3000")
         }
         
         return true
