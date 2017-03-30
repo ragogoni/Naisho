@@ -29,7 +29,7 @@
         <!--MainViewController-->
         <scene sceneID="AwX-pm-W47">
             <objects>
-                <viewController storyboardIdentifier="MainView" id="T81-PS-JuR" userLabel="MainViewController" customClass="MainViewController" customModule="Naisho" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" title="Main" id="T81-PS-JuR" userLabel="MainViewController" customClass="MainViewController" customModule="Naisho" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jeZ-dv-FZh"/>
                         <viewControllerLayoutGuide type="bottom" id="8mp-Q8-Zgt"/>
@@ -61,7 +61,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kvw-Sm-Miq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="768.79999999999995" y="106.59670164917542"/>
+            <point key="canvasLocation" x="783" y="91"/>
+        </scene>
+        <!--Loading-->
+        <scene sceneID="GIN-gF-XBj">
+            <objects>
+                <viewController storyboardIdentifier="Loading" title="Loading" id="719-Zf-WPZ" customClass="LoadingViewController" customModule="Naisho" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="coi-nB-VgO"/>
+                        <viewControllerLayoutGuide type="bottom" id="X44-h0-F71"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bDb-uc-eTE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J5f-tG-HB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1428" y="91"/>
         </scene>
     </scenes>
 </document>

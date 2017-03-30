@@ -47,7 +47,7 @@ class LogInViewController: BasicViewController, FBSDKLoginButtonDelegate {
             let storyboard = self.storyboard;
             
             // Present the main view and set it to the root
-            if let viewController = storyboard?.instantiateViewController(withIdentifier: "MainView"){
+            if let viewController = storyboard?.instantiateViewController(withIdentifier: "Main"){
                 UIApplication.shared.keyWindow?.rootViewController = viewController
             } // dont forget to tell the view controller to dismiss itself
             

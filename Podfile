@@ -24,6 +24,9 @@ target 'Naisho' do
   # Facebook Login Stuff
   pod 'FBSDKLoginKit'
   
+  # Loading Fluid View
+  pod 'BAFluidView'
+  
   # Firebase
   pod 'Firebase/Core'
   pod 'Firebase/Auth'

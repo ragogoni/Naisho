@@ -1,4 +1,5 @@
 PODS:
+  - BAFluidView (0.2.3)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -55,6 +56,7 @@ PODS:
   - XLPagerTabStrip (7.0.0)
 
 DEPENDENCIES:
+  - BAFluidView
   - FBSDKLoginKit
   - Firebase/Auth
   - Firebase/Core
@@ -68,6 +70,7 @@ DEPENDENCIES:
   - XLPagerTabStrip (~> 7.0)
 
 SPEC CHECKSUMS:
+  BAFluidView: 5d84ef109831b97740f75b6d785e51f13fa08398
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   FBSDKCoreKit: 2d16979b28fe28c2b95af0d275ad5f9703c6c8de
   FBSDKLoginKit: a9d9391506c687e2304a590bf9312837fce7f375
@@ -88,6 +91,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
 
-PODFILE CHECKSUM: 0ad676597b958d7afd0ae5ca32f34f9ec3a92c89
+PODFILE CHECKSUM: bb62e92255a584a20433c948abb041dd255c9b5b
 
 COCOAPODS: 1.2.0

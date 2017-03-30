@@ -27,9 +27,9 @@ class Business : Object{
     dynamic var lon = 0.0;
     dynamic var photoCount = 0;
     
-    dynamic var photo_1 = NSData()
-    dynamic var photo_2 = NSData()
-    dynamic var photo_3 = NSData()
+    dynamic var photo_1 = ""
+    dynamic var photo_2 = ""
+    dynamic var photo_3 = ""
     
     override static func primaryKey() -> String? {
         return "id"
@@ -73,24 +73,17 @@ class RealmManager:NSObject{
         }
     }
     
-    func updatePhotoCountOn(ID:String, count:Int){
+    func updatePhotoURLOn(ID:String, url:[String],count:Int){
         if let b = realm.object(ofType: Business.self, forPrimaryKey: ID){
             try! realm.write {
-                b.photoCount = count;
+                b.photo_1 = url[0]
+                b.photo_2 = url[1]
+                b.photo_3 = url[2]
+                b.photoCount = count
                 realm.add(b, update: true)
             }
         }
-    }
-    
-    func updatePhotoOn(ID:String, url:NSURL){
-        if let imgData = NSData(contentsOf: url as URL) {
-            if let b = realm.object(ofType: Business.self, forPrimaryKey: ID){
-                try! realm.write {
-                    b.photo_1 = imgData
-                    realm.add(b, update: true)
-                }
-            }
-        }
+        
     }
     
 }

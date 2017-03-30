@@ -98,10 +98,12 @@ class FourSquareManager:NSObject{
         if(currentLocation){
             lManager.updateUserLocationInUserDefaultsOnce();
             var loc:String = ""
-            while(UserDefaults.standard.string(forKey: "lat") == nil || UserDefaults.standard.string(forKey: "lon") == nil){
-                loc = UserDefaults.standard.string(forKey: "lat")! + "," + UserDefaults.standard.string(forKey: "lon")!
+            while(UserDefaults.standard.string(forKey: "lat")! == "" || UserDefaults.standard.string(forKey: "lon")! == ""){
+                // spin wait
             }
+            loc = UserDefaults.standard.string(forKey: "lat")! + "," + UserDefaults.standard.string(forKey: "lon")!
             param = ["ll":loc,"limit":String(limit)];
+            
         } else {
             param = ["ll":ll!,"limit":String(limit)];
         }
@@ -177,14 +179,13 @@ class FourSquareManager:NSObject{
             case let .success(data):
                 // update the photo count
                 let j = JSON(data)
-                
-                RealmManager.sharedInstance.updatePhotoCountOn(ID: venueID, count: j["response"]["photos"]["count"].int!)
+                var url:[String] = [String]()
                 
                 // restore 0 to 3 photos locally
                 for(_,subjson):(String,JSON) in j["response"]["photos"]["items"]{
-                    let url:NSURL = NSURL(string: subjson["prefix"].string!+"300x300"+subjson["suffix"].string!)!
-                    RealmManager.sharedInstance.updatePhotoOn(ID: subjson["id"].string!, url: url)
+                    url.append(subjson["prefix"].string!+"300x300"+subjson["suffix"].string!)
                 }
+                RealmManager.sharedInstance.updatePhotoURLOn(ID: venueID, url: url, count: j["response"]["photos"]["count"].int!)
                 break
                 
                 
