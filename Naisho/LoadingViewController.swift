@@ -15,7 +15,7 @@ class LoadingViewController: UIViewController {
         super.viewDidLoad()
         
         // Start Searching
-        FourSquareManager.sharedInstance.search(ll: nil, limit: 15, currentLocation: true,category: nil, radius: "3000")
+        FourSquareManager.sharedInstance.search(ll: nil, limit: 15, currentLocation: true,category: nil, radius: "3000",refresh:nil)
 
         //アニメーションのViewを生成
         let animeView = BAFluidView(frame: self.view.frame,startElevation: 0.3)!

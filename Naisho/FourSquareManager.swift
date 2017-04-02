@@ -10,6 +10,7 @@ import Foundation
 import FoursquareAPIClient
 import SwiftyJSON
 import CoreLocation
+import UIKit
 
 enum Category:String{
     case EastAsian = "4bf58dd8d48988d142941735"
@@ -91,7 +92,7 @@ class FourSquareManager:NSObject{
     
     
     // search by location and category
-    func search(ll:String?,limit:Int,currentLocation: Bool, category:Category?,radius:String?){
+    func search(ll:String?,limit:Int,currentLocation: Bool, category:Category?,radius:String?,refresh:UIRefreshControl?){
         var param:[String:String]
         
         if(currentLocation){
@@ -108,6 +109,7 @@ class FourSquareManager:NSObject{
         }
         
         param["radius"] = (radius != nil) ? radius! : nil;
+        
         
         // if the category is nil, search in general restaurant category
         if(category != nil){
@@ -143,6 +145,10 @@ class FourSquareManager:NSObject{
                         self.searchPhoto(venueID: subjson["id"].string!);
                     }
                     
+                }
+                print("refresh Done")
+                if(refresh != nil){
+                    refresh!.endRefreshing();
                 }
                 
                 

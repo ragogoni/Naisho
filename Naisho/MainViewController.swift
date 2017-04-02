@@ -54,7 +54,7 @@ class MainViewController: BasicViewController {
 
     func refresh()
     {
-        FourSquareManager.sharedInstance.search(ll: nil, limit: 10, currentLocation: true, category: Category.EastAsian, radius: "4000")
+        FourSquareManager.sharedInstance.search(ll: nil, limit: 10, currentLocation: true, category: Category.EastAsian, radius: "4000",refresh: self.refreshControl)
     }
     
     override func didReceiveMemoryWarning() {
