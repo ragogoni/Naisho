@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A24D4001E91690400BD6BBB /* CustomScrollableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A24D3FF1E91690400BD6BBB /* CustomScrollableView.xib */; };
+		3A24D4021E916C4300BD6BBB /* CustomScrollableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A24D4011E916C4300BD6BBB /* CustomScrollableView.swift */; };
 		3A2EE1091E79AAB400953110 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EE1081E79AAB400953110 /* FirebaseManager.swift */; };
 		3A2EE10B1E7F6DD400953110 /* MapBoxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EE10A1E7F6DD400953110 /* MapBoxManager.swift */; };
 		3AB2B6051E77451200FC7B52 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2B6041E77451200FC7B52 /* MainViewController.swift */; };
@@ -51,6 +53,8 @@
 /* Begin PBXFileReference section */
 		10D824FAF324C5023FEE467B /* Pods-NaishoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaishoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NaishoUITests/Pods-NaishoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		35907FAB935FFE40B179BDB1 /* Pods-Naisho.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Naisho.release.xcconfig"; path = "Pods/Target Support Files/Pods-Naisho/Pods-Naisho.release.xcconfig"; sourceTree = "<group>"; };
+		3A24D3FF1E91690400BD6BBB /* CustomScrollableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomScrollableView.xib; sourceTree = "<group>"; };
+		3A24D4011E916C4300BD6BBB /* CustomScrollableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomScrollableView.swift; sourceTree = "<group>"; };
 		3A2EE1081E79AAB400953110 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		3A2EE10A1E7F6DD400953110 /* MapBoxManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapBoxManager.swift; sourceTree = "<group>"; };
 		3AB2B6041E77451200FC7B52 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +118,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A24D3FE1E9168BA00BD6BBB /* xibs */ = {
+			isa = PBXGroup;
+			children = (
+				3A24D3FF1E91690400BD6BBB /* CustomScrollableView.xib */,
+				3A24D4011E916C4300BD6BBB /* CustomScrollableView.swift */,
+			);
+			name = xibs;
+			sourceTree = "<group>";
+		};
 		3ABEE42E1E70BCE400C753E8 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +152,7 @@
 		3ABEE4391E70BCE500C753E8 /* Naisho */ = {
 			isa = PBXGroup;
 			children = (
+				3A24D3FE1E9168BA00BD6BBB /* xibs */,
 				3ABEE46A1E70BD2400C753E8 /* SupportingFiles */,
 				3ABEE46B1E70BD3400C753E8 /* StoryBoards */,
 				3ABEE4691E70BD1C00C753E8 /* VCs */,
@@ -356,6 +370,7 @@
 				3AC1FB721E72FA1D0031DDCF /* GoogleService-Info.plist in Resources */,
 				3ABEE4421E70BCE500C753E8 /* Assets.xcassets in Resources */,
 				3ABEE4401E70BCE500C753E8 /* Main.storyboard in Resources */,
+				3A24D4001E91690400BD6BBB /* CustomScrollableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A24D4021E916C4300BD6BBB /* CustomScrollableView.swift in Sources */,
 				3ABEE46F1E70BD7A00C753E8 /* GradientViewManager.swift in Sources */,
 				3ABCA6E11E8AB1C2003D0376 /* CollaborativeFilteringManager.swift in Sources */,
 				3ABEE43D1E70BCE500C753E8 /* LogInViewController.swift in Sources */,

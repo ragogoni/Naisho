@@ -98,9 +98,13 @@ class FourSquareManager:NSObject{
         
         // convert CLLocationCoordinate2D to string so that we can do API call
         let loc = String(describing:ll.latitude) + "," + String(describing:ll.longitude);
-        print(loc)
+        
         // Update Parameters
         param = ["ll":loc,"limit":String(limit)];
+        
+        if(loc == "0.0,0.0"){
+            return;
+        }
         
         param["radius"] = (radius != nil) ? radius! : nil;
         
@@ -120,6 +124,8 @@ class FourSquareManager:NSObject{
                 
             case let .success(data):
                 self.json = JSON(data: data)
+                //print(self.json)
+                
                 
                 RealmManager.sharedInstance.removeAllEntries()
                 
@@ -137,6 +143,7 @@ class FourSquareManager:NSObject{
                         
                         // get the photos
                         self.searchPhoto(venueID: subjson["id"].string!);
+                        self.searchVenue(venueID: subjson["id"].string!);
                     }
                     
                 }
@@ -149,12 +156,6 @@ class FourSquareManager:NSObject{
                     for b in RealmManager.sharedInstance.getAllBusinesses(){
                         mapview!.addAnnotation(MapBoxManager.sharedInstance.getPin(title: b.name, location: CLLocationCoordinate2D(latitude: b.lat,longitude: b.lon), subtitile: b.name));
                     }
-                    
-                    // camera
-                    //let camera = MGLMapCamera(lookingAtCenter: mapview!.centerCoordinate, fromDistance: 4500, pitch: 15, heading: 180)
-                    
-                    // set the camera and start animation
-                    //mapview!.setCamera(camera, withDuration: 5, animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
                 }
                 
                 if(refresh != nil){
@@ -173,6 +174,40 @@ class FourSquareManager:NSObject{
                 }
             }
         }
+    }
+    
+    func searchVenue(venueID:String){
+        let VENUE_PATH = "venues/@".replacingOccurrences(of: "@", with: venueID)
+        
+        client.request(path: VENUE_PATH, parameter: ["VENUE_ID":venueID]){
+            result in
+            
+            switch result{
+            
+            case let .success(data):
+                let j = JSON(data)["response"]["venue"]
+                if(j["rating"] != JSON.null){
+                    RealmManager.sharedInstance.writeRatingOn(ID: venueID,rating: j["rating"].double!)
+                }
+                if(j["hours"] != JSON.null){
+                    RealmManager.sharedInstance.writeIsOpenOn(ID: venueID,isOpen:j["hours"]["isOpen"].bool!)
+                }
+                
+                break;
+                
+            case let .failure(error):
+                switch error{
+                case let .connectionError(connectionError):
+                    print(connectionError)
+                case let .apiError(apiError):
+                    print(apiError.errorType)   // e.g. endpoint_error
+                    print(apiError.errorDetail) // e.g. The requested path does not exist.
+                }
+                
+            
+            }
+        }
+    
     }
     
     // search for the very first photo

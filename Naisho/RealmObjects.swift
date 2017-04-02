@@ -31,6 +31,9 @@ class Business : Object{
     dynamic var photo_2 = ""
     dynamic var photo_3 = ""
     
+    var isOpen = RealmOptional<Bool>(nil)
+    var rating = RealmOptional<Double>(nil)
+    
     override static func primaryKey() -> String? {
         return "id"
     }
@@ -70,6 +73,24 @@ class RealmManager:NSObject{
     func removeAllEntries(){
         try! realm.write {
             realm.deleteAll()
+        }
+    }
+    
+    func writeRatingOn(ID:String,rating:Double){
+        if let b = realm.object(ofType: Business.self, forPrimaryKey: ID){
+            try! realm.write {
+                b.rating.value = rating;
+                realm.add(b, update: true)
+            }
+        }
+    }
+    
+    func writeIsOpenOn(ID:String,isOpen:Bool){
+        if let b = realm.object(ofType: Business.self, forPrimaryKey: ID){
+            try! realm.write {
+                b.isOpen.value = isOpen;
+                realm.add(b, update: true)
+            }
         }
     }
     

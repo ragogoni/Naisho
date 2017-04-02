@@ -54,7 +54,7 @@ class MainViewController: BasicViewController {
 
     func refresh()
     {
-        FourSquareManager.sharedInstance.search(ll: appDelegate.lManager.center, limit: 10, category: Category.EastAsian, radius: "4000",refresh: self.refreshControl,mapview: self.mapView)
+        FourSquareManager.sharedInstance.search(ll: appDelegate.lManager.center, limit: 20, category: Category.EastAsian, radius: "4000",refresh: self.refreshControl,mapview: self.mapView)
         
     }
     

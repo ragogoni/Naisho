@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         super.init()
         FIRApp.configure()
         FIRDatabase.database().persistenceEnabled = true
+        lManager.continuouslyUpdateUserLocation();
     }
     
     public func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -47,7 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         //lManager.updateUserLocationInUserDefaultsOnce();
-        lManager.continuouslyUpdateUserLocation();
         
         // if already logged in, skip the login View
         if((FBSDKAccessToken.current()) != nil){
@@ -64,7 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // FacebookManager.sharedInstance.UpdateUserInfo();
         }
-        lManager.continuouslyUpdateUserLocation();
         
         return true
     }
