@@ -40,7 +40,7 @@ class LocationManager:NSObject{
     
     public func continuouslyUpdateUserLocation(){
         // Request Location record it to userdefaults only when there is a significant change
-        Location.getLocation(accuracy: .city, frequency: .continuous, success: { (_, location) in
+        Location.getLocation(accuracy: .block, frequency: .continuous, success: { (_, location) in
             self.center = location.coordinate;
         }) { (request, last, error) in
             request.cancel() // stop continous location monitoring on error

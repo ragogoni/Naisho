@@ -11,6 +11,7 @@ import FoursquareAPIClient
 import SwiftyJSON
 import CoreLocation
 import UIKit
+import Mapbox
 
 enum Category:String{
     case EastAsian = "4bf58dd8d48988d142941735"
@@ -92,21 +93,14 @@ class FourSquareManager:NSObject{
     
     
     // search by location and category
-    func search(ll:String?,limit:Int,currentLocation: Bool, category:Category?,radius:String?,refresh:UIRefreshControl?){
+    func search(ll:CLLocationCoordinate2D,limit:Int,category:Category?,radius:String?,refresh:UIRefreshControl?,mapview:MGLMapView?){
         var param:[String:String]
         
-        if(currentLocation){
-            lManager.updateUserLocationInUserDefaultsOnce();
-            var loc:String = ""
-            while(UserDefaults.standard.string(forKey: "lat")! == "" || UserDefaults.standard.string(forKey: "lon")! == ""){
-                // spin wait
-            }
-            loc = UserDefaults.standard.string(forKey: "lat")! + "," + UserDefaults.standard.string(forKey: "lon")!
-            param = ["ll":loc,"limit":String(limit)];
-            
-        } else {
-            param = ["ll":ll!,"limit":String(limit)];
-        }
+        // convert CLLocationCoordinate2D to string so that we can do API call
+        let loc = String(describing:ll.latitude) + "," + String(describing:ll.longitude);
+        print(loc)
+        // Update Parameters
+        param = ["ll":loc,"limit":String(limit)];
         
         param["radius"] = (radius != nil) ? radius! : nil;
         
@@ -146,8 +140,25 @@ class FourSquareManager:NSObject{
                     }
                     
                 }
-                print("refresh Done")
+                
+                if(mapview != nil){
+                    // Optionally set a starting point.
+                    mapview!.setCenter(LocationManager.sharedInstance.center, zoomLevel: 12, direction: 0, animated: false)
+                    
+                    // add pins
+                    for b in RealmManager.sharedInstance.getAllBusinesses(){
+                        mapview!.addAnnotation(MapBoxManager.sharedInstance.getPin(title: b.name, location: CLLocationCoordinate2D(latitude: b.lat,longitude: b.lon), subtitile: b.name));
+                    }
+                    
+                    // camera
+                    //let camera = MGLMapCamera(lookingAtCenter: mapview!.centerCoordinate, fromDistance: 4500, pitch: 15, heading: 180)
+                    
+                    // set the camera and start animation
+                    //mapview!.setCamera(camera, withDuration: 5, animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
+                }
+                
                 if(refresh != nil){
+                    print("refresh Done")
                     refresh!.endRefreshing();
                 }
                 

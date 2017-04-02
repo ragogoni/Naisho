@@ -19,11 +19,13 @@ class MainViewController: BasicViewController {
     
     var refreshControl:UIRefreshControl!
     
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.refreshControl = UIRefreshControl()
-        self.refreshControl.attributedTitle = NSAttributedString(string: "引っ張って更新")
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull Up to Reload")
         self.refreshControl.addTarget(self, action: #selector(MainViewController.refresh), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(refreshControl)
         
@@ -37,9 +39,7 @@ class MainViewController: BasicViewController {
         
         // set the delegate
         mapView.delegate = MapBoxManager.sharedInstance;
-        
-        // define center
-        //let center = CLLocationCoordinate2D(latitude: UserDefaults.standard.double(forKey: "lat"), longitude: UserDefaults.standard.double(forKey: "lon"))
+    
         
         // Optionally set a starting point.
         mapView.setCenter(LocationManager.sharedInstance.center, zoomLevel: 7, direction: 0, animated: false)
@@ -54,7 +54,8 @@ class MainViewController: BasicViewController {
 
     func refresh()
     {
-        FourSquareManager.sharedInstance.search(ll: nil, limit: 10, currentLocation: true, category: Category.EastAsian, radius: "4000",refresh: self.refreshControl)
+        FourSquareManager.sharedInstance.search(ll: appDelegate.lManager.center, limit: 10, category: Category.EastAsian, radius: "4000",refresh: self.refreshControl,mapview: self.mapView)
+        
     }
     
     override func didReceiveMemoryWarning() {
