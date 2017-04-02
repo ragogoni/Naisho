@@ -13,17 +13,25 @@ import KCFloatingActionButton
 
 class MainViewController: BasicViewController {
     
-    @IBOutlet weak var mapView: MGLMapView!
-    
+    // the table view
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var mapView: MGLMapView!
     
     var refreshControl:UIRefreshControl!
     
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    var tableViewController:MainTableViewController = MainTableViewController();
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // assign the table view controller to the table
+        self.tableViewController.tableView = self.tableView;
+        
+        
+        // refresh Controll
         self.refreshControl = UIRefreshControl()
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull Up to Reload")
         self.refreshControl.addTarget(self, action: #selector(MainViewController.refresh), for: UIControlEvents.valueChanged)
@@ -54,7 +62,7 @@ class MainViewController: BasicViewController {
 
     func refresh()
     {
-        FourSquareManager.sharedInstance.search(ll: appDelegate.lManager.center, limit: 20, category: Category.EastAsian, radius: "4000",refresh: self.refreshControl,mapview: self.mapView)
+        FourSquareManager.sharedInstance.search(ll: appDelegate.lManager.center, limit: 20, category: Category.EastAsian, radius: "4000",refresh: self.refreshControl,mapview: self.mapView,tableViewController: self.tableViewController)
         
     }
     

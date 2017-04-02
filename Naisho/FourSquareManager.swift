@@ -93,7 +93,7 @@ class FourSquareManager:NSObject{
     
     
     // search by location and category
-    func search(ll:CLLocationCoordinate2D,limit:Int,category:Category?,radius:String?,refresh:UIRefreshControl?,mapview:MGLMapView?){
+    func search(ll:CLLocationCoordinate2D,limit:Int,category:Category?,radius:String?,refresh:UIRefreshControl?,mapview:MGLMapView?,tableViewController:MainTableViewController?){
         var param:[String:String]
         
         // convert CLLocationCoordinate2D to string so that we can do API call
@@ -158,9 +158,11 @@ class FourSquareManager:NSObject{
                     }
                 }
                 
-                if(refresh != nil){
+                if(refresh != nil && tableViewController != nil){
                     print("refresh Done")
                     refresh!.endRefreshing();
+                    tableViewController!.updateBusinesses();
+                    tableViewController!.tableView.reloadData();
                 }
                 
                 

@@ -17,5 +17,128 @@
             endingLineNumber = "93">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Naisho/MainTableViewController.swift"
+            timestampString = "512864184.908395"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "MainTableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Naisho.MainTableViewController.__deallocating_deinit"
+                  moduleName = "Naisho"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cao/Desktop/Coding/Naisho/Naisho/MainTableViewController.swift"
+                  timestampString = "512864185.184117"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Naisho.MainTableViewController.init (style : __C.UITableViewStyle) -&gt; Naisho.MainTableViewController"
+                  moduleName = "Naisho"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cao/Desktop/Coding/Naisho/Naisho/MainTableViewController.swift"
+                  timestampString = "512864185.186496"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Naisho.MainTableViewController.__allocating_init (style : __C.UITableViewStyle) -&gt; Naisho.MainTableViewController"
+                  moduleName = "Naisho"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cao/Desktop/Coding/Naisho/Naisho/MainTableViewController.swift"
+                  timestampString = "512864185.188546"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Naisho.MainTableViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Naisho.MainTableViewController"
+                  moduleName = "Naisho"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cao/Desktop/Coding/Naisho/Naisho/MainTableViewController.swift"
+                  timestampString = "512864185.190429"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Naisho.MainTableViewController.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Naisho.MainTableViewController"
+                  moduleName = "Naisho"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cao/Desktop/Coding/Naisho/Naisho/MainTableViewController.swift"
+                  timestampString = "512864185.192307"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Naisho.MainTableViewController.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Naisho.MainTableViewController&gt;"
+                  moduleName = "Naisho"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cao/Desktop/Coding/Naisho/Naisho/MainTableViewController.swift"
+                  timestampString = "512864185.194091"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Naisho.MainTableViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Naisho.MainTableViewController&gt;"
+                  moduleName = "Naisho"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cao/Desktop/Coding/Naisho/Naisho/MainTableViewController.swift"
+                  timestampString = "512864185.196024"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

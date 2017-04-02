@@ -17,7 +17,7 @@ class LoadingViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         // Start Searching
-        FourSquareManager.sharedInstance.search(ll: appDelegate.lManager.center, limit: 20,category: nil, radius: "3000",refresh:nil,mapview: nil)
+        FourSquareManager.sharedInstance.search(ll: appDelegate.lManager.center, limit: 20,category: nil, radius: "3000",refresh:nil,mapview: nil, tableViewController: nil)
 
         //アニメーションのViewを生成
         let animeView = BAFluidView(frame: self.view.frame,startElevation: 0.3)!
