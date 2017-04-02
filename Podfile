@@ -16,7 +16,7 @@ target 'Naisho' do
   pod 'SwiftyJSON'
   
   # Page View
-  pod 'XLPagerTabStrip', '~> 7.0'
+  #pod 'XLPagerTabStrip', '~> 7.0'
   
   # Location
   pod 'SwiftLocation'

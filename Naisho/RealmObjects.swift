@@ -76,9 +76,16 @@ class RealmManager:NSObject{
     func updatePhotoURLOn(ID:String, url:[String],count:Int){
         if let b = realm.object(ofType: Business.self, forPrimaryKey: ID){
             try! realm.write {
-                b.photo_1 = url[0]
-                b.photo_2 = url[1]
-                b.photo_3 = url[2]
+                if(count == 3){
+                    b.photo_1 = url[0]
+                    b.photo_2 = url[1]
+                    b.photo_3 = url[2]
+                } else if (count == 2){
+                    b.photo_1 = url[0]
+                    b.photo_2 = url[1]
+                } else if (count == 1){
+                    b.photo_1 = url[0]
+                }
                 b.photoCount = count
                 realm.add(b, update: true)
             }

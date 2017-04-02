@@ -18,7 +18,7 @@ class LoadingViewController: UIViewController {
         FourSquareManager.sharedInstance.search(ll: nil, limit: 15, currentLocation: true,category: nil, radius: "3000")
 
         //アニメーションのViewを生成
-        let animeView = BAFluidView(frame: self.view.frame,startElevation: 0.0)!
+        let animeView = BAFluidView(frame: self.view.frame,startElevation: 0.3)!
         //波の高さを設定(0~1.0)
         animeView.fill(to: 1.0)
         //波の境界線の色
@@ -30,7 +30,7 @@ class LoadingViewController: UIViewController {
         self.view.addSubview(animeView)
         
         // Wait for 4 seconds
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
             let storyboard: UIStoryboard = self.storyboard!
             let nextView = storyboard.instantiateViewController(withIdentifier: "Main") as! MainViewController
             self.present(nextView, animated: false, completion: nil)

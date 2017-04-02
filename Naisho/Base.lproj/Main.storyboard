@@ -39,29 +39,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vza-wZ-U06" customClass="MGLMapView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="284"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="290"/>
                                 <color key="backgroundColor" red="0.87315538194444442" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleURL__" value="mapbox://styles/vixaer/cj0hfud06004g2sqpso3ebbhw"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="showsUserLocation" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n4n-DV-cv1">
+                                <rect key="frame" x="0.0" y="312" width="375" height="355"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vza-wZ-U06" firstAttribute="leading" secondItem="dmp-Ur-gic" secondAttribute="leading" id="MXq-CI-dZo"/>
                             <constraint firstAttribute="trailing" secondItem="vza-wZ-U06" secondAttribute="trailing" id="OXc-TE-r8R"/>
                             <constraint firstItem="vza-wZ-U06" firstAttribute="top" secondItem="jeZ-dv-FZh" secondAttribute="bottom" id="XDD-XO-Uo1"/>
-                            <constraint firstItem="8mp-Q8-Zgt" firstAttribute="top" secondItem="vza-wZ-U06" secondAttribute="bottom" constant="363" id="sau-hI-zfg"/>
+                            <constraint firstItem="8mp-Q8-Zgt" firstAttribute="top" secondItem="vza-wZ-U06" secondAttribute="bottom" constant="357" id="sau-hI-zfg"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="vza-wZ-U06" id="Dgz-fL-0b2"/>
+                        <outlet property="tableView" destination="n4n-DV-cv1" id="tCg-MM-DDu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kvw-Sm-Miq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1782" y="91"/>
+            <point key="canvasLocation" x="1781.5999999999999" y="90.404797601199405"/>
         </scene>
         <!--Loading-->
         <scene sceneID="GIN-gF-XBj">

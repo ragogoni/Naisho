@@ -124,18 +124,10 @@ class FourSquareManager:NSObject{
                 
             case let .success(data):
                 self.json = JSON(data: data)
-                print(self.json)
                 
                 RealmManager.sharedInstance.removeAllEntries()
                 
                 for(_,subjson):(String,JSON) in self.json["response"]["venues"]{
-                    /*
-                    print("name: ", subjson["name"])
-                    print("distance: ", subjson["location"]["distance"])
-                    print("phone: ", subjson["contact"]["phone"])
-                    print("location: ", (subjson["location"]["lat"]) ,(subjson["location"]["lng"]),"\n")*/
-                    // TODO: Need to get it's price range too
-                    
                     if (subjson["name"] != JSON.null && subjson["location"]["distance"] != JSON.null && subjson["contact"]["phone"] != JSON.null && subjson["location"]["lat"] != JSON.null && subjson["location"]["lng"] != JSON.null){
                         
                         let b:Business = Business()
