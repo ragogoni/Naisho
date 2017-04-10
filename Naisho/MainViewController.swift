@@ -13,9 +13,6 @@ import KCFloatingActionButton
 
 class MainViewController: BasicViewController {
     
-    // the table view
-    @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var mapView: MGLMapView!
     
     var refreshControl:UIRefreshControl!
@@ -27,15 +24,6 @@ class MainViewController: BasicViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // assign the table view controller to the table
-        self.tableViewController.tableView = self.tableView;
-        
-        
-        // refresh Controll
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull Up to Reload")
-        self.refreshControl.addTarget(self, action: #selector(MainViewController.refresh), for: UIControlEvents.valueChanged)
-        self.tableView.addSubview(refreshControl)
         
         
         // Add floating action Button

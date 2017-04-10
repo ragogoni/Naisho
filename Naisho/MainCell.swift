@@ -59,7 +59,6 @@ class MainCell: UITableViewCell {
     func setMainImage(urlString:String){
         let url = URL(string: urlString)
         if let data = NSData(contentsOf: url!) {
-            print("why")
             self.ImageView.image = UIImage(data: data as Data)
         }
     }
