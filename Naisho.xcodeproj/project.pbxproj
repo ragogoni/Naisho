@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A2C76921E9FCFA700B14B7E /* SampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C76911E9FCFA700B14B7E /* SampleCell.swift */; };
+		3A2C76941E9FD9BF00B14B7E /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C76931E9FD9BF00B14B7E /* SimpleTableViewController.swift */; };
 		3A2EE1091E79AAB400953110 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EE1081E79AAB400953110 /* FirebaseManager.swift */; };
 		3A2EE10B1E7F6DD400953110 /* MapBoxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EE10A1E7F6DD400953110 /* MapBoxManager.swift */; };
-		3A47AC491E91A42400026FB0 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47AC481E91A42400026FB0 /* MainCell.swift */; };
-		3A47AC4B1E91A8EA00026FB0 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47AC4A1E91A8EA00026FB0 /* MainTableViewController.swift */; };
 		3AB2B6051E77451200FC7B52 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2B6041E77451200FC7B52 /* MainViewController.swift */; };
 		3AB2B6071E774B5600FC7B52 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2B6061E774B5600FC7B52 /* LocationManager.swift */; };
 		3AB83E691E8C5FED002CACDD /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB83E681E8C5FED002CACDD /* LoadingViewController.swift */; };
@@ -53,10 +53,10 @@
 /* Begin PBXFileReference section */
 		10D824FAF324C5023FEE467B /* Pods-NaishoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaishoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NaishoUITests/Pods-NaishoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		35907FAB935FFE40B179BDB1 /* Pods-Naisho.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Naisho.release.xcconfig"; path = "Pods/Target Support Files/Pods-Naisho/Pods-Naisho.release.xcconfig"; sourceTree = "<group>"; };
+		3A2C76911E9FCFA700B14B7E /* SampleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleCell.swift; sourceTree = "<group>"; };
+		3A2C76931E9FD9BF00B14B7E /* SimpleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
 		3A2EE1081E79AAB400953110 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		3A2EE10A1E7F6DD400953110 /* MapBoxManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapBoxManager.swift; sourceTree = "<group>"; };
-		3A47AC481E91A42400026FB0 /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
-		3A47AC4A1E91A8EA00026FB0 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		3AB2B6041E77451200FC7B52 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3AB2B6061E774B5600FC7B52 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		3AB83E681E8C5FED002CACDD /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
@@ -118,12 +118,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A24D3FE1E9168BA00BD6BBB /* xibs */ = {
+		3A24D3FE1E9168BA00BD6BBB /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				3A47AC481E91A42400026FB0 /* MainCell.swift */,
+				3A2C76911E9FCFA700B14B7E /* SampleCell.swift */,
 			);
-			name = xibs;
+			name = UI;
 			sourceTree = "<group>";
 		};
 		3ABEE42E1E70BCE400C753E8 = {
@@ -151,7 +151,7 @@
 		3ABEE4391E70BCE500C753E8 /* Naisho */ = {
 			isa = PBXGroup;
 			children = (
-				3A24D3FE1E9168BA00BD6BBB /* xibs */,
+				3A24D3FE1E9168BA00BD6BBB /* UI */,
 				3ABEE46A1E70BD2400C753E8 /* SupportingFiles */,
 				3ABEE46B1E70BD3400C753E8 /* StoryBoards */,
 				3ABEE4691E70BD1C00C753E8 /* VCs */,
@@ -201,7 +201,7 @@
 				3ABEE46C1E70BD7A00C753E8 /* BasicViewController.swift */,
 				3AB2B6041E77451200FC7B52 /* MainViewController.swift */,
 				3AB83E681E8C5FED002CACDD /* LoadingViewController.swift */,
-				3A47AC4A1E91A8EA00026FB0 /* MainTableViewController.swift */,
+				3A2C76931E9FD9BF00B14B7E /* SimpleTableViewController.swift */,
 			);
 			name = VCs;
 			sourceTree = "<group>";
@@ -533,10 +533,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3ABEE46F1E70BD7A00C753E8 /* GradientViewManager.swift in Sources */,
+				3A2C76921E9FCFA700B14B7E /* SampleCell.swift in Sources */,
 				3ABCA6E11E8AB1C2003D0376 /* CollaborativeFilteringManager.swift in Sources */,
 				3ABEE43D1E70BCE500C753E8 /* LogInViewController.swift in Sources */,
 				3A2EE1091E79AAB400953110 /* FirebaseManager.swift in Sources */,
-				3A47AC491E91A42400026FB0 /* MainCell.swift in Sources */,
 				3AC1FB6F1E71F5470031DDCF /* RealmObjects.swift in Sources */,
 				3ABEE46E1E70BD7A00C753E8 /* BasicViewController.swift in Sources */,
 				3AC1FB741E72FBD20031DDCF /* FacebookManager.swift in Sources */,
@@ -544,8 +544,8 @@
 				3A2EE10B1E7F6DD400953110 /* MapBoxManager.swift in Sources */,
 				3ABEE43B1E70BCE500C753E8 /* AppDelegate.swift in Sources */,
 				3AB2B6051E77451200FC7B52 /* MainViewController.swift in Sources */,
+				3A2C76941E9FD9BF00B14B7E /* SimpleTableViewController.swift in Sources */,
 				3AB83E691E8C5FED002CACDD /* LoadingViewController.swift in Sources */,
-				3A47AC4B1E91A8EA00026FB0 /* MainTableViewController.swift in Sources */,
 				3AB2B6071E774B5600FC7B52 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

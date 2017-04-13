@@ -15,22 +15,23 @@ class MainViewController: BasicViewController {
     
     @IBOutlet weak var mapView: MGLMapView!
     
-    var refreshControl:UIRefreshControl!
-    
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
-    var tableViewController:MainTableViewController = MainTableViewController();
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         // Add floating action Button
         let fab = KCFloatingActionButton()
         fab.buttonColor = UIColor.white
         fab.addItem("Settings", icon: UIImage(named: "settings")!)
-        fab.addItem("Stars", icon: UIImage(named: "star")!)
+        
+        fab.addItem("Stars", icon: UIImage(named: "star")!, handler: { item in
+            let storyboard: UIStoryboard = self.storyboard!
+            let nextView = storyboard.instantiateViewController(withIdentifier: "Data") as! SimpleTableViewController
+            self.present(nextView, animated: false, completion: nil)
+            fab.close()
+        })
+        
         self.view.addSubview(fab)
         
         // set the delegate
@@ -50,7 +51,7 @@ class MainViewController: BasicViewController {
 
     func refresh()
     {
-        FourSquareManager.sharedInstance.search(ll: appDelegate.lManager.center, limit: 20, category: Category.EastAsian, radius: "4000",refresh: self.refreshControl,mapview: self.mapView,tableViewController: self.tableViewController)
+        FourSquareManager.sharedInstance.search(ll: appDelegate.lManager.center, limit: 20, category: Category.EastAsian, radius: "4000",mapview: self.mapView)
         
     }
     

@@ -35,6 +35,9 @@ target 'Naisho' do
   # FloatingButton
   pod "KCFloatingActionButton", "~> 2.2.0"
   
+  # Folding Cell
+  pod 'FoldingCell', '~> 2.0.3'
+  
   # MapBox
   pod 'Mapbox-iOS-SDK', '~> 3.4'
 

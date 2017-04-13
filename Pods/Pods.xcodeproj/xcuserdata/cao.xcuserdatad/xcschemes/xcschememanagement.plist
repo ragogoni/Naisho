@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FoldingCell.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FoursquareAPIClient.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -82,17 +87,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>05322605A29A1D81C64ED225509E512B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3A7BD1AC27856D6BF6EC1D516AFB51DD</key>
+		<key>119E8FA5D1AABC785421ABE78A6BBCEF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>11F58E806E48CC2295B3D4FAD25D75D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,7 +122,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>768AF5A3AEAB77A7F7B294B1F918C739</key>
+		<key>66E3788A5E33603088CED120BF74E689</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>721B413B4D5A134390A028062F761B5A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -127,17 +137,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>9B2D9CCF71C79BF8FB98E5EDD1C3EC0E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A6E9CEC9E5ACFE69D21456CCB70BEEA0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A9C667F2770060C1181AE8BA8ACD7B19</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BB0D17CE4FEBA2ADB41B9E92A46E239C</key>
+		<key>B626E472969D6F87698AF0041EAAFC38</key>
 		<dict>
 			<key>primary</key>
 			<true/>

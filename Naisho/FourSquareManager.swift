@@ -93,7 +93,7 @@ class FourSquareManager:NSObject{
     
     
     // search by location and category
-    func search(ll:CLLocationCoordinate2D,limit:Int,category:Category?,radius:String?,refresh:UIRefreshControl?,mapview:MGLMapView?,tableViewController:MainTableViewController?){
+    func search(ll:CLLocationCoordinate2D,limit:Int,category:Category?,radius:String?,mapview:MGLMapView?){
         var param:[String:String]
         
         // convert CLLocationCoordinate2D to string so that we can do API call
@@ -156,13 +156,6 @@ class FourSquareManager:NSObject{
                     for b in RealmManager.sharedInstance.getAllBusinesses(){
                         mapview!.addAnnotation(MapBoxManager.sharedInstance.getPin(title: b.name, location: CLLocationCoordinate2D(latitude: b.lat,longitude: b.lon), subtitile: b.name));
                     }
-                }
-                
-                if(refresh != nil && tableViewController != nil){
-                    print("refresh Done")
-                    refresh!.endRefreshing();
-                    tableViewController!.updateBusinesses();
-                    tableViewController!.tableView.reloadData();
                 }
                 
                 

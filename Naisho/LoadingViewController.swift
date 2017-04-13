@@ -17,7 +17,7 @@ class LoadingViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         // Start Searching
-        FourSquareManager.sharedInstance.search(ll: appDelegate.lManager.center, limit: 20,category: nil, radius: "3000",refresh:nil,mapview: nil, tableViewController: nil)
+        FourSquareManager.sharedInstance.search(ll: appDelegate.lManager.center, limit: 20,category: nil, radius: "3000",mapview: nil)
 
         //アニメーションのViewを生成
         let animeView = BAFluidView(frame: self.view.frame,startElevation: 0.3)!
@@ -32,7 +32,7 @@ class LoadingViewController: UIViewController {
         self.view.addSubview(animeView)
         
         // Wait for 4 seconds
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
             let storyboard: UIStoryboard = self.storyboard!
             let nextView = storyboard.instantiateViewController(withIdentifier: "Main") as! MainViewController
             self.present(nextView, animated: false, completion: nil)

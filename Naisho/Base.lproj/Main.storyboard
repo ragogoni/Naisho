@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -39,7 +40,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vza-wZ-U06" customClass="MGLMapView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="290"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="228"/>
                                 <color key="backgroundColor" red="0.87315538194444442" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleURL__" value="mapbox://styles/vixaer/cj0hfud06004g2sqpso3ebbhw"/>
@@ -49,10 +50,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="vza-wZ-U06" secondAttribute="trailing" id="3eJ-Pg-LPT"/>
-                            <constraint firstItem="8mp-Q8-Zgt" firstAttribute="top" secondItem="vza-wZ-U06" secondAttribute="bottom" constant="357" id="Jbm-uq-hxA"/>
-                            <constraint firstItem="vza-wZ-U06" firstAttribute="top" secondItem="jeZ-dv-FZh" secondAttribute="bottom" id="mZ4-7M-nZa"/>
-                            <constraint firstItem="vza-wZ-U06" firstAttribute="leading" secondItem="dmp-Ur-gic" secondAttribute="leading" id="vIo-Ff-Jbo"/>
+                            <constraint firstItem="vza-wZ-U06" firstAttribute="leading" secondItem="dmp-Ur-gic" secondAttribute="leading" id="8ZS-o7-VAu"/>
+                            <constraint firstAttribute="trailing" secondItem="vza-wZ-U06" secondAttribute="trailing" id="EyR-dF-2x7"/>
+                            <constraint firstItem="8mp-Q8-Zgt" firstAttribute="top" secondItem="vza-wZ-U06" secondAttribute="bottom" constant="419" id="VCI-ch-U9o"/>
+                            <constraint firstItem="vza-wZ-U06" firstAttribute="top" secondItem="jeZ-dv-FZh" secondAttribute="bottom" id="XyR-9c-2Vd"/>
                         </constraints>
                     </view>
                     <connections>
@@ -62,6 +63,101 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kvw-Sm-Miq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1781.5999999999999" y="90.404797601199405"/>
+        </scene>
+        <!--Data-->
+        <scene sceneID="xCz-Vm-eai">
+            <objects>
+                <tableViewController storyboardIdentifier="Data" title="Data" id="83z-gl-p3u" customClass="SimpleTableViewController" customModule="Naisho" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="442" sectionHeaderHeight="28" sectionFooterHeight="28" id="giV-Eh-bPj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="419" id="xAE-E9-FvC" customClass="SampleCell" customModule="Naisho" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="419"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xAE-E9-FvC" id="BzP-mf-GtG">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="418"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dap-VH-ty6">
+                                            <rect key="frame" x="8" y="116" width="359" height="286"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhM-sj-tHq" userLabel="FirstView">
+                                                    <rect key="frame" x="8" y="0.0" width="343" height="100"/>
+                                                    <color key="backgroundColor" red="0.93569559010152281" green="0.93569559010152281" blue="0.93569559010152281" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="1xP-DY-eBw"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVz-vw-FvS" userLabel="SecondView" customClass="RotatedView" customModule="FoldingCell">
+                                                    <rect key="frame" x="8" y="100" width="343" height="100"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="IGV-VQ-czJ"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTu-H5-2WF" userLabel="ThirdView" customClass="RotatedView" customModule="FoldingCell">
+                                                    <rect key="frame" x="8" y="200" width="343" height="86"/>
+                                                    <color key="backgroundColor" red="0.93569559010000003" green="0.93569559010000003" blue="0.93569559010000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="86" id="ssM-fq-hrH"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.71412991751269028" green="0.70025479147596348" blue="0.63970535719508181" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="fhM-sj-tHq" secondAttribute="trailing" constant="8" id="ESV-HF-cOA"/>
+                                                <constraint firstAttribute="trailing" secondItem="tTu-H5-2WF" secondAttribute="trailing" constant="8" id="FmF-Ch-pNR"/>
+                                                <constraint firstAttribute="height" constant="286" id="S8i-7E-WTB"/>
+                                                <constraint firstItem="fhM-sj-tHq" firstAttribute="top" secondItem="dap-VH-ty6" secondAttribute="top" id="b4w-Hz-0hR"/>
+                                                <constraint firstItem="tTu-H5-2WF" firstAttribute="top" secondItem="cVz-vw-FvS" secondAttribute="bottom" id="gTp-ke-Vmd"/>
+                                                <constraint firstAttribute="trailing" secondItem="cVz-vw-FvS" secondAttribute="trailing" constant="8" id="gmS-Bo-1p8"/>
+                                                <constraint firstItem="cVz-vw-FvS" firstAttribute="leading" secondItem="dap-VH-ty6" secondAttribute="leading" constant="8" id="hAc-SY-PJX"/>
+                                                <constraint firstItem="cVz-vw-FvS" firstAttribute="top" secondItem="fhM-sj-tHq" secondAttribute="bottom" id="j7i-vy-Bqw"/>
+                                                <constraint firstItem="tTu-H5-2WF" firstAttribute="leading" secondItem="dap-VH-ty6" secondAttribute="leading" constant="8" id="xyV-kx-cO2"/>
+                                                <constraint firstItem="fhM-sj-tHq" firstAttribute="leading" secondItem="dap-VH-ty6" secondAttribute="leading" constant="8" id="z1b-RP-xjk"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J1D-Kn-0uc" customClass="RotatedView" customModule="FoldingCell">
+                                            <rect key="frame" x="8" y="8" width="359" height="100"/>
+                                            <color key="backgroundColor" red="0.83743780851364136" green="0.46433833310024653" blue="0.35282660339968236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="L3Z-lO-H5v"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="J1D-Kn-0uc" firstAttribute="leading" secondItem="BzP-mf-GtG" secondAttribute="leadingMargin" id="0Uz-EG-hAL"/>
+                                        <constraint firstItem="dap-VH-ty6" firstAttribute="top" secondItem="BzP-mf-GtG" secondAttribute="topMargin" constant="108" identifier="ContainerViewTop" id="BFD-qQ-BbA"/>
+                                        <constraint firstItem="J1D-Kn-0uc" firstAttribute="trailing" secondItem="BzP-mf-GtG" secondAttribute="trailingMargin" id="RsB-GI-ml4"/>
+                                        <constraint firstItem="dap-VH-ty6" firstAttribute="trailing" secondItem="BzP-mf-GtG" secondAttribute="trailingMargin" id="gdX-Fv-kR9"/>
+                                        <constraint firstItem="J1D-Kn-0uc" firstAttribute="top" secondItem="BzP-mf-GtG" secondAttribute="topMargin" identifier="ForegroundViewTop" id="kOC-A6-yjS"/>
+                                        <constraint firstItem="dap-VH-ty6" firstAttribute="leading" secondItem="BzP-mf-GtG" secondAttribute="leadingMargin" id="r3k-8s-oy5"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="itemCount">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="containerView" destination="dap-VH-ty6" id="bZE-5j-Tcf"/>
+                                    <outlet property="containerViewTop" destination="BFD-qQ-BbA" id="w4E-B3-rxW"/>
+                                    <outlet property="foregroundView" destination="J1D-Kn-0uc" id="vml-tr-dwo"/>
+                                    <outlet property="foregroundViewTop" destination="kOC-A6-yjS" id="IFz-Jm-Zac"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="83z-gl-p3u" id="TKr-Vu-mAK"/>
+                            <outlet property="delegate" destination="83z-gl-p3u" id="uj9-kR-6af"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dnk-W2-5ko" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2568.8000000000002" y="89.505247376311857"/>
         </scene>
         <!--Loading-->
         <scene sceneID="GIN-gF-XBj">
