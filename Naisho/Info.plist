@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Fonts/Marbre_Sans_Bold.otf</string>
+		<string>Fonts/Marbre_Sans.otf</string>
+		<string>Fonts/Infinity.ttf</string>
+	</array>
 	<key>MGLMapboxAccessToken</key>
 	<string>pk.eyJ1Ijoidml4YWVyIiwiYSI6ImNpczBneDM0cjAzYjUyenA4eXV1N2Zpb2UifQ.D2L9Dd674rBGVuallWx3RQ</string>
 	<key>FirebaseAppDelegateProxyEnabled</key>

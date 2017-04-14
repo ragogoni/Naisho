@@ -14,10 +14,10 @@ class SimpleTableViewController: UITableViewController {
 
     private var cellHeights: [CGFloat] = []
     
-    private let kCloseCellHeight: CGFloat = 164 //200+14
-    private let kOpenCellHeight: CGFloat = 346  //330+9
+    private let kCloseCellHeight: CGFloat = 164 //150+14
+    private let kOpenCellHeight: CGFloat = 346  //330+16
     
-    private let cellCount = 3
+    private let cellCount = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,6 +95,7 @@ class SimpleTableViewController: UITableViewController {
             return;
         }
         cell.backgroundColor = UIColor.clear
+        
         
         if cellHeights[indexPath.row] == kCloseCellHeight {
             cell.selectedAnimation(false, animated: false, completion:nil)

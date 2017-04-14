@@ -11,6 +11,9 @@ import FoldingCell
 
 class SampleCell: FoldingCell {
     
+    var businessName = "";
+    var businessNumber = 0;
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
