@@ -14,8 +14,8 @@ class SimpleTableViewController: UITableViewController {
 
     private var cellHeights: [CGFloat] = []
     
-    private let kCloseCellHeight: CGFloat = 136 //75+16
-    private let kOpenCellHeight: CGFloat = 322 //175+16
+    private let kCloseCellHeight: CGFloat = 164 //200+14
+    private let kOpenCellHeight: CGFloat = 346  //330+9
     
     private let cellCount = 3
     
