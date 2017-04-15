@@ -32,7 +32,7 @@ class LoadingViewController: UIViewController {
         self.view.addSubview(animeView)
         
         // Wait for 4 seconds
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
             let storyboard: UIStoryboard = self.storyboard!
             let nextView = storyboard.instantiateViewController(withIdentifier: "Main") as! MainViewController
             self.present(nextView, animated: false, completion: nil)

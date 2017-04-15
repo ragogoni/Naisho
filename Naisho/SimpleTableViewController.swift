@@ -17,7 +17,14 @@ class SimpleTableViewController: UITableViewController {
     private let kCloseCellHeight: CGFloat = 164 //150+14
     private let kOpenCellHeight: CGFloat = 466  //450+16
     
-    private let cellCount = 10
+    private let cellCount = RealmManager.sharedInstance.getTotalNumber()
+    
+    let colors = [UIColor(red:0.72, green:0.20, blue:0.39, alpha:1.0),
+                  UIColor(red:0.51, green:0.91, blue:0.26, alpha:1.0),
+                  UIColor(red:0.20, green:0.60, blue:0.72, alpha:1.0),
+                  UIColor(red:0.92, green:0.48, blue:0.26, alpha:1.0)]
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +75,7 @@ class SimpleTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let cell = tableView.cellForRow(at: indexPath) as! SampleCell
+    
         
         if(cell.isAnimating()){
             return;
@@ -91,18 +99,16 @@ class SimpleTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard case let cell as SampleCell  = cell else {
-            return;
-        }
-        cell.backgroundColor = UIColor.clear
-        
-        
-        
-        
-        if cellHeights[indexPath.row] == kCloseCellHeight {
-            cell.selectedAnimation(false, animated: false, completion:nil)
-        } else {
-            cell.selectedAnimation(true, animated: false, completion: nil)
+        guard case let cell as SampleCell = cell else { return }
+        if let b = RealmManager.sharedInstance.getObjectAtIndex(index: indexPath.row){
+            print(indexPath.row)
+            cell.fgNameLabel.text = b.name;
+            cell.containerNameLabel.text = b.name;
+            //cell.fgScoreLabel.text = String(describing:Int(b.rating.value!*10))
+            
+            // set colors
+            cell.fgLeftView.backgroundColor = colors[indexPath.row%4]
+            cell.containerTopView.backgroundColor = colors[indexPath.row%4]
         }
     }
 

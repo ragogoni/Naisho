@@ -94,6 +94,14 @@ class RealmManager:NSObject{
         }
     }
     
+    func getTotalNumber()-> Int{
+        return realm.objects(Business.self).count;
+    }
+    
+    func getObjectAtIndex(index:Int)->Business?{
+        return realm.objects(Business.self)[index];
+    }
+    
     func updatePhotoURLOn(ID:String, url:[String],count:Int){
         if let b = realm.object(ofType: Business.self, forPrimaryKey: ID){
             try! realm.write {
