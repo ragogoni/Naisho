@@ -10,9 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Coco-Regular.otf">
-            <string>Coco-Regular</string>
-        </array>
         <array key="Infinity.ttf">
             <string>Infinity</string>
         </array>
@@ -212,7 +209,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYd-LO-bOm">
-                                                            <rect key="frame" x="8" y="42" width="37" height="20"/>
+                                                            <rect key="frame" x="8" y="42" width="36.5" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="Tra-ug-SOX"/>
                                                             </constraints>
@@ -220,17 +217,8 @@
                                                             <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="514-868-8858" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgV-Gt-UY9">
-                                                            <rect key="frame" x="8" y="61" width="110" height="20"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="Tkv-QY-8fa"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="Infinity" family="Infinity" pointSize="21"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsT-lB-Poc">
-                                                            <rect key="frame" x="217" y="42" width="24" height="20"/>
+                                                            <rect key="frame" x="217.5" y="42" width="23.5" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="eK4-Lv-V8m"/>
                                                             </constraints>
@@ -255,15 +243,6 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open With Safari" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCd-6s-1aQ">
-                                                            <rect key="frame" x="217" y="61" width="128" height="20"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="Ay7-3f-NCT"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="Infinity" family="Infinity" pointSize="21"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="~33 mins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtQ-0p-GUK">
                                                             <rect key="frame" x="217" y="19" width="73" height="20"/>
                                                             <constraints>
@@ -274,37 +253,60 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="514-858-8848" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UbF-Nj-OpR" userLabel="PhoneTextView">
+                                                            <rect key="frame" x="3" y="51" width="120" height="30"/>
+                                                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="120" id="eFJ-3p-Kn6"/>
+                                                                <constraint firstAttribute="height" constant="30" id="iRc-rO-hZ1"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Infinity" family="Infinity" pointSize="21"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        </textView>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Open With Safari" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QdK-hX-n0J" userLabel="PhoneTextView">
+                                                            <rect key="frame" x="212" y="51" width="147" height="30"/>
+                                                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="147" id="i0u-eA-gge"/>
+                                                                <constraint firstAttribute="height" constant="30" id="mlz-hK-PH0"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Infinity" family="Infinity" pointSize="21"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        </textView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="VtQ-0p-GUK" firstAttribute="leading" secondItem="0mN-Nh-5zj" secondAttribute="leading" id="0s2-EL-N4q"/>
+                                                        <constraint firstAttribute="bottom" secondItem="QdK-hX-n0J" secondAttribute="bottom" constant="4" id="3F4-VO-hZf"/>
                                                         <constraint firstItem="zQg-hv-40y" firstAttribute="leading" secondItem="bik-Oc-HQI" secondAttribute="leading" id="4Yu-GF-T01"/>
                                                         <constraint firstAttribute="trailing" secondItem="0mN-Nh-5zj" secondAttribute="trailing" constant="8" id="4kX-qD-8k1"/>
-                                                        <constraint firstItem="mgV-Gt-UY9" firstAttribute="leading" secondItem="bik-Oc-HQI" secondAttribute="leading" constant="8" id="7du-dW-CTj"/>
-                                                        <constraint firstItem="mgV-Gt-UY9" firstAttribute="top" secondItem="zQg-hv-40y" secondAttribute="bottom" constant="18" id="7km-gY-Nkz"/>
+                                                        <constraint firstAttribute="trailing" secondItem="QdK-hX-n0J" secondAttribute="trailing" id="9iF-fo-3uB"/>
                                                         <constraint firstItem="MsT-lB-Poc" firstAttribute="top" secondItem="0mN-Nh-5zj" secondAttribute="bottom" constant="22" id="AcG-Zp-p8Z"/>
                                                         <constraint firstItem="zQg-hv-40y" firstAttribute="top" secondItem="lJq-sB-hDS" secondAttribute="bottom" constant="22" id="CRC-tZ-zE1"/>
+                                                        <constraint firstItem="QdK-hX-n0J" firstAttribute="top" secondItem="zQg-hv-40y" secondAttribute="bottom" constant="8" id="ChY-E9-9MD"/>
                                                         <constraint firstAttribute="bottom" secondItem="HYd-LO-bOm" secondAttribute="bottom" constant="23" id="Hdc-BT-DyL"/>
-                                                        <constraint firstAttribute="bottom" secondItem="mgV-Gt-UY9" secondAttribute="bottom" constant="4" id="P5G-bm-XFo"/>
                                                         <constraint firstItem="zQg-hv-40y" firstAttribute="centerY" secondItem="bik-Oc-HQI" secondAttribute="centerY" id="PD4-kl-l6T"/>
                                                         <constraint firstItem="0mN-Nh-5zj" firstAttribute="top" secondItem="bik-Oc-HQI" secondAttribute="top" id="RHa-fz-MYf"/>
                                                         <constraint firstItem="zQg-hv-40y" firstAttribute="top" secondItem="QDL-9W-fFv" secondAttribute="bottom" constant="3" id="Res-Q5-Kjv"/>
-                                                        <constraint firstItem="KCd-6s-1aQ" firstAttribute="top" secondItem="zQg-hv-40y" secondAttribute="bottom" constant="18" id="TaV-uQ-NYb"/>
                                                         <constraint firstItem="QDL-9W-fFv" firstAttribute="leading" secondItem="bik-Oc-HQI" secondAttribute="leading" constant="8" id="Up7-y1-nGv"/>
+                                                        <constraint firstItem="UbF-Nj-OpR" firstAttribute="leading" secondItem="bik-Oc-HQI" secondAttribute="leading" constant="3" id="W3C-0Y-WgF"/>
+                                                        <constraint firstItem="UbF-Nj-OpR" firstAttribute="top" secondItem="QdK-hX-n0J" secondAttribute="top" id="YFk-Wj-5oI"/>
                                                         <constraint firstItem="lJq-sB-hDS" firstAttribute="top" secondItem="bik-Oc-HQI" secondAttribute="top" id="YkP-Hh-tep"/>
                                                         <constraint firstAttribute="trailing" secondItem="zQg-hv-40y" secondAttribute="trailing" id="ZYQ-mt-bX9"/>
                                                         <constraint firstItem="zQg-hv-40y" firstAttribute="top" secondItem="VtQ-0p-GUK" secondAttribute="bottom" constant="3" id="akw-1D-5Pg"/>
-                                                        <constraint firstAttribute="bottom" secondItem="KCd-6s-1aQ" secondAttribute="bottom" constant="4" id="buM-Nw-toS"/>
-                                                        <constraint firstAttribute="bottom" secondItem="mgV-Gt-UY9" secondAttribute="bottom" constant="4" id="drW-sa-4g9"/>
+                                                        <constraint firstItem="UbF-Nj-OpR" firstAttribute="top" secondItem="zQg-hv-40y" secondAttribute="bottom" constant="8" id="axf-rl-1ml"/>
+                                                        <constraint firstAttribute="bottom" secondItem="UbF-Nj-OpR" secondAttribute="bottom" constant="4" id="b6x-zP-j0N"/>
+                                                        <constraint firstItem="QdK-hX-n0J" firstAttribute="trailing" secondItem="zQg-hv-40y" secondAttribute="trailing" id="gfI-Gi-loG"/>
                                                         <constraint firstItem="HYd-LO-bOm" firstAttribute="leading" secondItem="bik-Oc-HQI" secondAttribute="leading" constant="8" id="gis-wt-YYY"/>
                                                         <constraint firstAttribute="height" constant="85" id="iGQ-O7-sY8"/>
                                                         <constraint firstAttribute="trailing" secondItem="MsT-lB-Poc" secondAttribute="trailing" constant="118.5" id="rDh-Re-2BK"/>
                                                         <constraint firstItem="lJq-sB-hDS" firstAttribute="leading" secondItem="bik-Oc-HQI" secondAttribute="leading" constant="8" id="tdF-J0-uPp"/>
+                                                        <constraint firstItem="UbF-Nj-OpR" firstAttribute="bottom" secondItem="QdK-hX-n0J" secondAttribute="bottom" id="tdH-mH-PK2"/>
+                                                        <constraint firstItem="QdK-hX-n0J" firstAttribute="leading" secondItem="UbF-Nj-OpR" secondAttribute="trailing" constant="89" id="vEc-yD-cSm"/>
                                                         <constraint firstItem="VtQ-0p-GUK" firstAttribute="top" secondItem="bik-Oc-HQI" secondAttribute="top" constant="19" id="wlv-KR-TiN"/>
                                                         <constraint firstAttribute="bottom" secondItem="MsT-lB-Poc" secondAttribute="bottom" constant="23" id="wmq-JE-JvE"/>
                                                         <constraint firstItem="QDL-9W-fFv" firstAttribute="top" secondItem="bik-Oc-HQI" secondAttribute="top" constant="19" id="yPN-fo-Dzf"/>
                                                         <constraint firstItem="HYd-LO-bOm" firstAttribute="top" secondItem="lJq-sB-hDS" secondAttribute="bottom" constant="22" id="yf3-Y2-3Ud"/>
-                                                        <constraint firstAttribute="trailing" secondItem="KCd-6s-1aQ" secondAttribute="trailing" constant="14" id="yoi-hb-uRG"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -340,7 +342,7 @@
                                                                 <constraint firstAttribute="width" constant="59" id="WOK-k8-PFZ"/>
                                                                 <constraint firstAttribute="height" constant="59" id="cDZ-XE-pP4"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Coco-Regular" family="Coco" pointSize="40"/>
+                                                            <fontDescription key="fontDescription" name="Infinity" family="Infinity" pointSize="40"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -509,14 +511,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="containerContactLabel" destination="mgV-Gt-UY9" id="IQ5-Sr-qOm"/>
+                                    <outlet property="OpenMenuTextView" destination="QdK-hX-n0J" id="6Z1-r3-Ibg"/>
                                     <outlet property="containerDistanceLabel" destination="VtQ-0p-GUK" id="x0U-3c-wAy"/>
                                     <outlet property="containerGoButton" destination="rHr-3c-fpQ" id="GPz-rA-Bjb"/>
                                     <outlet property="containerImageView" destination="JGP-Im-hNU" id="bPQ-2j-Mes"/>
                                     <outlet property="containerLikeDescriptionLabel" destination="Foh-9T-Z2J" id="eFK-9H-yMR"/>
                                     <outlet property="containerMapView" destination="PDn-95-Efq" id="mgP-Ad-8ug"/>
-                                    <outlet property="containerMenuLabel" destination="KCd-6s-1aQ" id="ltS-AF-evG"/>
                                     <outlet property="containerNameLabel" destination="Xff-pF-j4I" id="fuR-2x-ANV"/>
+                                    <outlet property="containerPhoneTextView" destination="UbF-Nj-OpR" id="VWq-Ya-3eV"/>
                                     <outlet property="containerPriceLabel" destination="QDL-9W-fFv" id="V72-1n-3le"/>
                                     <outlet property="containerTopView" destination="sZk-ij-wyV" id="0xO-gY-unK"/>
                                     <outlet property="containerView" destination="dap-VH-ty6" id="xkT-Bj-wVI"/>

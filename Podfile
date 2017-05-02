@@ -12,7 +12,7 @@ target 'Naisho' do
   
   # FourSquare API
   pod 'FoursquareAPIClient'
-  #pod 'SDWebImage'
+  pod 'SDWebImage'
   pod 'SwiftyJSON'
   
   # Page View
@@ -40,6 +40,7 @@ target 'Naisho' do
   
   # MapBox
   pod 'Mapbox-iOS-SDK', '~> 3.4'
+  pod 'MapboxDirections.swift'
 
   target 'NaishoTests' do
     inherit! :search_paths

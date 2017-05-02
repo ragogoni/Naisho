@@ -9,6 +9,9 @@
 import UIKit
 import FoldingCell
 import KCFloatingActionButton
+import SDWebImage
+import MapboxDirections
+import Mapbox
 
 class SimpleTableViewController: UITableViewController {
 
@@ -24,7 +27,9 @@ class SimpleTableViewController: UITableViewController {
                   UIColor(red:0.20, green:0.60, blue:0.72, alpha:1.0),
                   UIColor(red:0.92, green:0.48, blue:0.26, alpha:1.0)]
     
+    private let directions = Directions(accessToken: "pk.eyJ1Ijoidml4YWVyIiwiYSI6ImNpczBneDM0cjAzYjUyenA4eXV1N2Zpb2UifQ.D2L9Dd674rBGVuallWx3RQ")
     
+    private let locationManager = LocationManager.sharedInstance;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +42,6 @@ class SimpleTableViewController: UITableViewController {
         let fab = KCFloatingActionButton()
         fab.buttonColor = UIColor.white
         fab.addItem("Settings", icon: UIImage(named: "settings")!)
-        
         fab.addItem("Main", icon: UIImage(named: "home")!, handler: { item in
             let storyboard: UIStoryboard = self.storyboard!
             let nextView = storyboard.instantiateViewController(withIdentifier: "Main") as! MainViewController
@@ -46,6 +50,8 @@ class SimpleTableViewController: UITableViewController {
         })
         
         self.view.addSubview(fab)
+        
+        
         
     }
 
@@ -75,7 +81,6 @@ class SimpleTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let cell = tableView.cellForRow(at: indexPath) as! SampleCell
-    
         
         if(cell.isAnimating()){
             return;
@@ -101,15 +106,83 @@ class SimpleTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard case let cell as SampleCell = cell else { return }
         if let b = RealmManager.sharedInstance.getObjectAtIndex(index: indexPath.row){
-            print(indexPath.row)
             cell.fgNameLabel.text = b.name;
             cell.containerNameLabel.text = b.name;
-            //cell.fgScoreLabel.text = String(describing:Int(b.rating.value!*10))
+            if(b.rating.value != nil){
+                cell.fgRatingLabel.text = String(describing:Int(b.rating.value!*10))+"/100"
+            }
+            
+            cell.containerPhoneTextView.text = b.phone 
+            
+            
+            cell.fgNumberLabel.text = "#"+String(describing:indexPath.row+1)
+            
+            let u = RealmManager.sharedInstance.getURLOn(index: indexPath.row, urlIndex: 1)
+            if (String(describing: u) != "" && u != nil){
+                cell.containerImageView.sd_setImage(with: u)
+                cell.containerImageView.contentMode = UIViewContentMode.scaleAspectFill
+            }
+            
+            let point = MGLPointAnnotation()
+            point.coordinate = CLLocationCoordinate2D(latitude: b.lat, longitude: b.lon)
+            point.title = b.name
+            cell.containerMapView.addAnnotation(point)
+            
+            let waypoints = [
+                Waypoint(coordinate: CLLocationCoordinate2D(latitude: locationManager.center.latitude, longitude: locationManager.center.longitude), name: "Start Position"),
+                Waypoint(coordinate: CLLocationCoordinate2D(latitude: b.lat, longitude: b.lon), name: b.name),
+                ]
+            let options = RouteOptions(waypoints: waypoints, profileIdentifier: .automobileAvoidingTraffic)
+            options.includesSteps = true
+            
+            _ = directions.calculate(options) { (waypoints, routes, error) in
+                guard error == nil else {
+                    print("Error calculating directions: \(error!)")
+                    return
+                }
+                
+                if let route = routes?.first, let leg = route.legs.first {
+                    
+                    print("Route via \(leg):")
+                    
+                    let distanceFormatter = LengthFormatter()
+                    let formattedDistance = distanceFormatter.string(fromMeters: route.distance)
+                    
+                    let travelTimeFormatter = DateComponentsFormatter()
+                    travelTimeFormatter.unitsStyle = .short
+                    let formattedTravelTime = travelTimeFormatter.string(from: route.expectedTravelTime)
+                    
+                    print("Distance: \(formattedDistance); ETA: \(formattedTravelTime!)")
+                    
+                    for step in leg.steps {
+                        print("\(step.instructions)")
+                        let formattedDistance = distanceFormatter.string(fromMeters: step.distance)
+                        print("— \(formattedDistance) —")
+                    }
+                    
+                    if route.coordinateCount > 0 {
+                        // Convert the route’s coordinates into a polyline.
+                        var routeCoordinates = route.coordinates!
+                        let routeLine = MGLPolyline(coordinates: &routeCoordinates, count: route.coordinateCount)
+                        
+                        // Add the polyline to the map and fit the viewport to the polyline.
+                        cell.containerMapView.addAnnotation(routeLine)
+                        cell.containerMapView.setVisibleCoordinates(&routeCoordinates, count: route.coordinateCount, edgePadding: .zero, animated: true)
+                    }
+                }
+            }
+
+            
+            
             
             // set colors
             cell.fgLeftView.backgroundColor = colors[indexPath.row%4]
             cell.containerTopView.backgroundColor = colors[indexPath.row%4]
         }
+    }
+    
+    func makePhoneCall(textField: UITextField) {
+        // user touch field
     }
 
 }

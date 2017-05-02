@@ -191,7 +191,6 @@
 		3ABEE4391E70BCE500C753E8 /* Naisho */ = {
 			isa = PBXGroup;
 			children = (
-				3A909A9E1EA14B41004CF624 /* Fonts */,
 				3A24D3FE1E9168BA00BD6BBB /* UI */,
 				3ABEE46A1E70BD2400C753E8 /* SupportingFiles */,
 				3ABEE46B1E70BD3400C753E8 /* StoryBoards */,
@@ -250,6 +249,7 @@
 		3ABEE46A1E70BD2400C753E8 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				3A909A9E1EA14B41004CF624 /* Fonts */,
 				3ABEE4461E70BCE500C753E8 /* Info.plist */,
 				3ABEE43A1E70BCE500C753E8 /* AppDelegate.swift */,
 				3AC1FB701E71FD640031DDCF /* FacebookLoginSample-Bridging-Header.h */,

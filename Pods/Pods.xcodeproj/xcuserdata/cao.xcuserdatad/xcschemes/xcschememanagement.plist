@@ -49,6 +49,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MapboxDirections.swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Naisho.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -64,12 +69,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Polyline.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Realm.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>RealmSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -87,17 +102,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>02E740F27A8446B61AACA32524A9F0E1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>119E8FA5D1AABC785421ABE78A6BBCEF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>11F58E806E48CC2295B3D4FAD25D75D6</key>
+		<key>179D40E8FCDD00A10C32F6A638C10CC0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,6 +127,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>430AD7707BEF6D5F7D596FC4DF87BCBF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>44CAD6CE523055ED339E87154473A254</key>
 		<dict>
 			<key>primary</key>
@@ -122,12 +142,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>66E3788A5E33603088CED120BF74E689</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>721B413B4D5A134390A028062F761B5A</key>
+		<key>4C4F5B7C92F92679D0F87D65A780F3A7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,7 +152,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9B2D9CCF71C79BF8FB98E5EDD1C3EC0E</key>
+		<key>7DF36B7388E2ECF1FD36A9D6888E9C8C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A3428E34AB88E82BA7A47E1659829001</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -163,6 +183,16 @@
 			<true/>
 		</dict>
 		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D83F6A76A566EEA5410477DF4CA8042C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DA38A468294DF8A687D702319D33105E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

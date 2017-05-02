@@ -23,25 +23,28 @@ class SampleCell: FoldingCell {
     @IBOutlet weak var fgRatingLabel: UILabel!
     @IBOutlet weak var fgDistanceLabel: UILabel!
     @IBOutlet weak var fgLeftView: UIView!
+    @IBOutlet weak var OpenMenuTextView: UITextView!
     
     
     @IBOutlet weak var containerImageView: UIImageView!
     @IBOutlet weak var containerMapView: MGLMapView!
     @IBOutlet weak var containerPriceLabel: UILabel!
     @IBOutlet weak var containerDistanceLabel: UILabel!
-    @IBOutlet weak var containerContactLabel: UILabel!
-    @IBOutlet weak var containerMenuLabel: UILabel!
     @IBOutlet weak var containerGoButton: UIButton!
     @IBOutlet weak var containerLikeDescriptionLabel: UILabel!
     @IBOutlet weak var containerNameLabel: UILabel!
     @IBOutlet weak var containerTopView: UIView!
+    
+    @IBOutlet weak var containerPhoneTextView: UITextView!
+    @IBOutlet weak var containerMenuTextView: UITextView!
+    
+    
     
     
     
     override func awakeFromNib() {
         foregroundView.layer.cornerRadius = 10
         foregroundView.layer.masksToBounds = true
-        
         super.awakeFromNib()
         
         backgroundColor = UIColor.clear

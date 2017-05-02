@@ -122,4 +122,17 @@ class RealmManager:NSObject{
         
     }
     
+    func getURLOn(index:Int,urlIndex:Int) -> URL?{
+        if(realm.objects(Business.self)[index].photoCount >= urlIndex){
+            if(urlIndex == 1){
+                return URL(string: realm.objects(Business.self)[index].photo_1)!;
+            } else if (urlIndex == 2){
+                return URL(string: realm.objects(Business.self)[index].photo_2)!;
+            } else if (urlIndex == 3){
+                return URL(string: realm.objects(Business.self)[index].photo_3)!;
+            }
+        }
+        return nil
+    }
+    
 }
