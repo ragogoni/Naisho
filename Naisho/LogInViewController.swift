@@ -58,6 +58,7 @@ class LogInViewController: BasicViewController, FBSDKLoginButtonDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         
         // testing Foursquare Client API

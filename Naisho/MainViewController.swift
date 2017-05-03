@@ -20,6 +20,13 @@ class MainViewController: BasicViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var loc = CLLocationCoordinate2D();
+        loc.latitude = Double(UserDefaults.standard.string(forKey:"lat")!)!;
+        loc.longitude = Double(UserDefaults.standard.string(forKey:"lon")!)!;
+        
+        // Start Searching
+        FourSquareManager.sharedInstance.search(ll: loc, limit: 20,category: nil, radius: "3000",mapview: nil)
+        
         // Add floating action Button
         let fab = KCFloatingActionButton()
         fab.buttonColor = UIColor.white
@@ -39,7 +46,7 @@ class MainViewController: BasicViewController {
     
         
         // Optionally set a starting point.
-        mapView.setCenter(LocationManager.sharedInstance.center, zoomLevel: 7, direction: 0, animated: false)
+        mapView.setCenter(loc, zoomLevel: 7, direction: 0, animated: false)
         mapView.showsUserLocation = true;
         
         // add pins
@@ -51,7 +58,9 @@ class MainViewController: BasicViewController {
 
     func refresh()
     {
-        FourSquareManager.sharedInstance.search(ll: appDelegate.lManager.center, limit: 20, category: Category.EastAsian, radius: "4000",mapview: self.mapView)
+        for b in RealmManager.sharedInstance.getAllBusinesses(){
+            mapView.addAnnotation(MapBoxManager.sharedInstance.getPin(title: b.name, location: CLLocationCoordinate2D(latitude: b.lat,longitude: b.lon), subtitile: b.name));
+        }
         
     }
     

@@ -8,16 +8,12 @@
 
 import UIKit
 import BAFluidView
+import CoreLocation
 
 class LoadingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        // Start Searching
-        FourSquareManager.sharedInstance.search(ll: appDelegate.lManager.center, limit: 20,category: nil, radius: "3000",mapview: nil)
 
         //アニメーションのViewを生成
         let animeView = BAFluidView(frame: self.view.frame,startElevation: 0.3)!

@@ -86,6 +86,73 @@ class SimpleTableViewController: UITableViewController {
             return;
         }
         
+        if let b = RealmManager.sharedInstance.getObjectAtIndex(index: indexPath.row){
+            
+            if cell.containerMapView.annotations?.isEmpty == false{
+                for a in cell.containerMapView.annotations!{
+                    cell.containerMapView.removeAnnotation(a)
+                }
+            }
+            
+            
+            let point = MGLPointAnnotation()
+            point.coordinate = CLLocationCoordinate2D(latitude: b.lat, longitude: b.lon)
+            point.title = b.name
+            cell.containerMapView.addAnnotation(point)
+            
+            let lat = Double(UserDefaults.standard.string(forKey:"lat")!)!;
+            let lon = Double(UserDefaults.standard.string(forKey:"lon")!)!;
+            
+            let waypoints = [
+                Waypoint(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lon), name: "Start Position"),
+                Waypoint(coordinate: CLLocationCoordinate2D(latitude: b.lat, longitude: b.lon), name: b.name),
+                ]
+            let options = RouteOptions(waypoints: waypoints, profileIdentifier: .automobileAvoidingTraffic)
+            options.includesSteps = true
+            
+            _ = directions.calculate(options) { (waypoints, routes, error) in
+                guard error == nil else {
+                    print("Error calculating directions: \(error!)")
+                    return
+                }
+                
+                if let route = routes?.first, let leg = route.legs.first {
+                    
+                    print("Route via \(leg):")
+                    
+                    let distanceFormatter = LengthFormatter()
+                    let formattedDistance = distanceFormatter.string(fromMeters: route.distance)
+                    
+                    let formatter = DateComponentsFormatter()
+                    formatter.unitsStyle = .short
+                    formatter.allowedUnits = [.minute]
+                    let formattedTravelTime = formatter.string(from: route.expectedTravelTime)
+                    
+                    print("Distance: \(formattedDistance); ETA: \(formattedTravelTime!)")
+                    
+                    cell.fgDistanceLabel.text = "~"+formattedTravelTime!
+                    cell.containerDistanceLabel.text = "~" + formattedTravelTime!
+                    
+                    for step in leg.steps {
+                        print("\(step.instructions)")
+                        let formattedDistance = distanceFormatter.string(fromMeters: step.distance)
+                        print("— \(formattedDistance) —")
+                    }
+                    
+                    if route.coordinateCount > 0 {
+                        // Convert the route’s coordinates into a polyline.
+                        var routeCoordinates = route.coordinates!
+                        let routeLine = MGLPolyline(coordinates: &routeCoordinates, count: route.coordinateCount)
+                        
+                        // Add the polyline to the map and fit the viewport to the polyline.
+                        cell.containerMapView.addAnnotation(routeLine)
+                        cell.containerMapView.setVisibleCoordinates(&routeCoordinates, count: route.coordinateCount, edgePadding: .zero, animated: true)
+                    }
+                }
+            }
+        }
+        
+        
         var duration = 0.0
         if cellHeights[(indexPath as NSIndexPath).row] == kCloseCellHeight { // open cell
             cellHeights[(indexPath as NSIndexPath).row] = kOpenCellHeight
@@ -122,58 +189,6 @@ class SimpleTableViewController: UITableViewController {
                 cell.containerImageView.sd_setImage(with: u)
                 cell.containerImageView.contentMode = UIViewContentMode.scaleAspectFill
             }
-            
-            let point = MGLPointAnnotation()
-            point.coordinate = CLLocationCoordinate2D(latitude: b.lat, longitude: b.lon)
-            point.title = b.name
-            cell.containerMapView.addAnnotation(point)
-            
-            let waypoints = [
-                Waypoint(coordinate: CLLocationCoordinate2D(latitude: locationManager.center.latitude, longitude: locationManager.center.longitude), name: "Start Position"),
-                Waypoint(coordinate: CLLocationCoordinate2D(latitude: b.lat, longitude: b.lon), name: b.name),
-                ]
-            let options = RouteOptions(waypoints: waypoints, profileIdentifier: .automobileAvoidingTraffic)
-            options.includesSteps = true
-            
-            _ = directions.calculate(options) { (waypoints, routes, error) in
-                guard error == nil else {
-                    print("Error calculating directions: \(error!)")
-                    return
-                }
-                
-                if let route = routes?.first, let leg = route.legs.first {
-                    
-                    print("Route via \(leg):")
-                    
-                    let distanceFormatter = LengthFormatter()
-                    let formattedDistance = distanceFormatter.string(fromMeters: route.distance)
-                    
-                    let travelTimeFormatter = DateComponentsFormatter()
-                    travelTimeFormatter.unitsStyle = .short
-                    let formattedTravelTime = travelTimeFormatter.string(from: route.expectedTravelTime)
-                    
-                    print("Distance: \(formattedDistance); ETA: \(formattedTravelTime!)")
-                    
-                    for step in leg.steps {
-                        print("\(step.instructions)")
-                        let formattedDistance = distanceFormatter.string(fromMeters: step.distance)
-                        print("— \(formattedDistance) —")
-                    }
-                    
-                    if route.coordinateCount > 0 {
-                        // Convert the route’s coordinates into a polyline.
-                        var routeCoordinates = route.coordinates!
-                        let routeLine = MGLPolyline(coordinates: &routeCoordinates, count: route.coordinateCount)
-                        
-                        // Add the polyline to the map and fit the viewport to the polyline.
-                        cell.containerMapView.addAnnotation(routeLine)
-                        cell.containerMapView.setVisibleCoordinates(&routeCoordinates, count: route.coordinateCount, edgePadding: .zero, animated: true)
-                    }
-                }
-            }
-
-            
-            
             
             // set colors
             cell.fgLeftView.backgroundColor = colors[indexPath.row%4]
