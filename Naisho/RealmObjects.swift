@@ -26,10 +26,16 @@ class Business : Object{
     dynamic var lat = 0.0;
     dynamic var lon = 0.0;
     dynamic var photoCount = 0;
+    dynamic var category = "";
     
+    // could be empty
     dynamic var photo_1 = ""
     dynamic var photo_2 = ""
     dynamic var photo_3 = ""
+    dynamic var menuURL = ""
+    dynamic var price = 0
+    
+    dynamic var likes = 0
     
     var isOpen = RealmOptional<Bool>(nil)
     var rating = RealmOptional<Double>(nil)
@@ -80,6 +86,25 @@ class RealmManager:NSObject{
         if let b = realm.object(ofType: Business.self, forPrimaryKey: ID){
             try! realm.write {
                 b.rating.value = rating;
+                realm.add(b, update: true)
+            }
+        }
+    }
+    
+    func writeLikesOn(ID:String, likes:Int){
+        if let b = realm.object(ofType: Business.self, forPrimaryKey: ID){
+            try! realm.write {
+                b.likes = likes;
+                realm.add(b, update: true)
+            }
+        }
+    }
+    
+    
+    func writePriceOn(ID:String, price:Int){
+        if let b = realm.object(ofType: Business.self, forPrimaryKey: ID){
+            try! realm.write {
+                b.price = price;
                 realm.add(b, update: true)
             }
         }

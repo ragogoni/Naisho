@@ -193,6 +193,37 @@ class SimpleTableViewController: UITableViewController {
             // set colors
             cell.fgLeftView.backgroundColor = colors[indexPath.row%4]
             cell.containerTopView.backgroundColor = colors[indexPath.row%4]
+            
+            /*
+             1: 0-10
+             2: 11-20
+             3: 21-35
+             4: 36+
+             */
+            switch b.price {
+                case 1:
+                    cell.fgPriceLabel.text = "$"
+                    cell.containerPriceLabel.text = "Affordable (~10 USD)"
+                case 2:
+                    cell.fgPriceLabel.text = "$$"
+                    cell.containerPriceLabel.text = "Safely Priced (11~20 USD)"
+                case 3:
+                    cell.fgPriceLabel.text = "$$$"
+                    cell.containerPriceLabel.text = "Expensive (21~35 USD)"
+                case 4:
+                    cell.fgPriceLabel.text = "$$$$"
+                    cell.containerPriceLabel.text = "Damn! (~36 USD)"
+                default:
+                    cell.fgPriceLabel.text = "N/A"
+                    cell.containerPriceLabel.text = "N/A"
+            }
+            
+            cell.containerLikeDescriptionLabel.text = String(describing:b.likes) + " people liked this place"
+            if(b.category == "Cafés"){
+                cell.fgCategoryLabel.text = "Cafe"
+            } else{
+                cell.fgCategoryLabel.text = b.category
+            }
         }
     }
     

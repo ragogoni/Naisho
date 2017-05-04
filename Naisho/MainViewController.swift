@@ -20,12 +20,15 @@ class MainViewController: BasicViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var loc = CLLocationCoordinate2D();
-        loc.latitude = Double(UserDefaults.standard.string(forKey:"lat")!)!;
-        loc.longitude = Double(UserDefaults.standard.string(forKey:"lon")!)!;
-        
-        // Start Searching
-        FourSquareManager.sharedInstance.search(ll: loc, limit: 20,category: nil, radius: "3000",mapview: nil)
+        // if both lat and lon are available, search
+        if let lat = UserDefaults.standard.string(forKey:"lat"){
+            if let lon = UserDefaults.standard.string(forKey:"lon"){
+                var loc = CLLocationCoordinate2D();
+                loc.latitude = Double(lat)!;
+                loc.longitude = Double(lon)!;
+                FourSquareManager.sharedInstance.search(ll: loc, limit: 20,category: nil, radius: "3000",mapview: nil)
+            }
+        }
         
         // Add floating action Button
         let fab = KCFloatingActionButton()
@@ -43,11 +46,19 @@ class MainViewController: BasicViewController {
         
         // set the delegate
         mapView.delegate = MapBoxManager.sharedInstance;
+        mapView.showsUserLocation = true;
     
         
         // Optionally set a starting point.
-        mapView.setCenter(loc, zoomLevel: 7, direction: 0, animated: false)
-        mapView.showsUserLocation = true;
+        if let lat = UserDefaults.standard.string(forKey:"lat"){
+            if let lon = UserDefaults.standard.string(forKey:"lon"){
+                var loc = CLLocationCoordinate2D();
+                loc.latitude = Double(lat)!;
+                loc.longitude = Double(lon)!;
+                mapView.setCenter(loc, zoomLevel: 7, direction: 0, animated: false)
+            }
+        }
+        
         
         // add pins
         for b in RealmManager.sharedInstance.getAllBusinesses(){
