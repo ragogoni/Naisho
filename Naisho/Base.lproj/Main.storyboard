@@ -45,7 +45,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vza-wZ-U06" customClass="MGLMapView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="228"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="179"/>
                                 <color key="backgroundColor" red="0.87315538194444442" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleURL__" value="mapbox://styles/vixaer/cj0hfud06004g2sqpso3ebbhw"/>
@@ -61,13 +61,19 @@
                             <constraint firstItem="vza-wZ-U06" firstAttribute="top" secondItem="jeZ-dv-FZh" secondAttribute="bottom" id="XyR-9c-2Vd"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Map" image="Treasure Map-30" selectedImage="Treasure Map-30" id="OpC-bP-pG2" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="DkZ-td-YAk" id="jOG-9w-ECF"/>
+                        </connections>
+                    </tabBarItem>
                     <connections>
                         <outlet property="mapView" destination="vza-wZ-U06" id="Dgz-fL-0b2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kvw-Sm-Miq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="DkZ-td-YAk" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
-            <point key="canvasLocation" x="1781.5999999999999" y="90.404797601199405"/>
+            <point key="canvasLocation" x="1209" y="1596"/>
         </scene>
         <!--Data-->
         <scene sceneID="xCz-Vm-eai">
@@ -543,10 +549,34 @@
                             <outlet property="delegate" destination="83z-gl-p3u" id="uj9-kR-6af"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Eureka" image="Lightning Bolt-30" selectedImage="Lightning Bolt-30" id="zat-J6-36g" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="LgQ-QZ-RbH" id="umk-PI-051"/>
+                        </connections>
+                    </tabBarItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dnk-W2-5ko" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="LgQ-QZ-RbH" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
-            <point key="canvasLocation" x="2508" y="89.505247376311857"/>
+            <point key="canvasLocation" x="1209" y="782"/>
+        </scene>
+        <!--Animated Tab Bar Controller-->
+        <scene sceneID="qBZ-dk-MKx">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBar" id="iRW-oX-4T6" customClass="RAMAnimatedTabBarController" customModule="RAMAnimatedTabBarController" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="rnt-Bt-wAY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="83z-gl-p3u" kind="relationship" relationship="viewControllers" id="YUM-tn-T53"/>
+                        <segue destination="T81-PS-JuR" kind="relationship" relationship="viewControllers" id="fos-6D-beA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X63-zQ-DYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="254" y="1039"/>
         </scene>
         <!--Loading-->
         <scene sceneID="GIN-gF-XBj">
@@ -564,7 +594,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5f-tG-HB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969" y="90"/>
+            <point key="canvasLocation" x="927" y="38"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Lightning Bolt-30" width="30" height="30"/>
+        <image name="Treasure Map-30" width="30" height="30"/>
+    </resources>
 </document>

@@ -45,7 +45,6 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.8)
-  - KCFloatingActionButton (2.2.0)
   - Mapbox-iOS-SDK (3.4.2)
   - MapboxDirections.swift (0.8.0):
     - Polyline (~> 4.0)
@@ -70,7 +69,6 @@ DEPENDENCIES:
   - Firebase/Database
   - FoldingCell (~> 2.0.3)
   - FoursquareAPIClient
-  - KCFloatingActionButton (~> 2.2.0)
   - Mapbox-iOS-SDK (~> 3.4)
   - MapboxDirections.swift
   - RAMAnimatedTabBarController (~> 2.0.13)
@@ -94,7 +92,6 @@ SPEC CHECKSUMS:
   FoursquareAPIClient: 2bb916176f560c0afb6838a28c1a0970467a0edc
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
-  KCFloatingActionButton: 8c71fa25774e422c8d407f82b4b27809d0cd5233
   Mapbox-iOS-SDK: d2c567fee32d316044ec925c8bcfb74a92d57ec9
   MapboxDirections.swift: 242f12da1a6530f436d5fe5b4d9fc38cf2f9b1d0
   Polyline: c6de7430bf6ff0bfff1f087343597b83b38fdb69
@@ -105,6 +102,6 @@ SPEC CHECKSUMS:
   SwiftLocation: 3c66807be3cc511d6b3496fcccd7ba05d839f23b
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: be0ccb116672a46be26c4440912502a751967986
+PODFILE CHECKSUM: 6d0b9fe96f02dc64a7ee5c36c5944d7a36e91387
 
 COCOAPODS: 1.2.0

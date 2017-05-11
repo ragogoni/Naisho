@@ -8,7 +8,6 @@
 
 import UIKit
 import FoldingCell
-import KCFloatingActionButton
 import SDWebImage
 import MapboxDirections
 import Mapbox
@@ -37,22 +36,6 @@ class SimpleTableViewController: UITableViewController {
         for _ in 0...cellCount {
             cellHeights.append(kCloseCellHeight)
         }
-        
-        
-        let fab = KCFloatingActionButton()
-        fab.buttonColor = UIColor.white
-        fab.addItem("Settings", icon: UIImage(named: "settings")!)
-        fab.addItem("Main", icon: UIImage(named: "home")!, handler: { item in
-            let storyboard: UIStoryboard = self.storyboard!
-            let nextView = storyboard.instantiateViewController(withIdentifier: "Main") as! MainViewController
-            self.present(nextView, animated: false, completion: nil)
-            fab.close()
-        })
-        
-        self.view.addSubview(fab)
-        
-        
-        
     }
 
     override func didReceiveMemoryWarning() {

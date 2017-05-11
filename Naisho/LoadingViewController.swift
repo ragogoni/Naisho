@@ -30,7 +30,7 @@ class LoadingViewController: UIViewController {
         // Wait for 4 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
             let storyboard: UIStoryboard = self.storyboard!
-            let nextView = storyboard.instantiateViewController(withIdentifier: "Main") as! MainViewController
+            let nextView = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
             self.present(nextView, animated: false, completion: nil)
         })
     }

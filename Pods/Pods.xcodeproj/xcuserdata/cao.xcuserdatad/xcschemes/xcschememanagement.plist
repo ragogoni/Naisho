@@ -44,11 +44,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>KCFloatingActionButton.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>MapboxDirections.swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -117,12 +112,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>249E135DEE7BEC23DBD3CEEBB1F17CD5</key>
+		<key>3C02DABE3BD7B4021015D4B16FA23205</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3C02DABE3BD7B4021015D4B16FA23205</key>
+		<key>3F06FD86F89C0F99B818A5AA1FCC7DBC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,12 +137,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5867E2A19A50CFBE85B9F934B830B321</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>74089A1E92967D9D751AC503C3D27C0C</key>
+		<key>5AD4E61D982F705E8A06A0658CF851F6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -157,27 +147,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7764291216455ADA7A9AB05270FB405F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7977B9B54F362A08BCDA630A3961CEB3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7DF36B7388E2ECF1FD36A9D6888E9C8C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>972C1488C701B07F6177F4C04B0A8717</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9FD48867025B61BCC090806ED5396832</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A1D2880DFC3FFF4B740EC51684D0EF97</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A6E9CEC9E5ACFE69D21456CCB70BEEA0</key>
+		<key>AA0F74256D52C20F13329080193D1A3D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -192,17 +177,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BDD86D368B3F5A4859BFC7285EF64C34</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>BEF7E6E85DB5CDE5D7A18F4F2EB8494B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DBD23C622807218142791C0E95BE5096</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E99B61F7AD3AE9EA1794A918EF0D8049</key>
 		<dict>
 			<key>primary</key>
 			<true/>

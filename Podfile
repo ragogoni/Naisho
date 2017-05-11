@@ -33,7 +33,6 @@ target 'Naisho' do
   pod 'Firebase/Database'
   
   # FloatingButton
-  pod "KCFloatingActionButton", "~> 2.2.0"
   pod 'RAMAnimatedTabBarController', "~> 2.0.13"
   
   # Folding Cell

@@ -9,7 +9,6 @@
 import UIKit
 import Mapbox
 import SwiftLocation
-import KCFloatingActionButton
 
 class MainViewController: BasicViewController {
     
@@ -29,20 +28,6 @@ class MainViewController: BasicViewController {
                 FourSquareManager.sharedInstance.search(ll: loc, limit: 20,category: nil, radius: "3000",mapview: nil)
             }
         }
-        
-        // Add floating action Button
-        let fab = KCFloatingActionButton()
-        fab.buttonColor = UIColor.white
-        fab.addItem("Settings", icon: UIImage(named: "settings")!)
-        
-        fab.addItem("Stars", icon: UIImage(named: "star")!, handler: { item in
-            let storyboard: UIStoryboard = self.storyboard!
-            let nextView = storyboard.instantiateViewController(withIdentifier: "Data") as! SimpleTableViewController
-            self.present(nextView, animated: false, completion: nil)
-            fab.close()
-        })
-        
-        self.view.addSubview(fab)
         
         // set the delegate
         mapView.delegate = MapBoxManager.sharedInstance;
