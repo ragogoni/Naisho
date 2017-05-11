@@ -34,6 +34,7 @@ target 'Naisho' do
   
   # FloatingButton
   pod "KCFloatingActionButton", "~> 2.2.0"
+  pod 'RAMAnimatedTabBarController', "~> 2.0.13"
   
   # Folding Cell
   pod 'FoldingCell', '~> 2.0.3'

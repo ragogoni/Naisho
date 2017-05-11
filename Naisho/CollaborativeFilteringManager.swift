@@ -35,6 +35,23 @@ class MLManager:NSObject{
         defaults.synchronize()
     }
     
+    func getLocalArray() -> [Int]{
+        let defaults = UserDefaults.standard
+        var array = defaults.array(forKey: "LocalCategoryArray")  as? [Int] ?? [Int]()
+        
+        
+        if(array.reduce(0, +) > 12*5){
+            for i in 0 ..< 12 {
+                array[i] = array[i]/2
+            }
+        }
+        
+        defaults.set(array, forKey: "LocalCategoryArray")
+        defaults.synchronize()
+        
+        return array
+    }
+    
     func updateLocalArrayOn(category:Category,action:UserAction){
         let defaults = UserDefaults.standard
         var array = defaults.array(forKey: "LocalCategoryArray")  as? [Int] ?? [Int]()

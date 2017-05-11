@@ -50,6 +50,7 @@ PODS:
   - MapboxDirections.swift (0.8.0):
     - Polyline (~> 4.0)
   - Polyline (4.0.0)
+  - RAMAnimatedTabBarController (2.0.13)
   - Realm (2.4.3):
     - Realm/Headers (= 2.4.3)
   - Realm/Headers (2.4.3)
@@ -72,6 +73,7 @@ DEPENDENCIES:
   - KCFloatingActionButton (~> 2.2.0)
   - Mapbox-iOS-SDK (~> 3.4)
   - MapboxDirections.swift
+  - RAMAnimatedTabBarController (~> 2.0.13)
   - RealmSwift
   - SDWebImage
   - SwiftLocation
@@ -96,12 +98,13 @@ SPEC CHECKSUMS:
   Mapbox-iOS-SDK: d2c567fee32d316044ec925c8bcfb74a92d57ec9
   MapboxDirections.swift: 242f12da1a6530f436d5fe5b4d9fc38cf2f9b1d0
   Polyline: c6de7430bf6ff0bfff1f087343597b83b38fdb69
+  RAMAnimatedTabBarController: 2510f3b66954c3f77ea1042a35d34df8f5f3b604
   Realm: e08d60b0048ccccd3949c8c28a92c4db5712d7e9
   RealmSwift: 30d49739ccb3385d201242736ca4dda56aec9dfc
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SwiftLocation: 3c66807be3cc511d6b3496fcccd7ba05d839f23b
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: b143cf7b584d5363d49e8f88ef5817d07f82c9a3
+PODFILE CHECKSUM: be0ccb116672a46be26c4440912502a751967986
 
 COCOAPODS: 1.2.0
