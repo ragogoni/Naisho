@@ -41,6 +41,9 @@ target 'Naisho' do
   # MapBox
   pod 'Mapbox-iOS-SDK', '~> 3.4'
   pod 'MapboxDirections.swift'
+  
+  # HUD
+  pod 'PKHUD', '~> 4.0'
 
   target 'NaishoTests' do
     inherit! :search_paths

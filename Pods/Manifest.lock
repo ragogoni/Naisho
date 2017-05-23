@@ -48,6 +48,7 @@ PODS:
   - Mapbox-iOS-SDK (3.4.2)
   - MapboxDirections.swift (0.8.0):
     - Polyline (~> 4.0)
+  - PKHUD (4.2.0)
   - Polyline (4.0.0)
   - RAMAnimatedTabBarController (2.0.13)
   - Realm (2.4.3):
@@ -71,6 +72,7 @@ DEPENDENCIES:
   - FoursquareAPIClient
   - Mapbox-iOS-SDK (~> 3.4)
   - MapboxDirections.swift
+  - PKHUD (~> 4.0)
   - RAMAnimatedTabBarController (~> 2.0.13)
   - RealmSwift
   - SDWebImage
@@ -94,6 +96,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
   Mapbox-iOS-SDK: d2c567fee32d316044ec925c8bcfb74a92d57ec9
   MapboxDirections.swift: 242f12da1a6530f436d5fe5b4d9fc38cf2f9b1d0
+  PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
   Polyline: c6de7430bf6ff0bfff1f087343597b83b38fdb69
   RAMAnimatedTabBarController: 2510f3b66954c3f77ea1042a35d34df8f5f3b604
   Realm: e08d60b0048ccccd3949c8c28a92c4db5712d7e9
@@ -102,6 +105,6 @@ SPEC CHECKSUMS:
   SwiftLocation: 3c66807be3cc511d6b3496fcccd7ba05d839f23b
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 6d0b9fe96f02dc64a7ee5c36c5944d7a36e91387
+PODFILE CHECKSUM: a947833e39cb920f4b677552746672ec9b5d2251
 
 COCOAPODS: 1.2.0

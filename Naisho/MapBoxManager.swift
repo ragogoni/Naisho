@@ -16,7 +16,7 @@ class MapBoxManager:NSObject,MGLMapViewDelegate{
     }()
     
     private override init(){
-    
+        super.init()
     }
     
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {

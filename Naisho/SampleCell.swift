@@ -23,7 +23,6 @@ class SampleCell: FoldingCell {
     @IBOutlet weak var fgRatingLabel: UILabel!
     @IBOutlet weak var fgDistanceLabel: UILabel!
     @IBOutlet weak var fgLeftView: UIView!
-    @IBOutlet weak var OpenMenuTextView: UITextView!
     
     
     @IBOutlet weak var containerImageView: UIImageView!
@@ -35,17 +34,17 @@ class SampleCell: FoldingCell {
     @IBOutlet weak var containerNameLabel: UILabel!
     @IBOutlet weak var containerTopView: UIView!
     
-    @IBOutlet weak var containerPhoneTextView: UITextView!
-    @IBOutlet weak var containerMenuTextView: UITextView!
     
-    
-    
-    
+    @IBOutlet weak var containerPhoneButton: UIButton!
+    @IBOutlet weak var containerMenuButton: UIButton!
     
     override func awakeFromNib() {
         foregroundView.layer.cornerRadius = 10
         foregroundView.layer.masksToBounds = true
         super.awakeFromNib()
+        
+        self.containerGoButton.layer.cornerRadius = 10
+        self.containerGoButton.clipsToBounds = true
         
         backgroundColor = UIColor.clear
     }
@@ -57,6 +56,35 @@ class SampleCell: FoldingCell {
     
     @IBAction func OnClickGoButton(_ sender: Any) {
     }
+    
+    @IBAction func onClickMenuButton(_ sender: Any) {
+        let button = sender as! UIButton
+        if let b = RealmManager.sharedInstance.getObjectAtIndex(index: button.tag){
+            let url = URL(string: b.menuURL)
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url!)
+            }
+            
+            print(b.category)
+            
+        }
+    
+    }
+    
+    
+    @IBAction func onClickPhoneButton(_ sender: Any) {
+        let button = sender as! UIButton
+        let url = URL(string: "telprompt://"+(button.titleLabel?.text)!)!
+        print(url)
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
+    
     
     
 }

@@ -29,6 +29,7 @@ class Business : Object{
     dynamic var category = "";
     
     // could be empty
+    dynamic var bestPhoto = ""
     dynamic var photo_1 = ""
     dynamic var photo_2 = ""
     dynamic var photo_3 = ""
@@ -63,8 +64,14 @@ class RealmManager:NSObject{
     }
     
     func writeBusiness(business:Business){
-        try! realm.write {
-            realm.add(business);
+        if realm.object(ofType: Business.self, forPrimaryKey: business.id) != nil{
+            try! realm.write {
+                realm.add(business, update: true)
+            }
+        } else {
+            try! realm.write {
+                realm.add(business);
+            }
         }
     }
     
@@ -86,6 +93,15 @@ class RealmManager:NSObject{
         if let b = realm.object(ofType: Business.self, forPrimaryKey: ID){
             try! realm.write {
                 b.rating.value = rating;
+                realm.add(b, update: true)
+            }
+        }
+    }
+    
+    func writeBestPhotoURLOn(ID:String,url:String){
+        if let b = realm.object(ofType: Business.self, forPrimaryKey: ID){
+            try! realm.write {
+                b.bestPhoto = url;
                 realm.add(b, update: true)
             }
         }

@@ -22,7 +22,7 @@
 		3A909AB51EA166BF004CF624 /* Coco-CondensedItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A909AAD1EA166BF004CF624 /* Coco-CondensedItalic.otf */; };
 		3A909AB61EA166BF004CF624 /* Coco-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A909AAE1EA166BF004CF624 /* Coco-Italic.otf */; };
 		3A909AB71EA166BF004CF624 /* Coco-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A909AAF1EA166BF004CF624 /* Coco-Regular.otf */; };
-		3AB2B6051E77451200FC7B52 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2B6041E77451200FC7B52 /* MainViewController.swift */; };
+		3AB2B6051E77451200FC7B52 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2B6041E77451200FC7B52 /* MapViewController.swift */; };
 		3AB2B6071E774B5600FC7B52 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2B6061E774B5600FC7B52 /* LocationManager.swift */; };
 		3AB83E691E8C5FED002CACDD /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB83E681E8C5FED002CACDD /* LoadingViewController.swift */; };
 		3ABCA6E11E8AB1C2003D0376 /* CollaborativeFilteringManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABCA6E01E8AB1C2003D0376 /* CollaborativeFilteringManager.swift */; };
@@ -79,7 +79,7 @@
 		3A909AAD1EA166BF004CF624 /* Coco-CondensedItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coco-CondensedItalic.otf"; sourceTree = "<group>"; };
 		3A909AAE1EA166BF004CF624 /* Coco-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coco-Italic.otf"; sourceTree = "<group>"; };
 		3A909AAF1EA166BF004CF624 /* Coco-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coco-Regular.otf"; sourceTree = "<group>"; };
-		3AB2B6041E77451200FC7B52 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3AB2B6041E77451200FC7B52 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3AB2B6061E774B5600FC7B52 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		3AB83E681E8C5FED002CACDD /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		3ABCA6E01E8AB1C2003D0376 /* CollaborativeFilteringManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollaborativeFilteringManager.swift; sourceTree = "<group>"; };
@@ -239,7 +239,7 @@
 			children = (
 				3ABEE43C1E70BCE500C753E8 /* LogInViewController.swift */,
 				3ABEE46C1E70BD7A00C753E8 /* BasicViewController.swift */,
-				3AB2B6041E77451200FC7B52 /* MainViewController.swift */,
+				3AB2B6041E77451200FC7B52 /* MapViewController.swift */,
 				3AB83E681E8C5FED002CACDD /* LoadingViewController.swift */,
 				3A2C76931E9FD9BF00B14B7E /* SimpleTableViewController.swift */,
 			);
@@ -595,7 +595,7 @@
 				3AC1FB501E71C5560031DDCF /* FourSquareManager.swift in Sources */,
 				3A2EE10B1E7F6DD400953110 /* MapBoxManager.swift in Sources */,
 				3ABEE43B1E70BCE500C753E8 /* AppDelegate.swift in Sources */,
-				3AB2B6051E77451200FC7B52 /* MainViewController.swift in Sources */,
+				3AB2B6051E77451200FC7B52 /* MapViewController.swift in Sources */,
 				3A2C76941E9FD9BF00B14B7E /* SimpleTableViewController.swift in Sources */,
 				3AB83E691E8C5FED002CACDD /* LoadingViewController.swift in Sources */,
 				3AB2B6071E774B5600FC7B52 /* LocationManager.swift in Sources */,

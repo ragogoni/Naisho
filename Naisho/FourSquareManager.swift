@@ -12,6 +12,7 @@ import SwiftyJSON
 import CoreLocation
 import UIKit
 import Mapbox
+import PKHUD
 
 enum Category:String{
     case EastAsian = "4bf58dd8d48988d142941735"
@@ -39,6 +40,7 @@ enum Category:String{
     // case Filipino = "4eb1bd1c3b7b55596b4a748f"
     //    case Brazilian = "4bf58dd8d48988d16b941735"
     //    case Peruvian = "4eb1bfa43b7b52c0e1adc2e8"
+    case Nil = ""
 }
 
 class FourSquareManager:NSObject{
@@ -93,7 +95,7 @@ class FourSquareManager:NSObject{
     
     
     // search by location and category
-    func search(ll:CLLocationCoordinate2D,limit:Int,category:Category?,radius:String?,mapview:MGLMapView?){
+    func search(ll:CLLocationCoordinate2D,limit:Int,category:Category?,radius:String?,mapview:MGLMapView?,tableView:UITableView?, refreshControl:UIRefreshControl?, removeAllEntries: Bool){
         var param:[String:String]
         
         // convert CLLocationCoordinate2D to string so that we can do API call
@@ -114,7 +116,6 @@ class FourSquareManager:NSObject{
             param["categoryId"] = category!.rawValue;
         } else {
             param["categoryId"] = "4d4b7105d754a06374d81259";
-            param["query"] = "Restaurant"
         }
         
         client.request(path: FourSquareManager.SEARCH_PATH, parameter: param){
@@ -126,8 +127,9 @@ class FourSquareManager:NSObject{
                 self.json = JSON(data: data)
                 //print(self.json)
                 
-                
-                RealmManager.sharedInstance.removeAllEntries()
+                if(removeAllEntries){
+                    RealmManager.sharedInstance.removeAllEntries()
+                }
                 
                 for(_,subjson):(String,JSON) in self.json["response"]["venues"]{
                     if (subjson["location"]["distance"] != JSON.null && subjson["contact"]["phone"] != JSON.null && subjson["hasMenu"].boolValue){
@@ -150,6 +152,13 @@ class FourSquareManager:NSObject{
                     
                 }
                 
+                // reload the data if the tableview is set
+                if tableView != nil {
+                    tableView!.reloadData()
+                }
+                
+                
+                // put pins on the mapview if it is given
                 if(mapview != nil){
                     // Optionally set a starting point.
                     mapview!.setCenter(LocationManager.sharedInstance.center, zoomLevel: 12, direction: 0, animated: false)
@@ -160,6 +169,20 @@ class FourSquareManager:NSObject{
                     }
                 }
                 
+                // end refreshing if its given
+                if(refreshControl != nil){
+                    refreshControl?.endRefreshing()
+                }
+                
+                // flash success for 0.5 secs
+                HUD.flash(.success, delay: 0.5)
+                
+                // set the refreshed key to be true
+                UserDefaults.standard.set(true, forKey: "refreshed")
+                UserDefaults.standard.synchronize()
+                
+                print("DEBUG: Finished searching venues on Foursquare.")
+                
                 
             case let .failure(error):
                 switch error{
@@ -169,6 +192,13 @@ class FourSquareManager:NSObject{
                     print(apiError.errorType)   // e.g. endpoint_error
                     print(apiError.errorDetail) // e.g. The requested path does not exist.
                 }
+                
+                if(refreshControl != nil){
+                    refreshControl?.endRefreshing()
+                }
+                
+                HUD.show(.error)
+                HUD.hide(afterDelay: 0.5)
             }
         }
     }
@@ -183,9 +213,15 @@ class FourSquareManager:NSObject{
             
             case let .success(data):
                 let j = JSON(data)["response"]["venue"]
+                
+                if(j["bestPhoto"] != JSON.null && j["bestPhoto"]["prefix"] != JSON.null && j["bestPhoto"]["suffix"] != JSON.null){
+                    RealmManager.sharedInstance.writeBestPhotoURLOn(ID: venueID, url: j["bestPhoto"]["prefix"].string!+"300x300"+j["bestPhoto"]["suffix"].string!)
+                }
+                
                 if(j["rating"] != JSON.null){
                     RealmManager.sharedInstance.writeRatingOn(ID: venueID,rating: j["rating"].double!)
                 }
+                
                 if(j["hours"] != JSON.null){
                     RealmManager.sharedInstance.writeIsOpenOn(ID: venueID,isOpen:j["hours"]["isOpen"].bool!)
                 }
@@ -228,6 +264,7 @@ class FourSquareManager:NSObject{
             case let .success(data):
                 // update the photo count
                 let j = JSON(data)
+                
                 var url:[String] = [String]()
                 
                 // restore 0 to 3 photos locally
@@ -249,9 +286,132 @@ class FourSquareManager:NSObject{
                 
             }
         }
+    }
+    
+    func categoryOfIndex(index: Int) -> Category{
+        switch index{
+        case 0:
+            return Category.EastAsian
+        case 1:
+            return Category.French
+        case 2:
+            return Category.Italian
+        case 3:
+            return Category.LatinAmerican
+        case 4:
+            return Category.Mexican
+        case 5:
+            return Category.Turkish
+        case 6:
+            return Category.Indonesian
+        case 7:
+            return Category.Indian
+        case 8:
+            return Category.Greek
+        case 9:
+            return Category.Mediterranean
+        case 10:
+            return Category.Spanish
+        case 11:
+            return Category.Vegetarian
+        default:
+            return Category.Nil
+        }
         
+    }
+    
+    // return the category from the category string accordings to the Foursquare API
+    func categoryFromRawString(categoryString :String)->Category{
+        switch categoryString{
+        case "Asian Restaurants", "Chinese Restaurants", "Japanese Restaurants", "Korean Restaurants", "Filipino Restaurants", "Thai Restaurants", "Vietnamese Restaurants", "Dim Sum Restaurants", "Ramen Restaurants", "Sushi Restaurants":
+            return Category.EastAsian
+        case "French Restaurants":
+            return Category.French
+        case "Indonesian Restaurants":
+            return Category.Indonesian
+        case "Indian Restaurants", "Pakistani Restaurants":
+            return Category.Indian
+        case "Italian Restaurants", "Pizza Places":
+            return Category.Italian
+        case "Latin American Restaurants", "Brazilian Restaurants", "Argentinian Restaurants", "Peruvian Restaurants", "Churrascarias":
+            return Category.LatinAmerican
+        case "Mexican Restaurants", "Burrito Places", "Taco Places":
+            return Category.Mexican
+        case "Spanish Restaurants", "Tapas Restaurants":
+            return Category.Spanish
+        case "Turkish Restaurants":
+            return Category.Turkish
+        case "Greek Restaurants", "Meze Restaurants":
+            return Category.Greek
+        case "Vegetarian / Vegan Restaurants","Salad Places":
+            return Category.Vegetarian
+        case "Mediterranean Restaurants":
+            return Category.Mediterranean
+        default:
+            return Category.Nil
+        }
     
     }
     
+    
+    func index(c:Category) -> Int{
+        switch c{
+        case Category.EastAsian:
+            return 0
+        case Category.French:
+            return 1
+        case Category.Italian:
+            return 2
+        case Category.LatinAmerican:
+            return 3
+        case Category.Mexican:
+            return 4
+        case Category.Turkish:
+            return 5
+        case Category.Indonesian:
+            return 6
+        case Category.Indian:
+            return 7
+        case Category.Greek:
+            return 8
+        case Category.Mediterranean:
+            return 9
+        case Category.Spanish:
+            return 10
+        case Category.Vegetarian:
+            return 11
+        case Category.Nil:
+            return -1
+        }
+    }
+    
+    
+    func ratioSearch(ll:CLLocationCoordinate2D,mapview:MGLMapView?,tableView:UITableView?, refreshControl:UIRefreshControl?){
+        
+        // remove all the instance
+        RealmManager.sharedInstance.removeAllEntries()
+        
+        // get the ratio
+        let array = MLManager.sharedInstance.getLocalArray()
+        let sum = array.reduce(0, +)
+        
+        // not enough infomation
+        if(sum == 0){
+            return
+        }
+        
+        
+        var ratioArray = [Int](repeating: 0, count: 12)
+        
+        for i in 0 ..< 12{
+            ratioArray[i] = Int(ceil(Double((array[i]))/(Double(sum))*10))
+        }
+        
+        
+        for i in 0 ..< 12{
+            self.search(ll: ll, limit: ratioArray[i]+2, category: self.categoryOfIndex(index: i), radius: "7000", mapview: mapview, tableView: tableView, refreshControl: refreshControl, removeAllEntries: false)
+        }
+        
+    }
     
 }

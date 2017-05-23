@@ -10,24 +10,55 @@ import UIKit
 import Mapbox
 import SwiftLocation
 
-class MainViewController: BasicViewController {
+class MapViewController: BasicViewController {
     
     @IBOutlet weak var mapView: MGLMapView!
     
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        // if both lat and lon are available, search
+        print(MLManager.sharedInstance.getLocalArray())
+        
+        
+        // set the center to the new location
         if let lat = UserDefaults.standard.string(forKey:"lat"){
             if let lon = UserDefaults.standard.string(forKey:"lon"){
                 var loc = CLLocationCoordinate2D();
                 loc.latitude = Double(lat)!;
                 loc.longitude = Double(lon)!;
-                FourSquareManager.sharedInstance.search(ll: loc, limit: 20,category: nil, radius: "3000",mapview: nil)
+                mapView.setCenter(loc, zoomLevel: 12, direction: 0, animated: false)
             }
         }
+        
+        // if the database if refreshed
+        if(UserDefaults.standard.bool(forKey: "refreshed")){
+            
+            // remove annotations
+            if self.mapView.annotations?.isEmpty == false{
+                for a in self.mapView.annotations!{
+                    self.mapView.removeAnnotation(a)
+                }
+            }
+        
+            // update the map
+            print("DEBUG: "+String(RealmManager.sharedInstance.getTotalNumber()) + " items in Realm DB.")
+            for b in RealmManager.sharedInstance.getAllBusinesses(){
+                mapView.addAnnotation(MapBoxManager.sharedInstance.getPin(title: b.name, location:  CLLocationCoordinate2D(latitude: b.lat,longitude: b.lon), subtitile: b.name));
+            }
+            
+            // set the refreshed to be false
+            UserDefaults.standard.set(false, forKey: "refreshed")
+            UserDefaults.standard.synchronize()
+            
+        }
+        
+        print("DEBUG: MapView ViewWillAppear")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         // set the delegate
         mapView.delegate = MapBoxManager.sharedInstance;
@@ -46,14 +77,6 @@ class MainViewController: BasicViewController {
         
         
         // add pins
-        for b in RealmManager.sharedInstance.getAllBusinesses(){
-            mapView.addAnnotation(MapBoxManager.sharedInstance.getPin(title: b.name, location: CLLocationCoordinate2D(latitude: b.lat,longitude: b.lon), subtitile: b.name));
-        }
-        
-    }
-
-    func refresh()
-    {
         for b in RealmManager.sharedInstance.getAllBusinesses(){
             mapView.addAnnotation(MapBoxManager.sharedInstance.getPin(title: b.name, location: CLLocationCoordinate2D(latitude: b.lat,longitude: b.lon), subtitile: b.name));
         }

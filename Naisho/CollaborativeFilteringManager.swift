@@ -19,6 +19,10 @@ class MLManager:NSObject{
     
     var ratings:[Int] = [Int](repeating: 0, count: 12)
     
+    static var sharedInstance: MLManager = {
+        return MLManager();
+    }()
+    
     private override init(){
         super.init()
     }
@@ -40,7 +44,7 @@ class MLManager:NSObject{
         var array = defaults.array(forKey: "LocalCategoryArray")  as? [Int] ?? [Int]()
         
         
-        if(array.reduce(0, +) > 12*5){
+        if(array.reduce(0, +) > 100){
             for i in 0 ..< 12 {
                 array[i] = array[i]/2
             }
@@ -54,56 +58,10 @@ class MLManager:NSObject{
     
     func updateLocalArrayOn(category:Category,action:UserAction){
         let defaults = UserDefaults.standard
-        var array = defaults.array(forKey: "LocalCategoryArray")  as? [Int] ?? [Int]()
+        var array:[Int] = defaults.array(forKey: "LocalCategoryArray") as! [Int]
         
-        switch category {
-        case Category.EastAsian:
-            array[0] += action.rawValue
-            break
-            
-        case Category.French:
-            array[1] += action.rawValue
-            break
-            
-        case Category.Italian:
-            array[2] += action.rawValue
-            break
-            
-        case Category.LatinAmerican:
-            array[3] += action.rawValue
-            break
-            
-        case Category.Mexican:
-            array[4] += action.rawValue
-            break
-            
-        case Category.Turkish:
-            array[5] += action.rawValue
-            break
-            
-        case Category.Indonesian:
-            array[6] += action.rawValue
-            break
-            
-        case Category.Indian:
-            array[7] += action.rawValue
-            break
-            
-        case Category.Greek:
-            array[8] += action.rawValue
-            break
-            
-        case Category.Mediterranean:
-            array[9] += action.rawValue
-            break
-            
-        case Category.Spanish:
-            array[10] += action.rawValue
-            break
-            
-        case Category.Vegetarian:
-            array[11] += action.rawValue
-            break
+        if(category != Category.Nil){
+            array[FourSquareManager.sharedInstance.index(c: category)] += action.rawValue
         }
         
         defaults.set(array, forKey: "LocalCategoryArray")

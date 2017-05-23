@@ -41,13 +41,14 @@ class LogInViewController: BasicViewController, FBSDKLoginButtonDelegate {
         } else {
             // その他
             print("Login Succeeded")
+            MLManager.sharedInstance.initLocalArray()
             // Perform login by calling Firebase APIs
             firebaseManager.auth();
             // dismiss itself
             let storyboard = self.storyboard;
             
             // Present the main view and set it to the root
-            if let viewController = storyboard?.instantiateViewController(withIdentifier: "Loading"){
+            if let viewController = storyboard?.instantiateViewController(withIdentifier: "TabBar"){
                 UIApplication.shared.keyWindow?.rootViewController = viewController
             } // dont forget to tell the view controller to dismiss itself
             

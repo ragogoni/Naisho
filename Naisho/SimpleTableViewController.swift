@@ -19,8 +19,6 @@ class SimpleTableViewController: UITableViewController {
     private let kCloseCellHeight: CGFloat = 164 //150+14
     private let kOpenCellHeight: CGFloat = 466  //450+16
     
-    private let cellCount = RealmManager.sharedInstance.getTotalNumber()
-    
     let colors = [UIColor(red:0.72, green:0.20, blue:0.39, alpha:1.0),
                   UIColor(red:0.51, green:0.91, blue:0.26, alpha:1.0),
                   UIColor(red:0.20, green:0.60, blue:0.72, alpha:1.0),
@@ -29,13 +27,47 @@ class SimpleTableViewController: UITableViewController {
     private let directions = Directions(accessToken: "pk.eyJ1Ijoidml4YWVyIiwiYSI6ImNpczBneDM0cjAzYjUyenA4eXV1N2Zpb2UifQ.D2L9Dd674rBGVuallWx3RQ")
     
     private let locationManager = LocationManager.sharedInstance;
+
+    
+    override func viewWillAppear(_ animated: Bool) {
+        for _ in 0...RealmManager.sharedInstance.getTotalNumber() {
+            cellHeights.append(kCloseCellHeight)
+        }
+        
+        self.tableView.reloadData()
+        
+        super.viewWillAppear(animated)
+        
+        print("DEBUG: TableView ViewWillAppear")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for _ in 0...cellCount {
+        self.tableView.dataSource = self;
+        self.tableView.delegate = self;
+        
+        
+        for _ in 0...RealmManager.sharedInstance.getTotalNumber() {
             cellHeights.append(kCloseCellHeight)
         }
+        
+        // refresher
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.attributedTitle = NSAttributedString(string: "Pull to reload")
+        self.refreshControl?.addTarget(self, action: #selector(SimpleTableViewController.refresh), for: UIControlEvents.valueChanged)
+        self.tableView.addSubview(refreshControl!)
+        
+        // if both lat and lon are available, search
+        if let lat = UserDefaults.standard.string(forKey:"lat"){
+            if let lon = UserDefaults.standard.string(forKey:"lon"){
+                var loc = CLLocationCoordinate2D();
+                loc.latitude = Double(lat)!;
+                loc.longitude = Double(lon)!;
+                FourSquareManager.sharedInstance.search(ll: loc, limit: 20,category: nil, radius: "3000",mapview: nil, tableView: self.tableView, refreshControl: nil, removeAllEntries: true)
+            }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,10 +79,13 @@ class SimpleTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cellCount;
+        return RealmManager.sharedInstance.getTotalNumber();
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        for _ in 0...RealmManager.sharedInstance.getTotalNumber() {
+            cellHeights.append(kCloseCellHeight)
+        }
         return cellHeights[(indexPath as NSIndexPath).row]
     }
     
@@ -71,85 +106,8 @@ class SimpleTableViewController: UITableViewController {
         
         if let b = RealmManager.sharedInstance.getObjectAtIndex(index: indexPath.row){
             
-            
-            let point = MGLPointAnnotation()
-            point.coordinate = CLLocationCoordinate2D(latitude: b.lat, longitude: b.lon)
-            point.title = b.name
-            cell.containerMapView.addAnnotation(point)
-        }
-        
-        
-        var duration = 0.0
-        if cellHeights[(indexPath as NSIndexPath).row] == kCloseCellHeight { // open cell
-            cellHeights[(indexPath as NSIndexPath).row] = kOpenCellHeight
-            cell.selectedAnimation(true, animated: true, completion: nil)
-            duration = 0.5
-        } else {// close cell
-            cellHeights[(indexPath as NSIndexPath).row] = kCloseCellHeight
-            cell.selectedAnimation(false, animated: true, completion: nil)
-            duration = 0.8
-        }
-        
-        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { () -> Void in
-            tableView.beginUpdates()
-            tableView.endUpdates()
-        }, completion: nil)
-    }
-    
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard case let cell as SampleCell = cell else { return }
-        if let b = RealmManager.sharedInstance.getObjectAtIndex(index: indexPath.row){
-            cell.fgNameLabel.text = b.name;
-            cell.containerNameLabel.text = b.name;
-            if(b.rating.value != nil){
-                cell.fgRatingLabel.text = String(describing:Int(b.rating.value!*10))+"/100"
-            }
-            
-            cell.containerPhoneTextView.text = b.phone 
-            
-            
-            cell.fgNumberLabel.text = "#"+String(describing:indexPath.row+1)
-            
-            let u = RealmManager.sharedInstance.getURLOn(index: indexPath.row, urlIndex: 1)
-            if (String(describing: u) != "" && u != nil){
-                cell.containerImageView.sd_setImage(with: u)
-                cell.containerImageView.contentMode = UIViewContentMode.scaleAspectFill
-            }
-            
-            // set colors
-            cell.fgLeftView.backgroundColor = colors[indexPath.row%4]
-            cell.containerTopView.backgroundColor = colors[indexPath.row%4]
-            
-            /*
-             1: 0-10
-             2: 11-20
-             3: 21-35
-             4: 36+
-             */
-            switch b.price {
-                case 1:
-                    cell.fgPriceLabel.text = "$"
-                    cell.containerPriceLabel.text = "Affordable (~10 USD)"
-                case 2:
-                    cell.fgPriceLabel.text = "$$"
-                    cell.containerPriceLabel.text = "Safely Priced (11~20 USD)"
-                case 3:
-                    cell.fgPriceLabel.text = "$$$"
-                    cell.containerPriceLabel.text = "Expensive (21~35 USD)"
-                case 4:
-                    cell.fgPriceLabel.text = "$$$$"
-                    cell.containerPriceLabel.text = "Fancy Fancy (~36 USD)"
-                default:
-                    cell.fgPriceLabel.text = "N/A"
-                    cell.containerPriceLabel.text = "N/A"
-            }
-            
-            cell.containerLikeDescriptionLabel.text = String(describing:b.likes) + " people liked this place"
-            if(b.category == "Cafés"){
-                cell.fgCategoryLabel.text = "Cafe"
-            } else{
-                cell.fgCategoryLabel.text = b.category
-            }
+            // add 1 point to the internal array on the category
+            MLManager.sharedInstance.updateLocalArrayOn(category: FourSquareManager.sharedInstance.categoryFromRawString(categoryString: b.category), action: UserAction.OnOpenCell)
             
             // remove annotations
             if cell.containerMapView.annotations?.isEmpty == false{
@@ -158,8 +116,14 @@ class SimpleTableViewController: UITableViewController {
                 }
             }
             
+            // configure the map
+            let point = MGLPointAnnotation()
+            point.coordinate = CLLocationCoordinate2D(latitude: b.lat, longitude: b.lon)
+            point.title = b.name
+            cell.containerMapView.addAnnotation(point)
             
-            // calculate the distance
+            
+            // calculate the distance and show it on the map
             let lat = Double(UserDefaults.standard.string(forKey:"lat")!)!;
             let lon = Double(UserDefaults.standard.string(forKey:"lon")!)!;
             
@@ -195,11 +159,11 @@ class SimpleTableViewController: UITableViewController {
                     cell.containerDistanceLabel.text = "~" + formattedTravelTime!
                     
                     /*
-                    for step in leg.steps {
-                        //print("\(step.instructions)")
-                        let formattedDistance = distanceFormatter.string(fromMeters: step.distance)
-                        //print("— \(formattedDistance) —")
-                    }*/
+                     for step in leg.steps {
+                     //print("\(step.instructions)")
+                     let formattedDistance = distanceFormatter.string(fromMeters: step.distance)
+                     //print("— \(formattedDistance) —")
+                     }*/
                     
                     if route.coordinateCount > 0 {
                         // Convert the route’s coordinates into a polyline.
@@ -212,11 +176,141 @@ class SimpleTableViewController: UITableViewController {
                     }
                 }
             }
+            
+            // reset the price tier
+            switch b.price {
+            case 1:
+                cell.fgPriceLabel.text = "$"
+                cell.containerPriceLabel.text = "Affordable (~10 USD)"
+            case 2:
+                cell.fgPriceLabel.text = "$$"
+                cell.containerPriceLabel.text = "Safely Priced (11~20 USD)"
+            case 3:
+                cell.fgPriceLabel.text = "$$$"
+                cell.containerPriceLabel.text = "Expensive (21~35 USD)"
+            case 4:
+                cell.fgPriceLabel.text = "$$$$"
+                cell.containerPriceLabel.text = "Fancy Fancy (~36 USD)"
+            default:
+                cell.fgPriceLabel.text = "N/A"
+                cell.containerPriceLabel.text = "N/A"
+            }
+            
+            // reset the image
+            if(b.bestPhoto != ""){
+                cell.containerImageView.sd_setImage(with: URL(string: b.bestPhoto))
+            } else {
+                if(b.photoCount == 0){
+                    // set it to some random photo
+                } else {
+                    cell.containerImageView.sd_setImage(with: URL(string: b.photo_1))
+                }
+            }
+        }
+        
+        
+        var duration = 0.0
+        if cellHeights[(indexPath as NSIndexPath).row] == kCloseCellHeight { // open cell
+            cellHeights[(indexPath as NSIndexPath).row] = kOpenCellHeight
+            cell.selectedAnimation(true, animated: true, completion: nil)
+            duration = 0.5
+        } else {// close cell
+            cellHeights[(indexPath as NSIndexPath).row] = kCloseCellHeight
+            cell.selectedAnimation(false, animated: true, completion: nil)
+            duration = 0.8
+        }
+        
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { () -> Void in
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }, completion: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard case let cell as SampleCell = cell else { return }
+        if let b = RealmManager.sharedInstance.getObjectAtIndex(index: indexPath.row){
+            cell.fgNameLabel.text = b.name;
+            cell.containerNameLabel.text = b.name;
+            
+            cell.containerPhoneButton.setTitle(b.phone, for: UIControlState.normal)
+            
+            cell.fgNumberLabel.text = "#"+String(describing:indexPath.row+1)
+            
+
+            
+            // set the photo to be the best photo
+            cell.containerImageView.contentMode = UIViewContentMode.scaleAspectFill
+            
+            if(b.bestPhoto != ""){
+                cell.containerImageView.sd_setImage(with: URL(string: b.bestPhoto))
+            } else {
+                if(b.photoCount == 0){
+                    // set it to some random photo 
+                } else {
+                    cell.containerImageView.sd_setImage(with: URL(string: b.photo_1))
+                }
+            }
+            
+            // set the rating
+            if(b.rating.value != nil){
+                cell.fgRatingLabel.text = String(describing:Int(b.rating.value!*10))+"/100"
+            }
+            
+            
+            // set colors
+            cell.fgLeftView.backgroundColor = colors[indexPath.row%4]
+            cell.containerTopView.backgroundColor = colors[indexPath.row%4]
+            
+            cell.containerMenuButton.tag = indexPath.row
+            cell.containerImageView.tag = indexPath.row
+            
+            /*
+             1: 0-10
+             2: 11-20
+             3: 21-35
+             4: 36+
+             */
+            switch b.price {
+                case 1:
+                    cell.fgPriceLabel.text = "$"
+                    cell.containerPriceLabel.text = "Affordable (~10 USD)"
+                case 2:
+                    cell.fgPriceLabel.text = "$$"
+                    cell.containerPriceLabel.text = "Safely Priced (11~20 USD)"
+                case 3:
+                    cell.fgPriceLabel.text = "$$$"
+                    cell.containerPriceLabel.text = "Expensive (21~35 USD)"
+                case 4:
+                    cell.fgPriceLabel.text = "$$$$"
+                    cell.containerPriceLabel.text = "Fancy Fancy (~36 USD)"
+                default:
+                    cell.fgPriceLabel.text = "N/A"
+                    cell.containerPriceLabel.text = "N/A"
+            }
+            
+            cell.containerLikeDescriptionLabel.text = String(describing:b.likes) + " people liked this place"
+            if(b.category == "Cafés"){
+                cell.fgCategoryLabel.text = "Cafe"
+            } else{
+                cell.fgCategoryLabel.text = b.category
+            }
+            
+            
         }
     }
     
-    func makePhoneCall(textField: UITextField) {
-        // user touch field
+    func refresh(){
+        if let lat = UserDefaults.standard.string(forKey:"lat"){
+            if let lon = UserDefaults.standard.string(forKey:"lon"){
+                var loc = CLLocationCoordinate2D();
+                loc.latitude = Double(lat)!;
+                loc.longitude = Double(lon)!;
+                FourSquareManager.sharedInstance.search(ll: loc, limit: 20,category: nil, radius: "10000",mapview: nil, tableView: self.tableView,refreshControl: self.refreshControl, removeAllEntries: true)
+            }
+        }
+        
     }
+    
+    
 
 }

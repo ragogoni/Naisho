@@ -6,6 +6,33 @@
 //  Copyright © 2017 JustACoin. All rights reserved.
 //
 
+/*
+ *
+ * TODO: Make favorite (saved) view controller
+ *          - need to create another Realm db
+ *          - put the save icon on the table view
+ *
+ * TODO: Make the pop-up image when clicked the image in the table view
+ *          - make it so that it is scrollable (4 photos at most)
+ *          - probably easier just to hardcode it
+ *
+ * TODO: Add another share button on the left side of the GO button
+ *          - use some library from github
+ *
+ * TODO: Make the foursquare search better
+ *          - it searches only the restaurants that is open
+ *          - it searches with the ratio of the internal rating system
+ *          - get the equation of deriving the ratio from the user actions
+ *
+ * TODO: Settings
+ *          - Name, Photo, ID, Description
+ *          - Report a Problem
+ *          - Credits
+ *
+ * TODO: Navigation view when clicked the GO button
+ *
+ */
+
 import UIKit
 import FBSDKCoreKit
 import Firebase
@@ -56,7 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             
             // Present the main view and set it to the root
-            if let viewController = storyboard?.instantiateViewController(withIdentifier: "Loading"){
+            if let viewController = storyboard?.instantiateViewController(withIdentifier: "TabBar"){
                 if let window = self.window{
                     window.rootViewController = viewController
                 }
@@ -64,6 +91,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // FacebookManager.sharedInstance.UpdateUserInfo();
         }
+        
+        print("hi")
         
         return true
     }
