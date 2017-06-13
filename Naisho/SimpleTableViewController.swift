@@ -195,17 +195,6 @@ class SimpleTableViewController: UITableViewController {
                 cell.fgPriceLabel.text = "N/A"
                 cell.containerPriceLabel.text = "N/A"
             }
-            
-            // reset the image
-            if(b.bestPhoto != ""){
-                cell.containerImageView.sd_setImage(with: URL(string: b.bestPhoto))
-            } else {
-                if(b.photoCount == 0){
-                    // set it to some random photo
-                } else {
-                    cell.containerImageView.sd_setImage(with: URL(string: b.photo_1))
-                }
-            }
         }
         
         
@@ -235,6 +224,17 @@ class SimpleTableViewController: UITableViewController {
             cell.containerPhoneButton.setTitle(b.phone, for: UIControlState.normal)
             
             cell.fgNumberLabel.text = "#"+String(describing:indexPath.row+1)
+            
+            // set the image
+            if(b.bestPhoto != ""){
+                cell.containerImageView.sd_setImage(with: URL(string: b.bestPhoto))
+            } else {
+                if(b.photoCount == 0){
+                    // set it to some random photo
+                } else {
+                    cell.containerImageView.sd_setImage(with: URL(string: b.photo_1))
+                }
+            }
             
 
             
